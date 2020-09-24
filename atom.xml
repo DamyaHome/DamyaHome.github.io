@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.damyahome.github.io/"/>
-  <updated>2020-09-24T08:05:32.238Z</updated>
+  <updated>2020-09-24T13:23:21.529Z</updated>
   <id>https://www.damyahome.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[MISC]拼图题小结</title>
+    <link href="https://www.damyahome.github.io/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/"/>
+    <id>https://www.damyahome.github.io/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/</id>
+    <published>2020-09-24T13:20:28.000Z</published>
+    <updated>2020-09-24T13:23:21.529Z</updated>
+    
+    <content type="html"><![CDATA[<p>pdf插件加载比较慢,请稍等一下下哈<br><div class="row">    <embed src="[MISC]拼图题小结.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;pdf插件加载比较慢,请稍等一下下哈&lt;br&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;[MISC]拼图题小结.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
+	&lt;/div&gt;
+
+
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="ctf writeup misc" scheme="https://www.damyahome.github.io/categories/ctf-writeup-misc/"/>
+    
+    
+      <category term="知识小结" scheme="https://www.damyahome.github.io/tags/%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>web for pentester 1 wp</title>
@@ -570,32 +603,6 @@
     
     
       <category term="个人ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E4%B8%AA%E4%BA%BActf%E7%AB%9E%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wfuzz实战操作!</title>
-    <link href="https://www.damyahome.github.io/wfuzz%E5%AE%9E%E6%88%98%E6%93%8D%E4%BD%9C/"/>
-    <id>https://www.damyahome.github.io/wfuzz%E5%AE%9E%E6%88%98%E6%93%8D%E4%BD%9C/</id>
-    <published>2019-11-21T12:49:05.000Z</published>
-    <updated>2019-11-21T13:14:20.766Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="爆破文件和路径"><a href="#爆破文件和路径" class="headerlink" title="爆破文件和路径"></a>爆破文件和路径</h2><h3 id="暴力猜测目录"><a href="#暴力猜测目录" class="headerlink" title="暴力猜测目录"></a>暴力猜测目录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure><h3 id="暴力猜测文件"><a href="#暴力猜测文件" class="headerlink" title="暴力猜测文件"></a>暴力猜测文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt http://testphp.vulnweb.com/FUZZ.php</span><br></pre></td></tr></table></figure><h2 id="测试url中的参数"><a href="#测试url中的参数" class="headerlink" title="测试url中的参数"></a>测试url中的参数</h2><p>通过在URL中在？后面设置FUZZ占位符，可以使用wfuzz来测试URL传入的参数<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -z range,0-10 --hl 97 http://testphp.vulnweb.com/listproducts.php?cat=FUZZ</span><br></pre></td></tr></table></figure></p><h2 id="测试post请求"><a href="#测试post请求" class="headerlink" title="测试post请求"></a>测试post请求</h2><p>传入 -d 参数</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/others/common_pass.txt -d <span class="string">"uname=FUZZ&amp;pass=FUZZ"</span> --hc 302 http://testphp.vulnweb.com/userinfo.php</span><br></pre></td></tr></table></figure><h2 id="测试cookies"><a href="#测试cookies" class="headerlink" title="测试cookies"></a>测试cookies</h2><p>可以使用 -b 参数指定,多个cookies可以使用多次<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt -b cookie=value1 -b cookie2=value2 http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure></p><p>同样也可以测试cookies字段<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt -b cookie=FUZZ http://testphp.vulnweb.com/</span><br></pre></td></tr></table></figure></p><h2 id="测试自定义请求头"><a href="#测试自定义请求头" class="headerlink" title="测试自定义请求头"></a>测试自定义请求头</h2><p>使用-H参数来指定HTTP请求和存在的请求头，多次指定可多次使用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt -H <span class="string">"myheader: headervalue"</span> -H <span class="string">"User-Agent: Googlebot-News"</span> http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure></p><p>Headers也可以被测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt -H <span class="string">"User-Agent: FUZZ"</span> http://testphp.vulnweb.com/</span><br></pre></td></tr></table></figure></p><h2 id="测试HTTP请求方法"><a href="#测试HTTP请求方法" class="headerlink" title="测试HTTP请求方法"></a>测试HTTP请求方法</h2><p>可以通过传入 -x 参数指定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -z list,GET-HEAD-POST-TRACE-OPTIONS -X FUZZ http://testphp.vulnweb.com/</span><br></pre></td></tr></table></figure></p><h2 id="使用代理"><a href="#使用代理" class="headerlink" title="使用代理"></a>使用代理</h2><p>可以通过传入 -p 参数指定,同样可以多个代理多个指定<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -w ./wordlist/general/common.txt -p localhost:8080 http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure></p><h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><p>可以通过 –basec/ntml/digest 来设置认证头<br>想测试经过认证后的资源,而一颗通过指定 –basic user:pass 的方式来测试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -z list,nonvalid-httpwatch --basic FUZZ:FUZZ https://www.httpwatch.com/httpgallery/authentication/authenticatedimage/default.aspx</span><br></pre></td></tr></table></figure></p><h2 id="递归测试"><a href="#递归测试" class="headerlink" title="递归测试"></a>递归测试</h2><p>可以换入 -R 参数指定一个payload被递归的深度<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -z list,<span class="string">"admin-CVS-cgi\-bin"</span> -R 1 http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure></p><h2 id="测试速度与效率"><a href="#测试速度与效率" class="headerlink" title="测试速度与效率"></a>测试速度与效率</h2><p>使用 -t 参数可以增加或减少同时发送HTTP请求的数量<br>使用 -s 参数可以调节每次发送HTTP的时间间隔</p><h2 id="输出到文件"><a href="#输出到文件" class="headerlink" title="输出到文件"></a>输出到文件</h2><p>可以通过 printers 插件来将结果以不同格式保存到文档中<br>例如<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wfuzz -f /tmp/outfile,json -w ./wordlist/general/common.txt http://testphp.vulnweb.com/FUZZ</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;爆破文件和路径&quot;&gt;&lt;a href=&quot;#爆破文件和路径&quot; class=&quot;headerlink&quot; title=&quot;爆破文件和路径&quot;&gt;&lt;/a&gt;爆破文件和路径&lt;/h2&gt;&lt;h3 id=&quot;暴力猜测目录&quot;&gt;&lt;a href=&quot;#暴力猜测目录&quot; class=&quot;headerlink&quot; 
-      
-    
-    </summary>
-    
-    
-      <category term="工具" scheme="https://www.damyahome.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="wfuzz" scheme="https://www.damyahome.github.io/tags/wfuzz/"/>
     
   </entry>
   
