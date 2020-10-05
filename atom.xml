@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.damyahome.github.io/"/>
-  <updated>2020-10-02T07:55:20.735Z</updated>
+  <updated>2020-10-05T09:58:42.403Z</updated>
   <id>https://www.damyahome.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUUCTF web练习4</title>
+    <link href="https://www.damyahome.github.io/BUUCTF-web%E7%BB%83%E4%B9%A04/"/>
+    <id>https://www.damyahome.github.io/BUUCTF-web%E7%BB%83%E4%B9%A04/</id>
+    <published>2020-10-05T09:50:50.000Z</published>
+    <updated>2020-10-05T09:58:42.403Z</updated>
+    
+    <content type="html"><![CDATA[<p>web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧</p><p>pdf插件加载比较慢,请稍等一下下哈<br><div class="row">    <embed src="BUUCTF_web练习4.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧&lt;/p&gt;
+&lt;p&gt;pdf插件加载比较慢,请稍等一下下哈&lt;br&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;BUUCTF_web练习4.pdf&quot; width=&quot;100%&quot; height
+      
+    
+    </summary>
+    
+    
+      <category term="ctf writeup web" scheme="https://www.damyahome.github.io/categories/ctf-writeup-web/"/>
+    
+    
+      <category term="个人ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E4%B8%AA%E4%BA%BActf%E7%AB%9E%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>SQL报错注入小结</title>
@@ -573,39 +603,6 @@
     
     
       <category term="个人ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E4%B8%AA%E4%BA%BActf%E7%AB%9E%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NCTF2019 wp</title>
-    <link href="https://www.damyahome.github.io/NCTF2019-wp/"/>
-    <id>https://www.damyahome.github.io/NCTF2019-wp/</id>
-    <published>2020-01-02T11:17:31.000Z</published>
-    <updated>2020-01-03T13:22:18.397Z</updated>
-    
-    <content type="html"><![CDATA[<p>pdf插件加载比较慢,请稍等一下下哈<br><div class="row">    <embed src="NCTF2019_wp.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;pdf插件加载比较慢,请稍等一下下哈&lt;br&gt;
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;NCTF2019_wp.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
-	&lt;/div&gt;
-
-
-&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="ctf writeup" scheme="https://www.damyahome.github.io/categories/ctf-writeup/"/>
-    
-    
-      <category term="团队ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E5%9B%A2%E9%98%9Fctf%E7%AB%9E%E8%B5%9B/"/>
     
   </entry>
   

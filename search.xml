@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title><![CDATA[BUUCTF web练习4]]></title>
+      <url>/BUUCTF-web%E7%BB%83%E4%B9%A04/</url>
+      <content type="html"><![CDATA[<p>web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧</p>
+<p>pdf插件加载比较慢,请稍等一下下哈<br>
+
+	<div class="row">
+    <embed src="BUUCTF_web练习4.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</p>
+]]></content>
+      
+        <categories>
+            
+            <category> ctf writeup web </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 个人ctf竞赛 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[SQL报错注入小结]]></title>
       <url>/SQL%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%B0%8F%E7%BB%93/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前阵子看我以前的文章</p>
