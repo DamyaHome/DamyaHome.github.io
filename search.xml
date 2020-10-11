@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title><![CDATA[10.8 队内AWD小结]]></title>
+      <url>/10-8-%E9%98%9F%E5%86%85AWD%E5%B0%8F%E7%BB%93/</url>
+      <content type="html"><![CDATA[<p>不安全的内容就算导出md也是不安全,火绒真严格,pdf真香</p>
+<p>pdf插件加载比较慢,请稍等一下下哈<br>
+
+	<div class="row">
+    <embed src="10_8_队内AWD小结.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</p>
+]]></content>
+      
+        <categories>
+            
+            <category> AWD </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 靶场练习 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[BUUCTF web练习5]]></title>
       <url>/BUUCTF-web%E7%BB%83%E4%B9%A05/</url>
       <content type="html"><![CDATA[<h2 id="GYCTF2020-Blacklist"><a href="#GYCTF2020-Blacklist" class="headerlink" title="[GYCTF2020]Blacklist"></a>[GYCTF2020]Blacklist</h2><p><a href="http://202bc5e9-02e8-4c36-9793-151b247a806c.node3.buuoj.cn" target="_blank" rel="noopener">http://202bc5e9-02e8-4c36-9793-151b247a806c.node3.buuoj.cn</a></p>
