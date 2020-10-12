@@ -106,10 +106,10 @@
                 <p>图片</p>
             </figure>
 <p>是个Aztec code,中国编码app扫出来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">di`f&#123;e1c64e14db14c6bb8faabab5bd7be1dc&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="image-box">
+<p>再进行npiet解密<br><a href="http://www.bertnase.de/npiet/npiet-execute.php" target="_blank" rel="noopener">在线网站</a><br><figure class="image-box">
                 <img src="./16.png" alt="图片" title class>
                 <p>图片</p>
-            </figure>
+            </figure></p>
 <p>flag{f2d76g36fd16cbb6abaaf8db57cbd1ed}</p>
 ]]></content>
       
