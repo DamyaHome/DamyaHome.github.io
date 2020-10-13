@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.damyahome.github.io/"/>
-  <updated>2020-10-12T13:47:18.836Z</updated>
+  <updated>2020-10-13T13:08:22.548Z</updated>
   <id>https://www.damyahome.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一些我常用的在线网站(持续更新)</title>
+    <link href="https://www.damyahome.github.io/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>https://www.damyahome.github.io/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</id>
+    <published>2020-10-13T12:28:23.000Z</published>
+    <updated>2020-10-13T13:08:22.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="工具和资料"><a href="#工具和资料" class="headerlink" title="工具和资料"></a>工具和资料</h2><p><a href="http://qtool.net/baseencode" target="_blank" rel="noopener">base16/32/36/58/62/64/85/91</a></p><p><a href="http://tool.chinaz.com/tools/imgtobase/" target="_blank" rel="noopener">base64图片编码解码</a>data:image/jpg;base64,</p><p><a href="https://www.somd5.com/" target="_blank" rel="noopener">输入让你无语的md5</a></p><p><a href="http://tools.jb51.net/aideddesign/flipped_txt" target="_blank" rel="noopener">文本倒序翻转排序</a></p><p><a href="http://tools.jb51.net/aideddesign/ip_net_calc" target="_blank" rel="noopener">IP地址/子网掩码计算与转换</a></p><p><a href="http://tools.jb51.net/aideddesign/ico_img" target="_blank" rel="noopener">ico图标生成</a></p><p><a href="http://tools.jb51.net/aideddesign/txt_quchong" target="_blank" rel="noopener">文本去重复</a></p><p><a href="http://tools.jb51.net/aideddesign/txt_diff#diff" target="_blank" rel="noopener">文本内容比较</a></p><p><a href="http://tools.jb51.net/transcoding/jb51qrcode" target="_blank" rel="noopener">二维码加强生成</a></p><p><a href="http://www.uuid.online/" target="_blank" rel="noopener">UUID在线生成</a></p><p><a href="http://tools.jb51.net/aideddesign/rnd_userinfo" target="_blank" rel="noopener">虚假个人信息生成</a></p><p><a href="https://sekao.net/pixeljihad/" target="_blank" rel="noopener">PixelJihad图片隐写</a></p><p><a href="http://tools.jb51.net/aideddesign/paixu_ys" target="_blank" rel="noopener">在线动画演示插入/选择/冒泡/归并/希尔/快速排序算法过程</a></p><p><a href="http://tools.jb51.net/table/useragent" target="_blank" rel="noopener">常用pc/移动端UA信息</a></p><p><a href="http://tools.jb51.net/table/tcp_udp_port" target="_blank" rel="noopener">常见TCP/UDP端口参考表</a></p><p><a href="http://tools.jb51.net/table/http_content_type" target="_blank" rel="noopener">HTTP Content-type对照表</a></p><p><a href="http://tools.jb51.net/table/http_status_code" target="_blank" rel="noopener">HTTP 状态码对照表</a></p><p><a href="http://tools.jb51.net/table/http_header" target="_blank" rel="noopener">HTTP 请求头对照表</a></p><p><a href="https://www.sojson.com/jsjiemi.html" target="_blank" rel="noopener">JS加密/解密/混淆/aa/jj/fuck等</a></p><p><a href="https://www.atool99.com/morse.php" target="_blank" rel="noopener">中英文morse电码加解密</a></p><p><a href="https://www.gaitubao.com/" target="_blank" rel="noopener">在线修改图片尺寸大小</a></p><p><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">Brainfuck/Ook</a></p><p><a href="https://morsecode.world/international/decoder/audio-decoder-adaptive.html?tdsourcetag=s_pcqq_aiomsg" target="_blank" rel="noopener">morse电码自适应音频解码器</a></p><p><a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="noopener">Vigenere/Autokey/Beaufort/substitution密码</a></p><p><a href="https://www.cs.drexel.edu/~jpopyack/IntroCS/HW/RSAWorksheet.html" target="_blank" rel="noopener">RSA计算器</a></p><p><a href="https://codewithrockstar.com/docs" target="_blank" rel="noopener">rockstar密码</a></p><p><a href="http://www.txttool.com/wenben_binarystr.asp" target="_blank" rel="noopener">全面增删改文本工具</a></p><p><a href="https://1024tools.com/unserialize" target="_blank" rel="noopener">php在线反序列化工具</a></p><p><a href="https://gchq.github.io/CyberChef/" target="_blank" rel="noopener">CyberChef密码工具</a></p><p><a href="https://www.ssleye.com/ser_cipher.html" target="_blank" rel="noopener">Serpent密码加密解密</a></p><p><a href="https://www.qqxiuzi.cn/bianma/zhalanmima.php" target="_blank" rel="noopener">栅栏密码</a></p><p><a href="https://www.qqxiuzi.cn/bianma/kaisamima.php" target="_blank" rel="noopener">凯撒密码</a></p><p><a href="http://www.bertnase.de/npiet/npiet-execute.php" target="_blank" rel="noopener">npiet加密解密</a></p><p><a href="http://factordb.com/" target="_blank" rel="noopener">RSA分解N</a></p><h2 id="看技术文章"><a href="#看技术文章" class="headerlink" title="看技术文章"></a>看技术文章</h2><p><a href="https://cxsecurity.com/exploit/" target="_blank" rel="noopener">https://cxsecurity.com/exploit/</a></p><p><a href="http://www.hackdig.com/?tag=CTF" target="_blank" rel="noopener">http://www.hackdig.com/?tag=CTF</a></p><p><a href="https://www.xj.hk/" target="_blank" rel="noopener">https://www.xj.hk/</a></p><p><a href="https://paper.seebug.org/" target="_blank" rel="noopener">https://paper.seebug.org/</a></p><p><a href="http://toutiao.secjia.com/#/" target="_blank" rel="noopener">http://toutiao.secjia.com/#/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;工具和资料&quot;&gt;&lt;a href=&quot;#工具和资料&quot; class=&quot;headerlink&quot; title=&quot;工具和资料&quot;&gt;&lt;/a&gt;工具和资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://qtool.net/baseencode&quot; target=&quot;_blank&quot; rel=
+      
+    
+    </summary>
+    
+    
+      <category term="工具" scheme="https://www.damyahome.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="收集" scheme="https://www.damyahome.github.io/tags/%E6%94%B6%E9%9B%86/"/>
+    
+  </entry>
   
   <entry>
     <title>2020西湖论剑misc复现</title>
@@ -568,36 +594,6 @@
     
     
       <category term="sql注入" scheme="https://www.damyahome.github.io/tags/sql%E6%B3%A8%E5%85%A5/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020高校战疫CTF wp</title>
-    <link href="https://www.damyahome.github.io/2020%E9%AB%98%E6%A0%A1%E6%88%98%E7%96%ABCTF-wp/"/>
-    <id>https://www.damyahome.github.io/2020%E9%AB%98%E6%A0%A1%E6%88%98%E7%96%ABCTF-wp/</id>
-    <published>2020-03-10T02:18:21.000Z</published>
-    <updated>2020-03-10T02:20:53.574Z</updated>
-    
-    <content type="html"><![CDATA[<p>pdf插件加载比较慢,请稍等一下下哈<br><div class="row">    <embed src="2020高校战疫CTF__wp.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;pdf插件加载比较慢,请稍等一下下哈&lt;br&gt;
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;2020高校战疫CTF__wp.pdf&quot; width=&quot;100%&quot; height=&quot;550&quot; type=&quot;application/pdf&quot;&gt;
-	&lt;/div&gt;
-      
-    
-    </summary>
-    
-    
-      <category term="ctf writeup" scheme="https://www.damyahome.github.io/categories/ctf-writeup/"/>
-    
-    
-      <category term="个人ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E4%B8%AA%E4%BA%BActf%E7%AB%9E%E8%B5%9B/"/>
     
   </entry>
   
