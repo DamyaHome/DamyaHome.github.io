@@ -3,6 +3,130 @@
   
     
     <entry>
+      <title><![CDATA[2020Bilibili解密赛]]></title>
+      <url>/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/</url>
+      <content type="html"><![CDATA[<p><a href="https://security.bilibili.com/sec1024/" target="_blank" rel="noopener">https://security.bilibili.com/sec1024/</a></p>
+<h2 id="第一关-页面的背后是什么？"><a href="#第一关-页面的背后是什么？" class="headerlink" title="第一关  页面的背后是什么？"></a>第一关  页面的背后是什么？</h2><figure class="image-box">
+                <img src="https://images-cdn.shimo.im/wOna8FEMVS405N3i__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>查看源码有flag1和flag2的接口</p>
+<p>flag1接口是 api/admin</p>
+<p>访问就有flag</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/d0TeMaQCaaPfZDTE__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag1{fe0cf087-8c3447bb-92c9cbca-1793c4cb}</p>
+<p>flag2接口是 /api/ctf/2 ,采用get传参</p>
+<p>修改UA:bilibili Security Browser</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/1OuzkFDxyWgkAwsm__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag2{b8138188-0c16d0d5-7235c383-418dd144}</p>
+<h2 id="第二关-真正的秘密只有特殊的设备才能看到"><a href="#第二关-真正的秘密只有特殊的设备才能看到" class="headerlink" title="第二关  真正的秘密只有特殊的设备才能看到"></a>第二关  真正的秘密只有特殊的设备才能看到</h2><figure class="image-box">
+                <img src="https://images-cdn.shimo.im/tpEYVrrI9kRnVTky__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag3接口是api/ctf/3</p>
+<p>管理员 admin</p>
+<p>密码盲猜弱口令 bilibili</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/HLTD1syfg4kc1f1S__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag3{cddb6186-4bdd52ea-0623764d-99f9b62f}</p>
+<h2 id="第三关-对不起，权限不足～"><a href="#第三关-对不起，权限不足～" class="headerlink" title="第三关  对不起，权限不足～"></a>第三关  对不起，权限不足～</h2><figure class="image-box">
+                <img src="https://images-cdn.shimo.im/OIN2BkTaufcyt3MX__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag4接口是api/ctf/4</p>
+<p>只有window才有超级管理员的说法,即Administrator</p>
+<p>抓包发现Cookie里有role变量,是个32位字符串,估计经过md5加密</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/saRnJpEB1xeqvqd1__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>将Administrator加密后传入  7b7bc2512ee1fedcd76bdc68926d4f7b</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/1eH8AwbMlcBylSgf__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag4{b5112a88-bb60c9e7-99935a1c-052fcc2e}</p>
+<h2 id="第四关别人的秘密"><a href="#第四关别人的秘密" class="headerlink" title="第四关别人的秘密"></a>第四关别人的秘密</h2><figure class="image-box">
+                <img src="https://images-cdn.shimo.im/Wbf3oi5rQNp3kku8__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>查看源码,提取关键信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uid = $.getUrlParam(<span class="string">'uid'</span>);</span><br><span class="line">            <span class="keyword">if</span> (uid == <span class="literal">null</span>) &#123;</span><br><span class="line">                uid = <span class="number">100336889</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"api/ctf/5?uid="</span> + uid,</span><br><span class="line">                type: <span class="string">"get"</span>,</span><br><span class="line">                success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">	              <span class="built_in">console</span>.log(data);</span><br><span class="line">	              <span class="keyword">if</span> (data.code == <span class="number">200</span>)&#123;</span><br><span class="line">	              <span class="comment">// 如果有值：前端跳转</span></span><br><span class="line">	           $(<span class="string">'#flag'</span>).html(<span class="string">"欢迎超级管理员登陆～flag : "</span> + data.data )</span><br></pre></td></tr></table></figure>
+<p>flag5接口是 api/ctf/5?uid=<br>role依旧为 7b7bc2512ee1fedcd76bdc68926d4f7b</p>
+<p>意思应该是要从100336889开始爆破,我爆到的是100336919</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/ICV7aTgqHYuEnLGW__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>flag5{f6c5ee82-af7a41b6-6f9314be-8625059a}</p>
+<h2 id="第五关-结束亦是开始"><a href="#第五关-结束亦是开始" class="headerlink" title="第五关  结束亦是开始"></a>第五关  结束亦是开始</h2><figure class="image-box">
+                <img src="https://images-cdn.shimo.im/hS7WTPesfWA6SPei__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>根据题目意思访问 /blog/end.php</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/7a9QEqPeHcS9p1o5__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>wfuzz一下文件</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/8DzWwf049y7hVr4b__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>访问 /blog/test.php,得到一大段jsfuck</p>
+<p>放到console输出</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/Jwq0NvFpTFA2WkUP__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;\u7a0b\u5e8f\u5458\u6700\u591a\u7684\u5730\u65b9&quot;;</span><br><span class="line">//程序员最多的地方</span><br><span class="line">var str2 = &quot;bilibili1024havefun&quot;;</span><br><span class="line">console.log()</span><br></pre></td></tr></table></figure>
+<p>在github上搜索相关信息,找到end.php的<a href="https://github.com/interesting-1024/end/blob/main/end.php" target="_blank" rel="noopener">源码</a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//filename end.php</span></span><br><span class="line">$bilibili = <span class="string">"bilibili1024havefun"</span>;</span><br><span class="line">$str = intval($_GET[<span class="string">'id'</span>]);</span><br><span class="line">$reg = preg_match(<span class="string">'/\d/is'</span>, $_GET[<span class="string">'id'</span>]);</span><br><span class="line"><span class="keyword">if</span>(!is_numeric($_GET[<span class="string">'id'</span>]) <span class="keyword">and</span> $reg !== <span class="number">1</span> <span class="keyword">and</span> $str === <span class="number">1</span>)&#123;</span><br><span class="line">	$content = file_get_contents($_GET[<span class="string">'url'</span>]);</span><br><span class="line">	<span class="comment">//文件路径猜解</span></span><br><span class="line">	<span class="keyword">if</span> (<span class="keyword">false</span>)&#123;</span><br><span class="line">		<span class="keyword">echo</span> <span class="string">"还差一点点啦～"</span>;</span><br><span class="line">	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="keyword">echo</span> $flag;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">	<span class="keyword">echo</span> <span class="string">"你想要的不在这儿～"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>根据逻辑用数组绕过,即 id[]=1<br>flag6接口是 api/ctf/6</p>
+<p>猜测为flag.txt</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/MJEs8pad0i0T8Oji__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>访问图片地址/imgs/bilibili_224a634752448def6c0ec064e49fe797_havefun.jpg</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/OOtcvlBwOtfk1dOx__original.jpg" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>用winhex打开,结尾有flag10?</p>
+<figure class="image-box">
+                <img src="https://images-cdn.shimo.im/j7UJA5OsYb2ceuu3__original.png" alt="图片" title class>
+                <p>图片</p>
+            </figure>
+<p>后面试了试url的参数接口可以是任意1-10数,flag.txt都在接口目录下</p>
+<p>flag10{2ebd3b08-47ffc478-b49a5f9d-f6099d65}</p>
+<h2 id="接下来的旅程-需要少年自己去探索啦～"><a href="#接下来的旅程-需要少年自己去探索啦～" class="headerlink" title="接下来的旅程 需要少年自己去探索啦～"></a>接下来的旅程 需要少年自己去探索啦～</h2><p>后面因为我是打完Byte和护网杯才来看的Bilibili,没多少时间做,开了个头就当有个参与感了</p>
+<p>别的题的思路见<a href="https://www.zhihu.com/question/427113420/answers/updated+" target="_blank" rel="noopener">知乎</a>或Github</p>
+]]></content>
+      
+        <categories>
+            
+            <category> ctf writeup web </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 个人ctf竞赛 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[2020susctf_wp]]></title>
       <url>/2020susctf-wp/</url>
       <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>得到号的时候只剩半天时间了,断断续续做了一些题,有些web题环境关了来不及复现,buu见</p>
@@ -269,6 +393,9 @@
 <p><a href="https://1024tools.com/unserialize" target="_blank" rel="noopener">php在线反序列化工具</a></p>
 <p><a href="https://www.gugeapps.net/" target="_blank" rel="noopener">谷歌网上应用店镜像站</a></p>
 <p><a href="https://apps.timwhitlock.info/emoji/tables/unicode" target="_blank" rel="noopener">emoji编码表</a></p>
+<p><a href="https://matrix.reshish.com/zh/multCalculation.php" target="_blank" rel="noopener">线代计算网站</a></p>
+<p><a href="https://www.compart.com/en/unicode/" target="_blank" rel="noopener">Unicode大全</a></p>
+<p><a href="https://www.dooccn.com/php/" target="_blank" rel="noopener">PHP等代码在线运行</a></p>
 <h2 id="在线解密"><a href="#在线解密" class="headerlink" title="在线解密"></a>在线解密</h2><p><a href="http://qtool.net/baseencode" target="_blank" rel="noopener">base16/32/36/58/62/64/85/91</a></p>
 <p><a href="http://tool.chinaz.com/tools/imgtobase/" target="_blank" rel="noopener">base64图片编码解码</a>data:image/jpg;base64,</p>
 <p><a href="https://www.somd5.com/" target="_blank" rel="noopener">SOMD5</a></p>
@@ -303,6 +430,7 @@
 <p><a href="https://apps.timwhitlock.info/unicode/inspect" target="_blank" rel="noopener">emoji编码加解密</a></p>
 <p><a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="noopener">维吉尼亚自动求解</a></p>
 <p><a href="http://www.metools.info/code/c90.html" target="_blank" rel="noopener">猪圈密码在线解密</a></p>
+<p><a href="http://www.metools.info/code/railfencecipher_154.html" target="_blank" rel="noopener">w型栅栏密码</a></p>
 <h2 id="看技术文章"><a href="#看技术文章" class="headerlink" title="看技术文章"></a>看技术文章</h2><p><a href="https://cxsecurity.com/exploit/" target="_blank" rel="noopener">https://cxsecurity.com/exploit/</a></p>
 <p><a href="http://www.hackdig.com/?tag=CTF" target="_blank" rel="noopener">http://www.hackdig.com/?tag=CTF</a></p>
 <p><a href="https://www.xj.hk/" target="_blank" rel="noopener">https://www.xj.hk/</a></p>
