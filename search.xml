@@ -3,6 +3,35 @@
   
     
     <entry>
+      <title><![CDATA[BUUCTF web练习6]]></title>
+      <url>/BUUCTF-web%E7%BB%83%E4%B9%A06/</url>
+      <content type="html"><![CDATA[<p>web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧</p>
+<p>pdf插件加载比较慢,请稍等一下下哈<br>
+
+	<div class="row">
+    <embed src="BUUCTF_web练习6.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+</p>
+]]></content>
+      
+        <categories>
+            
+            <category> ctf writeup web </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 个人ctf竞赛 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[2020Bilibili解密赛]]></title>
       <url>/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/</url>
       <content type="html"><![CDATA[<p><a href="https://security.bilibili.com/sec1024/" target="_blank" rel="noopener">https://security.bilibili.com/sec1024/</a></p>

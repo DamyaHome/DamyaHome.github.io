@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.damyahome.github.io/"/>
-  <updated>2020-10-28T13:28:04.810Z</updated>
+  <updated>2020-10-30T12:19:48.403Z</updated>
   <id>https://www.damyahome.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BUUCTF web练习6</title>
+    <link href="https://www.damyahome.github.io/BUUCTF-web%E7%BB%83%E4%B9%A06/"/>
+    <id>https://www.damyahome.github.io/BUUCTF-web%E7%BB%83%E4%B9%A06/</id>
+    <published>2020-10-30T12:19:30.000Z</published>
+    <updated>2020-10-30T12:19:48.403Z</updated>
+    
+    <content type="html"><![CDATA[<p>web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧</p><p>pdf插件加载比较慢,请稍等一下下哈<br><div class="row">    <embed src="BUUCTF_web练习6.pdf" width="100%" height="550" type="application/pdf"></div></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;web题自然是想md形式,看着好看,奈何本地报错,pdf凑合看吧&lt;/p&gt;
+&lt;p&gt;pdf插件加载比较慢,请稍等一下下哈&lt;br&gt;
+
+	&lt;div class=&quot;row&quot;&gt;
+    &lt;embed src=&quot;BUUCTF_web练习6.pdf&quot; width=&quot;100%&quot; height
+      
+    
+    </summary>
+    
+    
+      <category term="ctf writeup web" scheme="https://www.damyahome.github.io/categories/ctf-writeup-web/"/>
+    
+    
+      <category term="个人ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E4%B8%AA%E4%BA%BActf%E7%AB%9E%E8%B5%9B/"/>
+    
+  </entry>
   
   <entry>
     <title>2020Bilibili解密赛</title>
@@ -560,32 +590,6 @@
     
     
       <category term="团队ctf竞赛" scheme="https://www.damyahome.github.io/tags/%E5%9B%A2%E9%98%9Fctf%E7%AB%9E%E8%B5%9B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>第五周课堂笔记(汇编)</title>
-    <link href="https://www.damyahome.github.io/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/"/>
-    <id>https://www.damyahome.github.io/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/</id>
-    <published>2020-04-04T10:37:30.000Z</published>
-    <updated>2020-04-04T10:38:18.152Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>主要寄存器:(32位)<br>EAX EBX ECX EDX:数据寄存器<br>ESI EDI:变址寄存器<br>ESP:指向栈顶<br>EBP:指向栈底<br>EIP:指向指令执行的下一条地址</p><p>R(64位)</p><p>（以上也是在栈中的位置顺序）</p><h2 id="常见的汇编指令"><a href="#常见的汇编指令" class="headerlink" title="常见的汇编指令"></a>常见的汇编指令</h2><p>mov eax,0x12  将0x12覆盖的存入eax<br>mov eax,ebx   将ebxd的值覆盖的存入eax<br>add eax，ebx  将ebx+eax并覆盖的存入eax<br>inc eax       eax++<br>edc eax       eax–</p><h2 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH"></a>PUSH</h2><p>push指令将操作数压入内存的栈中<br>个人理解：栈结构不变，push数据（压栈）前，先将esp值减4，再将操作数内容压入esp指示的位置，再自行+4恢复到栈顶位置<br>push eax    将eax内容压栈<br>push [var]  将var指示的4直接内容压栈</p><h2 id="POP"><a href="#POP" class="headerlink" title="POP"></a>POP</h2><p>pop指令与push指令相反,执行出栈工作<br>个人理解：栈结构不变，pop数据（出栈）前，先将esp指示地址中的内容出栈，然后esp值+4恢复栈顶位置<br>pop edi    将edi内容出栈<br>pop [ebx]  将ebx指示的4直接内容出栈</p><h2 id="CALL"><a href="#CALL" class="headerlink" title="CALL"></a>CALL</h2><p>call指令实现子程序的调用<br>个人理解：call指令先将当前执行指令地址入栈，然后无条件转移到由标签指示的指令，但依旧保存调用前的地址信息，当调用结束后返回到调用前的地址</p><h2 id="RET"><a href="#RET" class="headerlink" title="RET"></a>RET</h2><p>ret指令实现子程序的返回<br>个人理解：ret指令弹出栈中保存的指令地址，然后无条件转移到保存的指令地址执行，等待下一次返回数据</p><h2 id="调用约定画图理解"><a href="#调用约定画图理解" class="headerlink" title="调用约定画图理解"></a>调用约定画图理解</h2><figure class="image-box">                <img src="./pwn_pic.png" alt title class>                <p></p>            </figure><p>(以下纯个人理解,有不对的地方虚心听教)</p><p>main函数里定义A子程序,并赋值1,2,3,A子程序里返回a+b+c的值<br>old ebp是原栈底,一个保存原栈底地址的寄存器,内容可变结构不变<br>ret add返回由1,2,3赋值后的a+b+c,当有值被定义时就返回值,地址位置自行变化,功能不变<br>mov ebp,esp,有新内容进来,一个入栈过程,将ebp的地址转移到esp<br>leave,一个出栈过程,mov esp,ebp,将栈顶地址转移到栈底,pop出来一个ebp地址的内容,但因为已经将esp地址转移到ebp,所以pop ebp的内容依旧是在出栈,retn返回出栈的值</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;寄存器&quot;&gt;&lt;a href=&quot;#寄存器&quot; class=&quot;headerlink&quot; title=&quot;寄存器&quot;&gt;&lt;/a&gt;寄存器&lt;/h2&gt;&lt;p&gt;主要寄存器:(32位)&lt;br&gt;EAX EBX ECX EDX:数据寄存器&lt;br&gt;ESI EDI:变址寄存器&lt;br&gt;ESP:指向栈顶&lt;
-      
-    
-    </summary>
-    
-    
-      <category term="笔记" scheme="https://www.damyahome.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="汇编" scheme="https://www.damyahome.github.io/tags/%E6%B1%87%E7%BC%96/"/>
     
   </entry>
   
