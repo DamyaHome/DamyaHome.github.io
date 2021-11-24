@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>Vue速学笔记 | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="vue.js">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Vue速学笔记</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Vue速学笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-11T13:21:14.000Z" itemprop="datePublished" class="page-time">
+  2019-06-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-Vue速学笔记"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">Vue速学笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-11 21:21:14" datetime="2019-06-11T13:21:14.000Z"  itemprop="datePublished">2019-06-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>#Vue.js 2.0 笔记</p>
+<hr>
+<p>###流程</p>
+<ol>
+<li>基础知识 </li>
+<li>案例实践</li>
+<li>TodoList</li>
+<li>Vue-cli</li>
+<li>TodoList<a id="more"></a>
+</li>
+</ol>
+<hr>
+<p>###学习开始</p>
+<ol>
+<li>创建第一个Vue实例</li>
+</ol>
+<ul>
+<li><a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue</a>–&gt;学习–&gt;教程–&gt;安装–&gt;直接用<script>引入–&gt;<strong>开发版本</strong>，生产版本，CDN</li>
+<li>将源码复制到一个vue.js文件–&gt;在html文件里，head部分–&gt;<script src="./vue.js"></script></li>
+<li>一个Vue实例<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span>&#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"hello world"</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="2">
+<li>挂载点，模板与实例</li>
+</ol>
+<ul>
+<li>Vue实例的挂载点<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span> //挂载点</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello &#123;&#123;msg&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> //模板, &#123;&#123; &#125;&#125;是插值表达式,是最安全也最基本的表达方式 </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123; <span class="comment">//实例</span></span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>, <span class="comment">//结点</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">        template:'<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello </span><span class="template-variable">&#123;&#123;msg&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span>'</span></span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"hello world"</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="3">
+<li>Vue实例中的数据，事件和方法</li>
+</ol>
+<ul>
+<li><p>插值表达式</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;number&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  //插值表达式 </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123; </span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>, </span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            msg:<span class="string">"world"</span></span></span><br><span class="line">            number:123</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-text(转义) 与 v-html（不转义）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-html</span>=<span class="string">"content"</span> &gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123; </span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>, </span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="handlebars"><span class="xml">            content:"<span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>"</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实例 方法 函数</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click</span>=<span class="string">"handleClick"</span>&gt;</span>&#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  //监听dom事件,简写：v-on = @</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123; </span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>, </span></span><br><span class="line"><span class="actionscript">        data:&#123;  <span class="comment">//数据对象</span></span></span><br><span class="line"><span class="actionscript">            content:<span class="string">"hello"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        methods:&#123; <span class="comment">//方法</span></span></span><br><span class="line"><span class="actionscript">            handleClick: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;  <span class="comment">//函数</span></span></span><br><span class="line"><span class="actionscript">                alert(<span class="number">123</span>) <span class="comment">//hello点击变成123</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.content = <span class="string">"world"</span> <span class="comment">//hello变成world</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> @<span class="attr">click</span>=<span class="string">"handleClick"</span>&gt;</span>&#123;&#123;content&#125;&#125;  //简写：v-on = @</span><br><span class="line">//<span class="tag">&lt;<span class="name">div</span> <span class="attr">v-text</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">//&#123;&#123;content&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123; </span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>, </span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            content:<span class="string">"hello"</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            handleClick: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="comment">//alert(123)</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.content = <span class="string">"world"</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<ol>
+<li>Vue中的属性绑定和双向数据绑定</li>
+</ol>
+<ul>
+<li><p>属性绑定(单向)<br>数据决定页面的显示，页面无法决定数据的内容</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">"'dell lee' + title"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span> //提示语，数据绑定 = ""里是js表达式，简写：v-bind = ：</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            title:<span class="string">"this is hello world"</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>双向数据绑定</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">:title</span>=<span class="string">"title"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"content"</span>/&gt;</span>  //输入内容时下方div里绑定的content内容也改变</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            title:<span class="string">"this is hello world"</span></span></span><br><span class="line"><span class="actionscript">            content:<span class="string">"this is content"</span>  <span class="comment">//两个content绑定</span></span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="5">
+<li>Vue中的计算属性和侦听器</li>
+</ol>
+<ul>
+<li><p>计算属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">姓：<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"firstName"</span> /&gt;</span></span><br><span class="line">名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"lastName"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>，</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            firstName:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">            lastName:<span class="string">''</span></span></span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">//reselect</span></span></span><br><span class="line"><span class="actionscript">        computed:&#123;  <span class="comment">//计算属性会记录缓存值</span></span></span><br><span class="line"><span class="actionscript">            fullName: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">''</span> + <span class="keyword">this</span>.lastName</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>侦听器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line">姓：<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"firstName"</span> /&gt;</span></span><br><span class="line">名：<span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"lastName"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;fullName&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>&#123;&#123;count&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>，</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            firstName:<span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">            lastName:<span class="string">''</span>,</span></span><br><span class="line">            count: 0</span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        <span class="comment">//reselect</span></span></span><br><span class="line">        computed:&#123;</span><br><span class="line"><span class="actionscript">            fullName: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">''</span> + <span class="keyword">this</span>.lastName</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        watch:&#123;</span><br><span class="line"><span class="actionscript">            fullName: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">return</span> <span class="keyword">this</span>.firstName + <span class="string">''</span> + <span class="keyword">this</span>.lastName</span></span><br><span class="line">            &#125;</span><br><span class="line"><span class="actionscript">            <span class="comment">//firstName: function() &#123;</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.count ++</span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            <span class="comment">//lastName: function() &#123;</span></span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.count ++</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="6">
+<li>v-if,v-show与v-for指令</li>
+</ol>
+<ul>
+<li><p>v-if(控制dom的存在与否，一次性较佳) 与 v-show（控制dom的显示与否，优先使用，性能高）</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">"show"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleClick"</span>&gt;</span>toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span></span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            show: <span class="literal">true</span></span></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            handleClick: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.show = !<span class="keyword">this</span>.show;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-for</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-show</span>=<span class="string">"show"</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleClick"</span>&gt;</span>toggle<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"（item，index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span>  //数据循环展示,:key=""提高性能，列表渲染，循环值不相同</span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span></span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            show: <span class="literal">true</span>,</span></span><br><span class="line">            list:[1,2,3]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line"><span class="actionscript">            handleClick: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.show = !<span class="keyword">this</span>.show;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="7">
+<li>todolist功能开发<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"hanleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            inputValue:<span class="string">''</span>,</span></span><br><span class="line">            list:[]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="actionscript">            hanleSubmit: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<ol start="8">
+<li>todolist组件拆分</li>
+</ol>
+<ul>
+<li>组件（页面中的一个部分）<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"hanleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span> <span class="attr">:content</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'todo-item'</span>,&#123;  <span class="comment">//全局组件</span></span></span><br><span class="line"><span class="actionscript">    props:[<span class="string">'content'</span>],  <span class="comment">//传参</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    template:'<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><span class="template-variable">&#123;&#123;content&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span>'</span></span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="actionscript"><span class="comment">//var TodoItem = &#123;  //局部组件</span></span></span><br><span class="line"><span class="handlebars"><span class="xml">    template:'<span class="tag">&lt;<span class="name">li</span>&gt;</span>item<span class="tag">&lt;/<span class="name">li</span>&gt;</span>'</span></span></span><br><span class="line">&#125;</span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//components:&#123;  //在实例里注册局部组件</span></span></span><br><span class="line"><span class="actionscript">            <span class="string">'todo-item'</span>:TodoItem</span></span><br><span class="line">        &#125;,</span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            inputValue:<span class="string">''</span>,</span></span><br><span class="line">            list:[]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="actionscript">            hanleSubmit: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="9">
+<li>组件与实例的关系</li>
+</ol>
+<ul>
+<li>每个组件都是一个vue实例，组件=实例，没有模板时挂载点=dom<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"hanleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span> <span class="attr">:content</span>=<span class="string">"item"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'todo-item'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">    props:[<span class="string">'content'</span>], </span></span><br><span class="line"><span class="handlebars"><span class="xml">    template:'<span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">"hanleClick"</span>&gt;</span></span><span class="template-variable">&#123;&#123;content&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span>',</span></span></span><br><span class="line">    methods:&#123;</span><br><span class="line"><span class="actionscript">        handleClick:<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            alert(<span class="string">'clicked'</span>)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            inputValue:<span class="string">''</span>,</span></span><br><span class="line">            list:[]</span><br><span class="line">        &#125;,</span><br><span class="line"><span class="actionscript">        template:<span class="string">''</span>, <span class="comment">//模板</span></span></span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="actionscript">            hanleSubmit: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="10">
+<li>实现Todolist的删除功能</li>
+</ol>
+<ul>
+<li>子组件实现与否决定于父组件的数据，子组件要与父组件通信<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"root"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"hanleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span> <span class="attr">:content</span>=<span class="string">"item"</span> <span class="attr">:index</span>=<span class="string">"index"</span> @<span class="attr">delete</span>=<span class="string">"handleDelete"</span>&gt;</span><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">Vue.component(<span class="string">'todo-item'</span>,&#123;</span></span><br><span class="line"><span class="actionscript">    props:[<span class="string">'content'</span>,<span class="string">'index'</span>], </span></span><br><span class="line"><span class="handlebars"><span class="xml">    template:'<span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">"hanleClick"</span>&gt;</span></span><span class="template-variable">&#123;&#123;content&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span>',</span></span></span><br><span class="line">    methods:&#123;</span><br><span class="line"><span class="actionscript">        handleClick:<span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>,$emit(<span class="string">'delete'</span>,<span class="keyword">this</span>.index)</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="actionscript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="actionscript">        el:<span class="string">"#root"</span>,</span></span><br><span class="line">        data:&#123;</span><br><span class="line"><span class="actionscript">            inputValue:<span class="string">''</span>,</span></span><br><span class="line">            list:[]</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line"><span class="actionscript">            hanleSubmit: <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">            &#125;,</span><br><span class="line"><span class="actionscript">            handleDelete:<span class="function"><span class="keyword">function</span><span class="params">(index)</span></span>&#123;</span></span><br><span class="line"><span class="actionscript">                <span class="keyword">this</span>.list.splice(index,<span class="number">1</span>)</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ol start="11">
+<li>vue-cli的简介与使用<br>官网 –》学习 –》教程 –》安装 –》命令行工具<blockquote>
+<p>node -v  //node.js官方安装<br>npm -v<br>npm install –global vue-cli //全局安装<br>vue init webpack my-project  //创建一个基于webpack模板的新项目<br>cd my-project  //安装依赖<br>npm run dev</p>
+</blockquote>
+</li>
+</ol>
+<p>build：项目webtate配置文件<br>config：开发环境线上环境配置文件<br>node——modules：依赖<br>src：源代码（可以使用es6语法）</p>
+<blockquote>
+<p>main.js:挂载文件<br>  xxx.vue:单文件组件（内容清空）<br>static：静态资源</p>
+</blockquote>
+<hr>
+<ol start="12">
+<li>使用vue-cli开发Todolist</li>
+</ol>
+<ul>
+<li>终端启动vue-cli<blockquote>
+<p>npm run dev</p>
+</blockquote>
+</li>
+<li><p>main.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span></span><br><span class="line"><span class="keyword">import</span> Todolist <span class="keyword">from</span> <span class="string">'./Todolist'</span></span><br><span class="line"></span><br><span class="line">Vue.config.productionTip = <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">'#app'</span>,</span><br><span class="line">    components:&#123; Todolist &#125;,</span><br><span class="line">    template:<span class="string">'&lt;TodoList/&gt;'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TodoList.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span>  //只能有一个大标签</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span> <span class="attr">:content</span>=<span class="string">"item"</span> <span class="attr">:index</span>=<span class="string">"index"</span> @<span class="attr">delete</span>=<span class="string">"handleDelete"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./components/TodoItem'</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;  <span class="comment">//对象变成函数</span></span></span><br><span class="line">  components:&#123;</span><br><span class="line"><span class="actionscript">    <span class="string">'todo-item'</span>: TodoItem</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">          inputValue: <span class="string">''</span></span></span><br><span class="line">          list:[]</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">      handleSubmit () &#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">      &#125;,</span><br><span class="line">      handleDelete(index)&#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.splice(index,<span class="number">1</span>)</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>components–&gt;TodoItem.vue(清空模板)</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> @<span class="attr">click</span>=<span class="string">"handleDelete"</span>&gt;</span>&#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> defult&#123;</span></span><br><span class="line"><span class="actionscript">    props:[<span class="string">'content'</span>],</span></span><br><span class="line">    methods:()&#123;</span><br><span class="line">      handleDelete () &#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.$emit(<span class="string">'delete'</span>,<span class="keyword">this</span>.index)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="13">
+<li>全局样式与局部样式</li>
+</ol>
+<ul>
+<li><p>TodoList.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">"item"</span> <span class="attr">v-model</span>=<span class="string">"inputValue"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"handleSubmit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">todo-item</span> <span class="attr">v-for</span>=<span class="string">"(item,index) of list"</span> <span class="attr">:key</span>=<span class="string">"index"</span> <span class="attr">:content</span>=<span class="string">"item"</span> <span class="attr">:index</span>=<span class="string">"index"</span> @<span class="attr">delete</span>=<span class="string">"handleDelete"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">todo-item</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> TodoItem <span class="keyword">from</span> <span class="string">'./components/TodoItem'</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span></span><br><span class="line">  components:&#123;</span><br><span class="line"><span class="actionscript">    <span class="string">'todo-item'</span>: TodoItem</span></span><br><span class="line">  &#125;,</span><br><span class="line">  data () &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">          inputValue: <span class="string">''</span></span></span><br><span class="line">          list:[]</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods:&#123;</span><br><span class="line">      handleSubmit () &#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.push(<span class="keyword">this</span>.inputValue)</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.inputValue = <span class="string">''</span></span></span><br><span class="line">      &#125;,</span><br><span class="line">      handleDelete(index)&#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.list.splice(index,<span class="number">1</span>)</span></span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>TodoItem.vue</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"item"</span> @<span class="attr">click</span>=<span class="string">"handleDelete"</span>&gt;</span>&#123;&#123;content&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> defult&#123;</span></span><br><span class="line"><span class="actionscript">    props:[<span class="string">'content'</span>],</span></span><br><span class="line">    methods:()&#123;</span><br><span class="line">      handleDelete () &#123;</span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.$emit(<span class="string">'delete'</span>,<span class="keyword">this</span>.index)</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span>&gt;</span>  //作用域,scoped决定全局样式或局部样式</span><br><span class="line"><span class="css"><span class="selector-class">.item</span>&#123;</span></span><br><span class="line">    color: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol start="14">
+<li>课程总结<br>在官网继续学习<br><a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue</a></li>
+</ol>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-06-11T13:21:52.354Z" itemprop="dateUpdated">2019-06-11 21:21:52</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/Vue速学笔记/" target="_blank" rel="external">https://www.damyahome.github.io/Vue速学笔记/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/Vue速学笔记/&title=《Vue速学笔记》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/Vue速学笔记/&title=《Vue速学笔记》 — Damya's Blog&source=#Vue.js 2.0 笔记
+
+###流程
+
+基础知识 
+案例实践
+TodoList
+Vue-cli
+TodoList" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/一些和sql注入有关的web题wp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">一些和sql注入有关的web题wp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/Vue官方笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Vue官方笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/Vue速学笔记/&title=《Vue速学笔记》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/Vue速学笔记/&title=《Vue速学笔记》 — Damya's Blog&source=#Vue.js 2.0 笔记
+
+###流程
+
+基础知识 
+案例实践
+TodoList
+Vue-cli
+TodoList" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3aS3KDQAwFwNz/0mSbRYAnCbuKmWaVio2ZZqHS7+cnvo4/1/X/z755dlf13tGFgYHxWsZxeSUPvv7l3ovIz4aBgbEPIznE2ffzoFk9YvI7GBgYGPPHT4I4BgYGxlMBN7mrmghiYGBg9IrY5HDXD75OK79Ui2NgYLyQkXfdv//3R+YbGBgYr2IcxSu5tzfgPAYXBgbG2ow8wD07wuy12G4STQwMjKUZ5cZWsdTMy9q80I1yWAwMjKUZeVMsaev3CtckuN8EXAwMjCUYkzWIp1a+8nHm6WvFwMDYhpGPGz/RXEuOfhqmMTAwNmBMKsGnWnWjcSYGBsYGjOrSVZ5EztcpopNgYGBswKguPSTBupfw5SOBf3ZGMDAwNmAkD8sPMWmlJaOC020RDAyM5RjVFnze6O+9jtEiCAYGxqKMTwB6yd8kBGNgYKzN6JWjyae9YDr6NQwMjEUZvXWKeYlbHW3e8DAwMJZm5GPCqBoOgmYyLs0XODAwMHZmJMniZDmjmhoWuoYYGBgbMHpjyDz5q4bv5LkYGBj7MJKwe33QvJTttepuXgcGBsaijKN45eldMuCct+GiuI6BgfFyxqS5X03j8tWKvKxtTmsxMDBeyJgE2epKa3WBrLxygYGBsTTjqcBXHVJWj1tetsDAwMAoFqvVEWYBjIGBgdE63FONs6hVh4GBsQEjL0fnBXDezisknRgYGEszqqVj0uhPgmxvqBkVtBgYGOswfgG6vZNh2e5yrQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

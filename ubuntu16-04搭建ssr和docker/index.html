@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>ubuntu16.04搭建ssr/docker/git配置 | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="ubuntu16.04">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>ubuntu16.04搭建ssr/docker/git配置</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">ubuntu16.04搭建ssr/docker/git配置</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-14T13:49:44.000Z" itemprop="datePublished" class="page-time">
+  2019-06-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/搭建/">搭建</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-ubuntu16-04搭建ssr和docker"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">ubuntu16.04搭建ssr/docker/git配置</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-14 21:49:44" datetime="2019-06-14T13:49:44.000Z"  itemprop="datePublished">2019-06-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/搭建/">搭建</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>在rfc新换了一个ip,重新搭一下ssr和docker,记录下过程和遇到的问题</p>
+<hr>
+<h1 id="搭建ssr"><a href="#搭建ssr" class="headerlink" title="搭建ssr"></a>搭建ssr</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt update -y</span><br><span class="line">apt upgrade</span><br></pre></td></tr></table></figure>
+<p>在upgrade的时候遇到了这个问题</p>
+<blockquote>
+<p>Could not find /boot/grub/menu.lst file. Would you like /boot/grub/menu.lst generated for you? (y/N) /usr/sbin/update-grub: line 1094: read: read error: 0: Bad file descriptor<br>run-parts: /etc/kernel/postinst.d/zz-update-grub exited with return code 1<br>dpkg: error processing package linux-image-4.15.0-51-generic (–configure):<br> subprocess installed post-installation script returned error exit status 1<br>Errors were encountered while processing:<br> linux-image-4.15.0-50-generic<br> linux-image-4.15.0-51-generic<br>E: Sub-process /usr/bin/dpkg returned an error code (1)</p>
+</blockquote>
+<p>解决方法是<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /var/lib/dpkg/</span><br><span class="line">$ sudo mv info info.bak</span><br><span class="line">$ sudo mkdir info</span><br><span class="line">$ sudo apt-get update</span><br><span class="line">$ sudo apt-get -f install</span><br><span class="line">这一步里会出现很多warning，是因为dpkg的info文件的缺失，不用担心，后面用info.bak恢复就可以了。</span><br><span class="line"></span><br><span class="line">更新和重新配置完成后，恢复info.bak</span><br><span class="line">$ sudo mv ./info/*./info.bak</span><br><span class="line">$ sudo rm -r info</span><br><span class="line">$ sudo mv info.bak info</span><br><span class="line"></span><br><span class="line">完成以上步骤，理论上问题应该解决了。</span><br></pre></td></tr></table></figure></p>
+<p>然后安装需要的依赖<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install wget epel-release grub -y</span><br></pre></td></tr></table></figure></p>
+<p>使用ssr一键管理脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="搭建docker"><a href="#搭建docker" class="headerlink" title="搭建docker"></a>搭建docker</h1><p>检查版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure></p>
+<p>卸载旧版本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get remove docker docker-engine docker-ce docker.io</span><br></pre></td></tr></table></figure></p>
+<p>更新引索<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure></p>
+<p>安装以下包以使apt可以通过HTTPS使用存储库（repository）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y apt-transport-https ca-certificates curl software-properties-common</span><br></pre></td></tr></table></figure></p>
+<p>添加Docker官方的GPG密钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -</span><br></pre></td></tr></table></figure></p>
+<p>使用下面的命令来设置stable存储库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">add-apt-repository <span class="string">"deb [arch=amd64] https://download.docker.com/linux/ubuntu <span class="variable">$(lsb_release -cs)</span> stable"</span></span><br></pre></td></tr></table></figure></p>
+<p>安装最新版本的Docker CE<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install -y docker-ce</span><br></pre></td></tr></table></figure></p>
+<p>查看docker服务是否启动<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status docker</span><br></pre></td></tr></table></figure></p>
+<p>若未启动，则启动docker服务<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure></p>
+<p>经典的hello world,检验是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run hello-world</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="几个docker常用到的命令："><a href="#几个docker常用到的命令：" class="headerlink" title="几个docker常用到的命令："></a>几个docker常用到的命令：</h2><p>(1)docker image  查看本地的docker镜像</p>
+<p>(2)docker ps 查看正在运行的docker</p>
+<p>(3)docker run [options] image [command] [arg…]</p>
+<p>用到的option：-d 后台运行</p>
+<p>-P 随机把容器的端口映射到一个主机未使用的高端口</p>
+<p>-p 格式为主机端口：容器端口 ，自选端口映射</p>
+<p>-i  以交互模式运行容器，常与-t连用</p>
+<p>-t  为容器重新分配一个伪输入终端，常与-i连用</p>
+<p>(3)docker stop 停止正在运行的容器</p>
+<hr>
+<h1 id="在git添加多个id-rsa-私钥-管理远程仓库"><a href="#在git添加多个id-rsa-私钥-管理远程仓库" class="headerlink" title="在git添加多个id_rsa(私钥)管理远程仓库"></a>在git添加多个id_rsa(私钥)管理远程仓库</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -f ~/.ssh/id_rsa -C <span class="string">"yourmail@xxx.com"</span>  //创建新私钥</span><br><span class="line">touch config  //新建config文件</span><br><span class="line">vim config</span><br></pre></td></tr></table></figure>
+<p>编辑config文件，配置不同的仓库指向不同的密钥文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 第一个账号，默认使用的账号</span></span><br><span class="line">Host damya  //使用的用户名</span><br><span class="line">HostName github.com</span><br><span class="line">User git  //创建私钥时一路回车下去默认用户名,可以自己定义</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line"><span class="comment"># 第二个账号</span></span><br><span class="line">Host ginkgo</span><br><span class="line">HostName github.com</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/id_rsa_x</span><br></pre></td></tr></table></figure></p>
+<h2 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h2><ol>
+<li>ssh 客户端是通过类似 <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:githubUserName/repName.git ** 的地址来识别使用本地的哪个私钥的，地址中的 User 是@前面的git， Host 是@后面的github.com。</li>
+<li>如果所有账号的 User 和 Host 都为 git 和 github.com，那么就只能使用一个私钥。所以要对User 和 Host 进行配置，让每个账号使用自己的 Host，每个 Host 的域名做 CNAME 解析到 github.com，如上面配置中的Host second.github.com。</li>
+<li>配置了别名之后，新的地址就是<a href="mailto:git@second.github.com" target="_blank" rel="noopener">git@second.github.com</a>:githubUserName/repName.git**（在添加远程仓库时使用）。这样 ssh 在连接时就可以区别不同的账号了。</li>
+</ol>
+<hr>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh-add -D  //清除私钥列表</span><br><span class="line">ssh-add id_rsa  //添加私钥</span><br><span class="line">ssh-add -l  //列出所有私钥及对应用户</span><br></pre></td></tr></table></figure>
+<p>测试ssh链接<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line">ssh -T git@second.github.com</span><br><span class="line"><span class="comment"># xxx! You’ve successfully authenticated, but GitHub does not provide bash access.</span></span><br><span class="line"><span class="comment"># 出现上述提示，连接成功</span></span><br></pre></td></tr></table></figure></p>
+<p>报错:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Could not open a connection to your authentication agent.</span><br></pre></td></tr></table></figure></p>
+<p>解决方法如下,将ssh挂载<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-agent bash --login -i</span><br></pre></td></tr></table></figure></p>
+<p>取消git全局用户名/邮箱的设置，设置独立的用户名/邮箱<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 取消全局 用户名/邮箱 配置</span></span><br><span class="line">$ git config --global --<span class="built_in">unset</span> user.name</span><br><span class="line">$ git config --global --<span class="built_in">unset</span> user.email</span><br><span class="line"><span class="comment"># 进入项目文件夹，单独设置每个repo 用户名/邮箱</span></span><br><span class="line">$ git config user.email <span class="string">"xxxx@xx.com"</span></span><br><span class="line">$ git config user.name <span class="string">"xxxx"</span></span><br></pre></td></tr></table></figure></p>
+<p>配置proxy<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.https://github.com.proxy socks://127.0.0.1:2014</span><br></pre></td></tr></table></figure></p>
+<p>clone远程仓库到本地<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> ginkgo:GinkgoTeam/CTF_Assemble</span><br></pre></td></tr></table></figure></p>
+<p>查看git项目的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure></p>
+<p>查看git项目信息<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote  //一般出现origin(私人)<span class="built_in">clone</span>成功</span><br><span class="line">git remote -v  //列出仓库对应的<span class="built_in">clone</span>链接</span><br></pre></td></tr></table></figure></p>
+<p>命令行进入项目目录，重建 origin (whatever 为相应项目地址)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git remote rm origin</span><br><span class="line"><span class="comment"># 远程仓库地址，注意Host名称</span></span><br><span class="line">$ git remote add origin git@second.github.com:githubUserName/repName.git</span><br><span class="line">$ git remote -v <span class="comment"># 查看远程</span></span><br></pre></td></tr></table></figure></p>
+<p>远程 push 测试<br>首先在 GitHub 上新建一个名为 testProj 的远程仓库，然后再在本地建一个本地仓库。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/documnts</span><br><span class="line">$ mkdir testProj</span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>进入 testProj 文件夹，创建 REDME.md文件</li>
+<li>初始化此文件夹为git</li>
+<li>添加并提交README.md到Git本地仓库</li>
+<li>添加远程仓库</li>
+<li>把README.md推送到远程仓库<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> testProj</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">"# ludilala.github.io"</span> &gt;&gt; README.md</span><br><span class="line">$ git init</span><br><span class="line">$ git add README.md</span><br><span class="line">$ git commit -m <span class="string">"first commit"</span></span><br><span class="line"><span class="comment"># 如果前面已添加远程连接，就无需再次添加</span></span><br><span class="line">$ git remote add origin https://github.com/ludilalaa/ludilala.github.io.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T09:08:52.219Z" itemprop="dateUpdated">2019-11-14 17:08:52</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ubuntu16-04搭建ssr和docker/" target="_blank" rel="external">https://www.damyahome.github.io/ubuntu16-04搭建ssr和docker/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu16-04/">ubuntu16.04</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ubuntu16-04搭建ssr和docker/&title=《ubuntu16.04搭建ssr/docker/git配置》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ubuntu16-04搭建ssr和docker/&title=《ubuntu16.04搭建ssr/docker/git配置》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/8307和8302靶场web题wp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">8307和8302靶场web题wp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/git-warning-LF-will-be-replaced-by-CRLF-in-解决办法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[git]warning: LF will be replaced by CRLF in 解决办法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搭建ssr"><span class="post-toc-number">1.</span> <span class="post-toc-text">搭建ssr</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#搭建docker"><span class="post-toc-number">2.</span> <span class="post-toc-text">搭建docker</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#几个docker常用到的命令："><span class="post-toc-number">2.1.</span> <span class="post-toc-text">几个docker常用到的命令：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#在git添加多个id-rsa-私钥-管理远程仓库"><span class="post-toc-number">3.</span> <span class="post-toc-text">在git添加多个id_rsa(私钥)管理远程仓库</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原理分析"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">原理分析</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ubuntu16-04搭建ssr和docker/&title=《ubuntu16.04搭建ssr/docker/git配置》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ubuntu16-04搭建ssr和docker/&title=《ubuntu16.04搭建ssr/docker/git配置》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3bQW7DMAwEwP7/0+m1QGtnV7QLRB6dgkZJND4QFMl+fcXr9Wudv/tzz9H+o9e/91+2MDAwPpbxOl1HP5Ac+vw7z785PxsGBsZzGEcR7HzP/LhtsD78OwYGBkaQDs4DKAYGBsZVjORSer6nTQ0xMDAw2sC3ViybP5TL7uIYGBgfyMir7v//+pb+BgYGxkcxXuVaC4JraWJxKgwMjK0ZeYArvq5M8tYCLgYGxnMYSWksL/Tn7czks0XIxsDA2JqRR+W8uThJCvOBs+gMGBgYWzDy0Jn/cBvK21YoBgbG0xhtMrd2NS0GJk4D7psHgYGBsSnjfGueDq4lkZOd0dsYGBhbMObjF22Ybo+StxMwMDCewJiU/icNyzz0Rw8FAwNjO0ZRzBqEyAnsgmkRDAyMD2fkTcck4M4fwWUPFAMDYyNGmw7m7cm80J+X3ophCwwMjI0Ya0le2zzIg/ItDQAMDIyNGPOBrbUhsGRdkCZiYGBswZjfCtuguTa6USeFGBgYWzAm4/V5u/HaT/3xdwwMjAcw2stqfvW9o2F5GHAxMDAewGiL8m2wnkzU1v83gIGBsQXjVa72uEnQXGs5vEkKMTAwNmKstTPbwtmk9N8OfGBgYOzKaK+dk1DbjojVDUsMDIytGW0jc35NXTvum7s4BgYGRlyAW7twjqZFMDAwMOKE7+6WwGGYxsDAeACjbQa077axsR7CwMDA2JqxdnW8j922BzAwMLZmfANcliy6Z3ntuQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
