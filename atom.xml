@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.damyahome.github.io/"/>
-  <updated>2020-10-28T13:28:04.810Z</updated>
+  <updated>2021-11-24T08:19:03.387Z</updated>
   <id>https://www.damyahome.github.io/</id>
   
   <author>
@@ -18,12 +18,12 @@
   
   <entry>
     <title>2020Bilibili解密赛</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913ai000mpwucurcf0xzq/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913ai000mpwucurcf0xzq/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2h0015usucxfcalmym/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2h0015usucxfcalmym/2020Bilibili%E8%A7%A3%E5%AF%86%E8%B5%9B/</id>
     <published>2020-10-28T13:27:21.000Z</published>
-    <updated>2020-10-28T13:28:04.810Z</updated>
+    <updated>2021-11-24T08:19:03.387Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://security.bilibili.com/sec1024/" target="_blank" rel="noopener">https://security.bilibili.com/sec1024/</a></p><h2 id="第一关-页面的背后是什么？"><a href="#第一关-页面的背后是什么？" class="headerlink" title="第一关  页面的背后是什么？"></a>第一关  页面的背后是什么？</h2><figure class="image-box">                <img src="https://images-cdn.shimo.im/wOna8FEMVS405N3i__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>查看源码有flag1和flag2的接口</p><p>flag1接口是 api/admin</p><p>访问就有flag</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/d0TeMaQCaaPfZDTE__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag1{fe0cf087-8c3447bb-92c9cbca-1793c4cb}</p><p>flag2接口是 /api/ctf/2 ,采用get传参</p><p>修改UA:bilibili Security Browser</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/1OuzkFDxyWgkAwsm__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag2{b8138188-0c16d0d5-7235c383-418dd144}</p><h2 id="第二关-真正的秘密只有特殊的设备才能看到"><a href="#第二关-真正的秘密只有特殊的设备才能看到" class="headerlink" title="第二关  真正的秘密只有特殊的设备才能看到"></a>第二关  真正的秘密只有特殊的设备才能看到</h2><figure class="image-box">                <img src="https://images-cdn.shimo.im/tpEYVrrI9kRnVTky__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag3接口是api/ctf/3</p><p>管理员 admin</p><p>密码盲猜弱口令 bilibili</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/HLTD1syfg4kc1f1S__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag3{cddb6186-4bdd52ea-0623764d-99f9b62f}</p><h2 id="第三关-对不起，权限不足～"><a href="#第三关-对不起，权限不足～" class="headerlink" title="第三关  对不起，权限不足～"></a>第三关  对不起，权限不足～</h2><figure class="image-box">                <img src="https://images-cdn.shimo.im/OIN2BkTaufcyt3MX__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag4接口是api/ctf/4</p><p>只有window才有超级管理员的说法,即Administrator</p><p>抓包发现Cookie里有role变量,是个32位字符串,估计经过md5加密</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/saRnJpEB1xeqvqd1__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>将Administrator加密后传入  7b7bc2512ee1fedcd76bdc68926d4f7b</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/1eH8AwbMlcBylSgf__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag4{b5112a88-bb60c9e7-99935a1c-052fcc2e}</p><h2 id="第四关别人的秘密"><a href="#第四关别人的秘密" class="headerlink" title="第四关别人的秘密"></a>第四关别人的秘密</h2><figure class="image-box">                <img src="https://images-cdn.shimo.im/Wbf3oi5rQNp3kku8__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>查看源码,提取关键信息</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uid = $.getUrlParam(<span class="string">'uid'</span>);</span><br><span class="line">            <span class="keyword">if</span> (uid == <span class="literal">null</span>) &#123;</span><br><span class="line">                uid = <span class="number">100336889</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"api/ctf/5?uid="</span> + uid,</span><br><span class="line">                type: <span class="string">"get"</span>,</span><br><span class="line">                success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(data);</span><br><span class="line">              <span class="keyword">if</span> (data.code == <span class="number">200</span>)&#123;</span><br><span class="line">              <span class="comment">// 如果有值：前端跳转</span></span><br><span class="line">           $(<span class="string">'#flag'</span>).html(<span class="string">"欢迎超级管理员登陆～flag : "</span> + data.data )</span><br></pre></td></tr></table></figure><p>flag5接口是 api/ctf/5?uid=<br>role依旧为 7b7bc2512ee1fedcd76bdc68926d4f7b</p><p>意思应该是要从100336889开始爆破,我爆到的是100336919</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/ICV7aTgqHYuEnLGW__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag5{f6c5ee82-af7a41b6-6f9314be-8625059a}</p><h2 id="第五关-结束亦是开始"><a href="#第五关-结束亦是开始" class="headerlink" title="第五关  结束亦是开始"></a>第五关  结束亦是开始</h2><figure class="image-box">                <img src="https://images-cdn.shimo.im/hS7WTPesfWA6SPei__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>根据题目意思访问 /blog/end.php</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/7a9QEqPeHcS9p1o5__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>wfuzz一下文件</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/8DzWwf049y7hVr4b__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>访问 /blog/test.php,得到一大段jsfuck</p><p>放到console输出</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/Jwq0NvFpTFA2WkUP__original.png" alt="图片" title class>                <p>图片</p>            </figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;\u7a0b\u5e8f\u5458\u6700\u591a\u7684\u5730\u65b9&quot;;</span><br><span class="line">//程序员最多的地方</span><br><span class="line">var str2 = &quot;bilibili1024havefun&quot;;</span><br><span class="line">console.log()</span><br></pre></td></tr></table></figure><p>在github上搜索相关信息,找到end.php的<a href="https://github.com/interesting-1024/end/blob/main/end.php" target="_blank" rel="noopener">源码</a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//filename end.php</span></span><br><span class="line">$bilibili = <span class="string">"bilibili1024havefun"</span>;</span><br><span class="line">$str = intval($_GET[<span class="string">'id'</span>]);</span><br><span class="line">$reg = preg_match(<span class="string">'/\d/is'</span>, $_GET[<span class="string">'id'</span>]);</span><br><span class="line"><span class="keyword">if</span>(!is_numeric($_GET[<span class="string">'id'</span>]) <span class="keyword">and</span> $reg !== <span class="number">1</span> <span class="keyword">and</span> $str === <span class="number">1</span>)&#123;</span><br><span class="line">$content = file_get_contents($_GET[<span class="string">'url'</span>]);</span><br><span class="line"><span class="comment">//文件路径猜解</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">false</span>)&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"还差一点点啦～"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> $flag;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"你想要的不在这儿～"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p><p>根据逻辑用数组绕过,即 id[]=1<br>flag6接口是 api/ctf/6</p><p>猜测为flag.txt</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/MJEs8pad0i0T8Oji__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>访问图片地址/imgs/bilibili_224a634752448def6c0ec064e49fe797_havefun.jpg</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/OOtcvlBwOtfk1dOx__original.jpg" alt="图片" title class>                <p>图片</p>            </figure><p>用winhex打开,结尾有flag10?</p><figure class="image-box">                <img src="https://images-cdn.shimo.im/j7UJA5OsYb2ceuu3__original.png" alt="图片" title class>                <p>图片</p>            </figure><p>后面试了试url的参数接口可以是任意1-10数,flag.txt都在接口目录下</p><p>flag10{2ebd3b08-47ffc478-b49a5f9d-f6099d65}</p><h2 id="接下来的旅程-需要少年自己去探索啦～"><a href="#接下来的旅程-需要少年自己去探索啦～" class="headerlink" title="接下来的旅程 需要少年自己去探索啦～"></a>接下来的旅程 需要少年自己去探索啦～</h2><p>后面因为我是打完Byte和护网杯才来看的Bilibili,没多少时间做,开了个头就当有个参与感了</p><p>别的题的思路见<a href="https://www.zhihu.com/question/427113420/answers/updated+" target="_blank" rel="noopener">知乎</a>或Github</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://security.bilibili.com/sec1024/" target="_blank" rel="noopener">https://security.bilibili.com/sec1024/</a></p><h2 id="第一关-页面的背后是什么？"><a href="#第一关-页面的背后是什么？" class="headerlink" title="第一关  页面的背后是什么？"></a>第一关  页面的背后是什么？</h2><figure class="image-box">                <img src="./1.png" alt="图片" title class>                <p>图片</p>            </figure><p>查看源码有flag1和flag2的接口</p><p>flag1接口是 api/admin</p><p>访问就有flag</p><figure class="image-box">                <img src="./2.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag1{fe0cf087-8c3447bb-92c9cbca-1793c4cb}</p><p>flag2接口是 /api/ctf/2 ,采用get传参</p><p>修改UA:bilibili Security Browser</p><figure class="image-box">                <img src="./3.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag2{b8138188-0c16d0d5-7235c383-418dd144}</p><h2 id="第二关-真正的秘密只有特殊的设备才能看到"><a href="#第二关-真正的秘密只有特殊的设备才能看到" class="headerlink" title="第二关  真正的秘密只有特殊的设备才能看到"></a>第二关  真正的秘密只有特殊的设备才能看到</h2><figure class="image-box">                <img src="./4.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag3接口是api/ctf/3</p><p>管理员 admin</p><p>密码盲猜弱口令 bilibili</p><figure class="image-box">                <img src="./5.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag3{cddb6186-4bdd52ea-0623764d-99f9b62f}</p><h2 id="第三关-对不起，权限不足～"><a href="#第三关-对不起，权限不足～" class="headerlink" title="第三关  对不起，权限不足～"></a>第三关  对不起，权限不足～</h2><figure class="image-box">                <img src="./6.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag4接口是api/ctf/4</p><p>只有window才有超级管理员的说法,即Administrator</p><p>抓包发现Cookie里有role变量,是个32位字符串,估计经过md5加密</p><figure class="image-box">                <img src="./7.png" alt="图片" title class>                <p>图片</p>            </figure><p>将Administrator加密后传入  7b7bc2512ee1fedcd76bdc68926d4f7b</p><figure class="image-box">                <img src="./8.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag4{b5112a88-bb60c9e7-99935a1c-052fcc2e}</p><h2 id="第四关别人的秘密"><a href="#第四关别人的秘密" class="headerlink" title="第四关别人的秘密"></a>第四关别人的秘密</h2><figure class="image-box">                <img src="./9.png" alt="图片" title class>                <p>图片</p>            </figure><p>查看源码,提取关键信息</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uid = $.getUrlParam(<span class="string">'uid'</span>);</span><br><span class="line">            <span class="keyword">if</span> (uid == <span class="literal">null</span>) &#123;</span><br><span class="line">                uid = <span class="number">100336889</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: <span class="string">"api/ctf/5?uid="</span> + uid,</span><br><span class="line">                type: <span class="string">"get"</span>,</span><br><span class="line">                success:<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">              <span class="built_in">console</span>.log(data);</span><br><span class="line">              <span class="keyword">if</span> (data.code == <span class="number">200</span>)&#123;</span><br><span class="line">              <span class="comment">// 如果有值：前端跳转</span></span><br><span class="line">           $(<span class="string">'#flag'</span>).html(<span class="string">"欢迎超级管理员登陆～flag : "</span> + data.data )</span><br></pre></td></tr></table></figure><p>flag5接口是 api/ctf/5?uid=<br>role依旧为 7b7bc2512ee1fedcd76bdc68926d4f7b</p><p>意思应该是要从100336889开始爆破,我爆到的是100336919</p><figure class="image-box">                <img src="./10.png" alt="图片" title class>                <p>图片</p>            </figure><p>flag5{f6c5ee82-af7a41b6-6f9314be-8625059a}</p><h2 id="第五关-结束亦是开始"><a href="#第五关-结束亦是开始" class="headerlink" title="第五关  结束亦是开始"></a>第五关  结束亦是开始</h2><figure class="image-box">                <img src="./11.png" alt="图片" title class>                <p>图片</p>            </figure><p>根据题目意思访问 /blog/end.php</p><figure class="image-box">                <img src="./12.png" alt="图片" title class>                <p>图片</p>            </figure><p>wfuzz一下文件</p><figure class="image-box">                <img src="./13.png" alt="图片" title class>                <p>图片</p>            </figure><p>访问 /blog/test.php,得到一大段jsfuck</p><p>放到console输出</p><figure class="image-box">                <img src="./14.png" alt="图片" title class>                <p>图片</p>            </figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str1 = &quot;\u7a0b\u5e8f\u5458\u6700\u591a\u7684\u5730\u65b9&quot;;</span><br><span class="line">//程序员最多的地方</span><br><span class="line">var str2 = &quot;bilibili1024havefun&quot;;</span><br><span class="line">console.log()</span><br></pre></td></tr></table></figure><p>在github上搜索相关信息,找到end.php的<a href="https://github.com/interesting-1024/end/blob/main/end.php" target="_blank" rel="noopener">源码</a><br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//filename end.php</span></span><br><span class="line">$bilibili = <span class="string">"bilibili1024havefun"</span>;</span><br><span class="line">$str = intval($_GET[<span class="string">'id'</span>]);</span><br><span class="line">$reg = preg_match(<span class="string">'/\d/is'</span>, $_GET[<span class="string">'id'</span>]);</span><br><span class="line"><span class="keyword">if</span>(!is_numeric($_GET[<span class="string">'id'</span>]) <span class="keyword">and</span> $reg !== <span class="number">1</span> <span class="keyword">and</span> $str === <span class="number">1</span>)&#123;</span><br><span class="line">$content = file_get_contents($_GET[<span class="string">'url'</span>]);</span><br><span class="line"><span class="comment">//文件路径猜解</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">false</span>)&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"还差一点点啦～"</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> $flag;</span><br><span class="line">&#125;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"你想要的不在这儿～"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p><p>根据逻辑用数组绕过,即 id[]=1<br>flag6接口是 api/ctf/6</p><p>猜测为flag.txt</p><figure class="image-box">                <img src="./15.png" alt="图片" title class>                <p>图片</p>            </figure><p>访问图片地址/imgs/bilibili_224a634752448def6c0ec064e49fe797_havefun.jpg</p><figure class="image-box">                <img src="./16.png" alt="图片" title class>                <p>图片</p>            </figure><p>用winhex打开,结尾有flag10?</p><figure class="image-box">                <img src="./17.png" alt="图片" title class>                <p>图片</p>            </figure><p>后面试了试url的参数接口可以是任意1-10数,flag.txt都在接口目录下</p><p>flag10{2ebd3b08-47ffc478-b49a5f9d-f6099d65}</p><h2 id="接下来的旅程-需要少年自己去探索啦～"><a href="#接下来的旅程-需要少年自己去探索啦～" class="headerlink" title="接下来的旅程 需要少年自己去探索啦～"></a>接下来的旅程 需要少年自己去探索啦～</h2><p>后面因为我是打完Byte和护网杯才来看的Bilibili,没多少时间做,开了个头就当有个参与感了</p><p>别的题的思路见<a href="https://www.zhihu.com/question/427113420/answers/updated+" target="_blank" rel="noopener">知乎</a>或Github</p>]]></content>
     
     <summary type="html">
     
@@ -45,8 +45,8 @@
   
   <entry>
     <title>2020susctf_wp</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd913ak000opwuc4co8m7tv/2020susctf-wp/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup/ckwd913ak000opwuc4co8m7tv/2020susctf-wp/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd99z28000vusucck76nj44/2020susctf-wp/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup/ckwd99z28000vusucck76nj44/2020susctf-wp/</id>
     <published>2020-10-21T13:05:52.000Z</published>
     <updated>2020-10-21T13:13:30.006Z</updated>
     
@@ -72,8 +72,8 @@
   
   <entry>
     <title>大二下网络工程实训考试</title>
-    <link href="https://www.damyahome.github.io/%E6%97%A5%E5%B8%B8/ckwd913eb005opwucpyxqfcil/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E8%80%83%E8%AF%95/"/>
-    <id>https://www.damyahome.github.io/%E6%97%A5%E5%B8%B8/ckwd913eb005opwucpyxqfcil/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E8%80%83%E8%AF%95/</id>
+    <link href="https://www.damyahome.github.io/%E6%97%A5%E5%B8%B8/ckwd99z7o005musucmob91ax5/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E8%80%83%E8%AF%95/"/>
+    <id>https://www.damyahome.github.io/%E6%97%A5%E5%B8%B8/ckwd99z7o005musucmob91ax5/%E5%A4%A7%E4%BA%8C%E4%B8%8B%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E8%80%83%E8%AF%95/</id>
     <published>2020-10-14T08:31:21.000Z</published>
     <updated>2020-10-14T08:35:44.864Z</updated>
     
@@ -99,8 +99,8 @@
   
   <entry>
     <title>一些我常用的在线网站(持续更新)</title>
-    <link href="https://www.damyahome.github.io/%E5%B7%A5%E5%85%B7/ckwd913e9005lpwucl9e5worh/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
-    <id>https://www.damyahome.github.io/%E5%B7%A5%E5%85%B7/ckwd913e9005lpwucl9e5worh/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</id>
+    <link href="https://www.damyahome.github.io/%E5%B7%A5%E5%85%B7/ckwd99z8x006ausucia8koeth/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/"/>
+    <id>https://www.damyahome.github.io/%E5%B7%A5%E5%85%B7/ckwd99z8x006ausucia8koeth/%E4%B8%80%E4%BA%9B%E6%88%91%E5%B8%B8%E7%94%A8%E7%9A%84%E5%9C%A8%E7%BA%BF%E7%BD%91%E7%AB%99-%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</id>
     <published>2020-10-13T12:28:23.000Z</published>
     <updated>2020-10-28T13:26:13.828Z</updated>
     
@@ -125,8 +125,8 @@
   
   <entry>
     <title>2020西湖论剑misc复现</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd913as0011pwucbuu0sam2/2020%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc%E5%A4%8D%E7%8E%B0/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd913as0011pwucbuu0sam2/2020%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc%E5%A4%8D%E7%8E%B0/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z2b000yusuccy3uh3fu/2020%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc%E5%A4%8D%E7%8E%B0/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z2b000yusuccy3uh3fu/2020%E8%A5%BF%E6%B9%96%E8%AE%BA%E5%89%91misc%E5%A4%8D%E7%8E%B0/</id>
     <published>2020-10-12T13:30:01.000Z</published>
     <updated>2020-10-12T13:47:18.836Z</updated>
     
@@ -152,8 +152,8 @@
   
   <entry>
     <title>10.8 队内AWD小结</title>
-    <link href="https://www.damyahome.github.io/AWD/ckwd9139k0000pwucjz8d1gos/10-8-%E9%98%9F%E5%86%85AWD%E5%B0%8F%E7%BB%93/"/>
-    <id>https://www.damyahome.github.io/AWD/ckwd9139k0000pwucjz8d1gos/10-8-%E9%98%9F%E5%86%85AWD%E5%B0%8F%E7%BB%93/</id>
+    <link href="https://www.damyahome.github.io/AWD/ckwd99z0x0000usuc2hvx5yew/10-8-%E9%98%9F%E5%86%85AWD%E5%B0%8F%E7%BB%93/"/>
+    <id>https://www.damyahome.github.io/AWD/ckwd99z0x0000usuc2hvx5yew/10-8-%E9%98%9F%E5%86%85AWD%E5%B0%8F%E7%BB%93/</id>
     <published>2020-10-11T11:00:52.000Z</published>
     <updated>2020-10-11T11:06:07.462Z</updated>
     
@@ -182,8 +182,8 @@
   
   <entry>
     <title>BUUCTF web练习5</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913bf001upwuct65h139y/BUUCTF-web%E7%BB%83%E4%B9%A05/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913bf001upwuct65h139y/BUUCTF-web%E7%BB%83%E4%B9%A05/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z30001susucojpnidl7/BUUCTF-web%E7%BB%83%E4%B9%A05/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z30001susucojpnidl7/BUUCTF-web%E7%BB%83%E4%B9%A05/</id>
     <published>2020-10-07T13:12:09.000Z</published>
     <updated>2020-10-07T13:20:27.489Z</updated>
     
@@ -208,8 +208,8 @@
   
   <entry>
     <title>BUUCTF web练习4</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913bs002cpwuclqnd2krp/BUUCTF-web%E7%BB%83%E4%B9%A04/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913bs002cpwuclqnd2krp/BUUCTF-web%E7%BB%83%E4%B9%A04/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2r001jusuc7zlztj4o/BUUCTF-web%E7%BB%83%E4%B9%A04/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2r001jusuc7zlztj4o/BUUCTF-web%E7%BB%83%E4%B9%A04/</id>
     <published>2020-10-05T09:50:50.000Z</published>
     <updated>2020-10-05T09:58:42.403Z</updated>
     
@@ -238,8 +238,8 @@
   
   <entry>
     <title>SQL报错注入小结</title>
-    <link href="https://www.damyahome.github.io/web%E5%AD%A6%E4%B9%A0/ckwd913cw003vpwuctefakhs7/SQL%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%B0%8F%E7%BB%93/"/>
-    <id>https://www.damyahome.github.io/web%E5%AD%A6%E4%B9%A0/ckwd913cw003vpwuctefakhs7/SQL%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%B0%8F%E7%BB%93/</id>
+    <link href="https://www.damyahome.github.io/web%E5%AD%A6%E4%B9%A0/ckwd99z45003cusucyk1nr0rh/SQL%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%B0%8F%E7%BB%93/"/>
+    <id>https://www.damyahome.github.io/web%E5%AD%A6%E4%B9%A0/ckwd99z45003cusucyk1nr0rh/SQL%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5%E5%B0%8F%E7%BB%93/</id>
     <published>2020-10-02T07:48:06.000Z</published>
     <updated>2020-10-02T07:55:20.735Z</updated>
     
@@ -265,8 +265,8 @@
   
   <entry>
     <title>BUUCTF web练习3</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913b9001npwucqcvmiwpn/BUUCTF-web%E7%BB%83%E4%B9%A03/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913b9001npwucqcvmiwpn/BUUCTF-web%E7%BB%83%E4%B9%A03/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2u001musuc8ri6i85v/BUUCTF-web%E7%BB%83%E4%B9%A03/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2u001musuc8ri6i85v/BUUCTF-web%E7%BB%83%E4%B9%A03/</id>
     <published>2020-09-29T09:21:43.000Z</published>
     <updated>2020-09-29T09:33:58.130Z</updated>
     
@@ -291,8 +291,8 @@
   
   <entry>
     <title>BUUCTF web练习2</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913b2001cpwucfng7tkhw/BUUCTF-web%E7%BB%83%E4%B9%A02/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913b2001cpwucfng7tkhw/BUUCTF-web%E7%BB%83%E4%B9%A02/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2x001pusuctav95i9y/BUUCTF-web%E7%BB%83%E4%B9%A02/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2x001pusuctav95i9y/BUUCTF-web%E7%BB%83%E4%B9%A02/</id>
     <published>2020-09-25T13:20:04.000Z</published>
     <updated>2020-09-25T13:22:09.933Z</updated>
     
@@ -321,8 +321,8 @@
   
   <entry>
     <title>[MISC]拼图题小结</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd913cc0034pwucq6m75oto/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd913cc0034pwucq6m75oto/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z3t002wusucgi25kelc/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z3t002wusucgi25kelc/MISC-%E6%8B%BC%E5%9B%BE%E9%A2%98%E5%B0%8F%E7%BB%93/</id>
     <published>2020-09-24T13:20:28.000Z</published>
     <updated>2020-09-24T13:23:21.529Z</updated>
     
@@ -354,8 +354,8 @@
   
   <entry>
     <title>web for pentester 1 wp</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913dt0054pwucaqr91oji/web-for-pentester-1-wp/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913dt0054pwucaqr91oji/web-for-pentester-1-wp/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z5d004tusucr6l2hsbp/web-for-pentester-1-wp/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z5d004tusucr6l2hsbp/web-for-pentester-1-wp/</id>
     <published>2020-09-24T08:03:04.000Z</published>
     <updated>2020-09-24T08:05:32.238Z</updated>
     
@@ -384,8 +384,8 @@
   
   <entry>
     <title>BUUCTF_web练习1</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913b7001kpwuc2cyhtsd4/BUUCTF-web%E7%BB%83%E4%B9%A01/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913b7001kpwuc2cyhtsd4/BUUCTF-web%E7%BB%83%E4%B9%A01/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2n001fusuclgioe4bw/BUUCTF-web%E7%BB%83%E4%B9%A01/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z2n001fusuclgioe4bw/BUUCTF-web%E7%BB%83%E4%B9%A01/</id>
     <published>2020-09-23T13:13:38.000Z</published>
     <updated>2020-09-23T13:45:38.330Z</updated>
     
@@ -410,8 +410,8 @@
   
   <entry>
     <title>GINKGO大废物杯_wp</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd913bn0025pwucat4cfqd3/GINKGO%E5%A4%A7%E5%BA%9F%E7%89%A9%E6%9D%AF-wp/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup/ckwd913bn0025pwucat4cfqd3/GINKGO%E5%A4%A7%E5%BA%9F%E7%89%A9%E6%9D%AF-wp/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd99z360021usuctaixu5kz/GINKGO%E5%A4%A7%E5%BA%9F%E7%89%A9%E6%9D%AF-wp/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup/ckwd99z360021usuctaixu5kz/GINKGO%E5%A4%A7%E5%BA%9F%E7%89%A9%E6%9D%AF-wp/</id>
     <published>2020-09-23T13:06:12.000Z</published>
     <updated>2020-09-23T13:08:32.116Z</updated>
     
@@ -442,8 +442,8 @@
   
   <entry>
     <title>Ginkgo废物杯_web1高地_复现</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd913bz002npwucn3o1ov6s/Ginkgo%E5%BA%9F%E7%89%A9%E6%9D%AF-web1%E9%AB%98%E5%9C%B0-%E5%A4%8D%E7%8E%B0/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd913bz002npwucn3o1ov6s/Ginkgo%E5%BA%9F%E7%89%A9%E6%9D%AF-web1%E9%AB%98%E5%9C%B0-%E5%A4%8D%E7%8E%B0/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-web/ckwd99z3k002lusuc6vnehevb/Ginkgo%E5%BA%9F%E7%89%A9%E6%9D%AF-web1%E9%AB%98%E5%9C%B0-%E5%A4%8D%E7%8E%B0/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-web/ckwd99z3k002lusuc6vnehevb/Ginkgo%E5%BA%9F%E7%89%A9%E6%9D%AF-web1%E9%AB%98%E5%9C%B0-%E5%A4%8D%E7%8E%B0/</id>
     <published>2020-09-23T13:05:35.000Z</published>
     <updated>2020-09-23T13:07:38.989Z</updated>
     
@@ -472,8 +472,8 @@
   
   <entry>
     <title>2020GACTF_misc复现</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd913ab000hpwuc4uh63avk/2020GACTF-misc%E5%A4%8D%E7%8E%B0/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd913ab000hpwuc4uh63avk/2020GACTF-misc%E5%A4%8D%E7%8E%B0/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z22000nusuclhjgjuo2/2020GACTF-misc%E5%A4%8D%E7%8E%B0/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup-misc/ckwd99z22000nusuclhjgjuo2/2020GACTF-misc%E5%A4%8D%E7%8E%B0/</id>
     <published>2020-09-23T13:01:40.000Z</published>
     <updated>2020-09-23T13:05:03.856Z</updated>
     
@@ -502,8 +502,8 @@
   
   <entry>
     <title>FCTF_wp</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd913bk0021pwucjo59d30z/FCTF-wp/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup/ckwd913bk0021pwucjo59d30z/FCTF-wp/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd99z380024usucquj2icbv/FCTF-wp/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup/ckwd99z380024usucquj2icbv/FCTF-wp/</id>
     <published>2020-09-23T11:51:04.000Z</published>
     <updated>2020-09-23T11:52:08.815Z</updated>
     
@@ -536,8 +536,8 @@
   
   <entry>
     <title>2020DozerCTF_wp_by_ginkgo_三叶草</title>
-    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd913ae000ipwuc600yub17/2020DozerCTF-wp-by-ginkgo-%E4%B8%89%E5%8F%B6%E8%8D%89/"/>
-    <id>https://www.damyahome.github.io/ctf-writeup/ckwd913ae000ipwuc600yub17/2020DozerCTF-wp-by-ginkgo-%E4%B8%89%E5%8F%B6%E8%8D%89/</id>
+    <link href="https://www.damyahome.github.io/ctf-writeup/ckwd99z1y000iusuct53p53lt/2020DozerCTF-wp-by-ginkgo-%E4%B8%89%E5%8F%B6%E8%8D%89/"/>
+    <id>https://www.damyahome.github.io/ctf-writeup/ckwd99z1y000iusuct53p53lt/2020DozerCTF-wp-by-ginkgo-%E4%B8%89%E5%8F%B6%E8%8D%89/</id>
     <published>2020-09-23T11:37:34.000Z</published>
     <updated>2020-09-23T11:39:58.357Z</updated>
     
@@ -565,8 +565,8 @@
   
   <entry>
     <title>第五周课堂笔记(汇编)</title>
-    <link href="https://www.damyahome.github.io/%E7%AC%94%E8%AE%B0/ckwd913eo0064pwucxknmks77/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/"/>
-    <id>https://www.damyahome.github.io/%E7%AC%94%E8%AE%B0/ckwd913eo0064pwucxknmks77/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/</id>
+    <link href="https://www.damyahome.github.io/%E7%AC%94%E8%AE%B0/ckwd99z95006dusuckix8etpc/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/"/>
+    <id>https://www.damyahome.github.io/%E7%AC%94%E8%AE%B0/ckwd99z95006dusuckix8etpc/%E7%AC%AC%E4%BA%94%E5%91%A8%E8%AF%BE%E5%A0%82%E7%AC%94%E8%AE%B0-%E6%B1%87%E7%BC%96/</id>
     <published>2020-04-04T10:37:30.000Z</published>
     <updated>2020-04-04T10:38:18.152Z</updated>
     
