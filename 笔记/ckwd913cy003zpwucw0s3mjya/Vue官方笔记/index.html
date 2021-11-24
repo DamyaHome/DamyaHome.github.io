@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>Vue官方笔记 | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="vue.js">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Vue官方笔记</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Vue官方笔记</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-11T13:16:20.000Z" itemprop="datePublished" class="page-time">
+  2019-06-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-Vue官方笔记"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">Vue官方笔记</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-11 21:16:20" datetime="2019-06-11T13:16:20.000Z"  itemprop="datePublished">2019-06-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>#Vue大笔记</p>
+<hr>
+<p>##Vue.js是什么<br>Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vue 被设计为可以自底向上逐层应用。Vue 的核心库只关注视图层，不仅易于上手，还便于与第三方库或既有项目整合。另一方面，当与现代化的工具链以及各种支持类库结合使用时，Vue 也完全能够为复杂的单页应用提供驱动。</p>
+<a id="more"></a>
+<p>##声明式渲染<br>Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统（响应式系统）</p>
+<p>##各种笔记<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.freeze()  会阻止修改现有属性，使响应式系统无法再追踪变化</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>你的站点上动态渲染的任意 HTML 可能会非常危险，因为它很容易导致 XSS 攻击。请只对可信内容使用 HTML 插值，绝不要对用户提供的内容使用插值。</li>
+<li>应该优先通过 prop 和事件进行父子组件之间的通信，而不是 this.$parent 或改变 prop。</li>
+<li>元素选择器应该避免在 scoped 中出现。<br> 在 scoped 样式中，类选择器比元素选择器更好，因为大量使用元素选择器是很慢的。</li>
+<li>当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。</li>
+<li>key 只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出。</li>
+</ul>
+<p>###实例生命周期钩子<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">created:  可以用来在一个实例被创建后执行代码</span><br><span class="line">mounted: </span><br><span class="line">updated: </span><br><span class="line">destroyed:</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">箭头函数</a></p>
+<p><a href="https://cn.vuejs.org/images/lifecycle.png" target="_blank" rel="noopener">生命周期钩子图</a></p>
+<blockquote>
+<p>v-bind = :  将元素与属性进行绑定,数据绑定 = “”里是js表达式<br>    v-model  双向数据绑定<br>    v-once  将静态内容缓存起来不进行渲染更新<br>    v-text(转义)   会输出html标签+内容<br>    v-html（不转义）  仅会输出内容<br>    v-if(控制dom的存在与否，一次性较佳)<br>    v-show（控制dom的显示与否，优先使用，性能高）<br>    v-for  数据循环展示<br>    :key=””提高性能，列表渲染，循环值不相同<br>    v-on = @  侦听dom事件</p>
+</blockquote>
+<blockquote>
+<p>组件选项默认顺序</p>
+<ol>
+<li>副作用(触发组件外的影响)<br> el</li>
+<li>全局感知(要求组件以外的知识)<br> name<br> parent</li>
+<li>组件类型 (更改组件的类型)<br> functional</li>
+<li>模板修改器 (改变模板的编译方式)<br> delimiters<br> comments</li>
+<li>模板依赖 (模板内使用的资源)<br> components<br> directives<br> filters</li>
+<li>组合 (向选项里合并属性)<br> extends<br> mixins</li>
+<li>接口 (组件的接口)<br> inheritAttrs<br> model<br> props/propsData</li>
+<li>本地状态 (本地的响应式属性)<br> data<br> computed</li>
+<li>事件 (通过响应式事件触发的回调)<br> watch<br> 生命周期钩子 (按照它们被调用的顺序)<pre><code>beforeCreate
+created
+beforeMount
+mounted
+beforeUpdate
+updated
+activated
+deactivated
+beforeDestroy
+destroyed
+</code></pre></li>
+<li>非响应式的属性 (不依赖响应系统的实例属性)<br>methods</li>
+<li>渲染 (组件输出的声明式描述)<br>template/render<br>renderError</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>元素 (包括组件) 特性顺序</p>
+</blockquote>
+<pre><code>定义 (提供组件的选项)
+    is
+
+列表渲染 (创建多个变化的相同元素)
+    v-for
+
+条件渲染 (元素是否渲染/显示)
+    v-if
+    v-else-if
+    v-else
+    v-show
+    v-cloak
+
+渲染方式 (改变元素的渲染方式)
+    v-pre
+    v-once
+
+全局感知 (需要超越组件的知识)
+    id
+
+唯一的特性 (需要唯一值的特性)
+    ref
+    key
+    slot
+
+双向绑定 (把绑定和事件结合起来)
+    v-model
+
+其它特性 (所有普通的绑定或未绑定的特性)
+
+事件 (组件事件监听器)
+    v-on
+
+内容 (覆写元素的内容)
+    v-html
+    v-text
+</code></pre><ul>
+<li>v-for on a <template>   </template></li>
+<li>v-for with v-if</li>
+</ul>
+<p>###变异方法<br>Vue 包含一组观察数组的变异方法，所以它们也将会触发视图更新。这些方法如下：</p>
+<blockquote>
+</blockquote>
+<pre><code>push()
+pop()
+shift()
+unshift()
+splice()
+sort()
+reverse()
+</code></pre><p>你打开控制台，然后用前面例子的 items 数组调用变异方法：example1.items.push({ message: ‘Baz’ }) 。</p>
+<p>####替换数组（高效）<br>变异方法 (mutation method)，顾名思义，会改变被这些方法调用的原始数组。相比之下，也有非变异 (non-mutating method) 方法，例如：filter(), concat() 和 slice() 。这些不会改变原始数组，但总是返回一个新数组。当使用非变异方法时，可以用新数组替换旧数组：</p>
+<p>example1.items = example1.items.filter(function (item) {<br>  return item.message.match(/Foo/)<br>})</p>
+<p>###v-on</p>
+<p>####事件修饰符<br>    .stop   阻止执行<br>    .prevent  阻止重载<br>    .capture  事件捕获<br>    .self   元素本身触发<br>    .once  只触发一次<br>    .passive  滚动行为立即触发（尤其能提升移动端性能）</p>
+<p>####按键码<br>    .enter<br>    .tab<br>    .delete (捕获“删除”和“退格”键)<br>    .esc<br>    .space<br>    .up<br>    .down<br>    .left<br>    .right</p>
+<ul>
+<li>键盘按钮修饰符<br>  .ctrl<br>  .alt<br>  .shift<br>  .meta（win）<br>  .exact   （修饰符允许控制由精确的系统修饰符组合触发的事件）</li>
+<li>鼠标按钮修饰符<br>  .left<br>  .right<br>  .middle</li>
+</ul>
+<p>###v-model<br>v-model 在内部使用不同的属性为不同的输入元素并抛出不同的事件：<br>    text 和 textarea 元素使用 value 属性和 input 事件；<br>    checkbox 和 radio 使用 checked 属性和 change 事件；<br>    select 字段将 value 作为 prop 并将 change 作为事件。</p>
+<p><a href="https://cn.vuejs.org/v2/guide/forms.html" target="_blank" rel="noopener">表单输入绑定</a></p>
+<ul>
+<li><p>修饰符<br>.lazy  转变为change时触发<br>.number  自动将用户的输入值转为数值类型<br>.trim  自动过滤用户输入的首尾空白字符</p>
+</li>
+<li><p>$emit</p>
+</li>
+<li>$event</li>
+</ul>
+<p>###单元素/组件的过渡</p>
+<ul>
+<li><p>类名<br>  v-enter：定义进入过渡的开始状态。在元素被插入之前生效，在元素被插入之后的下一帧移除。</p>
+<p>  v-enter-active：定义进入过渡生效时的状态。在整个进入过渡的阶段中应用，在元素被插入之前生效，在过渡/动画完成之后移除。这个类可以被用来定义进入过渡的过程时间，延迟和曲线函数。</p>
+<p>  v-enter-to: 2.1.8版及以上 定义进入过渡的结束状态。在元素被插入之后下一帧生效 (与此同时 v-enter 被移除)，在过渡/动画完成之后移除。</p>
+<p>  v-leave: 定义离开过渡的开始状态。在离开过渡被触发时立刻生效，下一帧被移除。</p>
+<p>  v-leave-active：定义离开过渡生效时的状态。在整个离开过渡的阶段中应用，在离开过渡被触发时立刻生效，在过渡/动画完成之后移除。这个类可以被用来定义离开过渡的过程时间，延迟和曲线函数。</p>
+<p>  v-leave-to: 2.1.8版及以上 定义离开过渡的结束状态。在离开过渡被触发之后下一帧生效 (与此同时 v-leave 被删除)，在过渡/动画完成之后移除。<br><a href="https://cn.vuejs.org/v2/guide/transitions.html" target="_blank" rel="noopener">具体实例</a><br><a href="https://cn.vuejs.org/v2/guide/transitioning-state.html" target="_blank" rel="noopener">状态过渡</a></p>
+</li>
+</ul>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-06-11T13:17:16.083Z" itemprop="dateUpdated">2019-06-11 21:17:16</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/" target="_blank" rel="external">https://www.damyahome.github.io/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-js/">vue.js</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/&title=《Vue官方笔记》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/&title=《Vue官方笔记》 — Damya's Blog&source=#Vue大笔记
+
+##Vue.js是什么Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/笔记/ckwd913ct003rpwuc5qc55466/Vue速学笔记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Vue速学笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/笔记/ckwd913cj003gpwuceu3z24sv/PHP笔记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PHP笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/&title=《Vue官方笔记》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/笔记/ckwd913cy003zpwucw0s3mjya/Vue官方笔记/&title=《Vue官方笔记》 — Damya's Blog&source=#Vue大笔记
+
+##Vue.js是什么Vue (读音 /vjuː/，类似于 view) 是一套用于构建用户界面的渐进式框架。与其它大型框架不同的是，Vu..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3a22rDMBAFwP7/T7evhWLn7EXGhfFTaBJbo4K0Oauvr/j6/nXdf+bv6793uPrk1beu3l278PDw8AZDvx9E8vf8bskYriY3eQoeHh7eaV6+0N8v38kqncPuecn98fDw8N7ASwrufBvYKtnx8PDw/iPv/rsJPi/E8fDw8N7Am8QH1btVt5Z8IvDw8PCe4VVDhDe8PtLfw8PDwxt31SftqK0pG40WDw8P7wAvX3CrgLzZ34sw8ufi4eHhPcmrNuzzaLW35TSLbzw8PLzHefOmV4KvHiPIJxcPDw/vBC8fdDUs6EUSeeOtPCl4eHh4q7xq8743KfnRhMkWhYeHh3ea12s49TaPXq8/L9ybWQseHh5ezJsszXk5O2mYVcPiy/8bHh4e3hIvjwaqgWzysByQbBXlGBcPDw+vxesNKNkS8vv0wt9oi8LDw8M7xqs+OF+gJwdhq5vEhzACDw8Pb5VXzX3npfNWOd48LoCHh4c34CWbQTWA6MUNvW0pGiceHh7eKq+3oOel86hZ1Tqa8CGMwMPDwxvz8i/kwcGkIF4OI/Dw8PAO8KqBbBK29raT+zv0mnN4eHh4J3j5g6sHnnYPIuQTh4eHh/cMLy9nq0em8tbX5DNRqIGHh4e3yust+r3wt3eYIA8jRr8b8PDw8Fq8Qu47jh6q4W+5jMbDw8N7hNc7KLA10HzjKTwRDw8P7xivvOAWN4atLaFcrOPh4eGt8r6LV6/U7jXJ8hji8l08PDy8A7zq4ts7dFUtx/M4o9Dfw8PDw1vlVTeDajmeB7jJGJK2XKGwxsPDwxvwJs3+arm8u3dFGwMeHh7eC3jJj/9kce9NYmE68PDw8F7AmwwrZ/fKcTw8PLwneXkQkA80x08abB+KeDw8PLwDvGpdWl2+Jw3++fTh4eHhrfJ+APhoaG2u6eWGAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
