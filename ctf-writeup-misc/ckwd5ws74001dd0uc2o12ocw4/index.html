@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>BUUCTF misc wp(部分) | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>BUUCTF misc wp(部分)</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">BUUCTF misc wp(部分)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-10T17:23:50.000Z" itemprop="datePublished" class="page-time">
+  2019-06-11
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-misc/">ctf writeup misc</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-BUUCTF-misc-wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">BUUCTF misc wp(部分)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-11 01:23:50" datetime="2019-06-10T17:23:50.000Z"  itemprop="datePublished">2019-06-11</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup-misc/">ctf writeup misc</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p>网站地址: <a href="https://buuoj.cn/challenges" target="_blank" rel="noopener">buuctf</a></p>
+<h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="签到"><a href="#签到" class="headerlink" title="签到"></a>签到</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p> flag{buu_ctf}</p>
+<h2 id="梅花香之苦寒来"><a href="#梅花香之苦寒来" class="headerlink" title="梅花香之苦寒来"></a>梅花香之苦寒来</h2><p>解压得到一张图片<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>拖入notepad,在文件尾发现一大串字符,提取出来hex-&gt;ascil,得到坐标<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>写脚本转化成二维码，扫描得到flag<br>flag{40fc0a979f759c8892f4dc045e28b820}</p>
+<h2 id="snake"><a href="#snake" class="headerlink" title="snake"></a>snake</h2><p>解压是条蛇(有点可爱)<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./4.png" title="图片" data-fancybox="images"><img src="./4.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>拖进notepad在文档尾有一串base64,解密得,还有一个zip头<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./5.png" title="图片" data-fancybox="images"><img src="./5.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>foremost分离得到两个文件<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./6.png" title="图片" data-fancybox="images"><img src="./6.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>百度搜了下key,得到 anaconda<br>另一个key在cipher里,是一串乱码,百度了下关于蛇的解密算法,是serpent加密<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./7.png" title="图片" data-fancybox="images"><img src="./7.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{who_knew_serpent_cipher_existed}</p>
+<h2 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h2><p>拖进routerpassview,发现用户信息<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./8.png" title="图片" data-fancybox="images"><img src="./8.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{053700357621}</p>
+<h2 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h2><p>扫描得到信息  secret is here<br>拖进notepad里发现有隐藏文件<br>foremost分离,得到一个有密码的zip<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./9.png" title="图片" data-fancybox="images"><img src="./9.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>只有4个数字,生成一个字典,直接爆破<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./10.png" title="图片" data-fancybox="images"><img src="./10.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>解压,得到 flag{vjpw_wnoei}</p>
+<h2 id="镜子里面的世界"><a href="#镜子里面的世界" class="headerlink" title="镜子里面的世界"></a>镜子里面的世界</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./11.png" title="图片" data-fancybox="images"><img src="./11.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>拖进stegsolve里,提取像素<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./12.png" title="图片" data-fancybox="images"><img src="./12.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{st3g0_saurus_wr3cks}</p>
+<h2 id="N种方法解决"><a href="#N种方法解决" class="headerlink" title="N种方法解决"></a>N种方法解决</h2><p>拖进notepad得到图片base64码，解码得到二维码<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./13.png" title="图片" data-fancybox="images"><img src="./13.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>扫描得到  flag{dca57f966e4e4e31fd5b15417da63269}</p>
+<h2 id="来首歌吧"><a href="#来首歌吧" class="headerlink" title="来首歌吧"></a>来首歌吧</h2><p>拖进au,看频谱<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./14.png" title="图片" data-fancybox="images"><img src="./14.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>提取摩斯密码,解密<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./15.png" title="图片" data-fancybox="images"><img src="./15.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{5BC925649CB0188F52E617D70929191C}</p>
+<h2 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a>另外一个世界</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./16.png" title="图片" data-fancybox="images"><img src="./16.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>肉眼可见的左上角高斯模糊,拖进notepad,尾部发现一串01<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./55.png" title="图片" data-fancybox="images"><img src="./55.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>转字符串  koekj3s<br>flag{koekj3s}</p>
+<h2 id="你竟然赶我走"><a href="#你竟然赶我走" class="headerlink" title="你竟然赶我走"></a>你竟然赶我走</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./17.png" title="图片" data-fancybox="images"><img src="./17.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>神奇的题目,拖进notepad,结尾就是flag<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./18.png" title="图片" data-fancybox="images"><img src="./18.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{stego_is_s0_bor1ing}</p>
+<h2 id="假如给我三天光明"><a href="#假如给我三天光明" class="headerlink" title="假如给我三天光明"></a>假如给我三天光明</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./19.png" title="图片" data-fancybox="images"><img src="./19.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>盲文密码,解密得到  kmdonowg<br>解压得到摩斯电码,提取解密得flag<br>flag{wpei08732?23dz}<br><br>## LSB<br><br><a rel=BUUCTF misc wp(部分) href="./20.png" title="图片" data-fancybox="images"><img src="./20.png" alt="图片"></a><br>stegsolve提取像素,改后缀为png<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./21.png" title="图片" data-fancybox="images"><img src="./21.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>得到flag<br>flag{1sb_i4_s0_Ea4y}</p>
+<h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./22.png" title="图片" data-fancybox="images"><img src="./22.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>查看属性,得到信息  this_is_not_password<br>拖进notepad,在结尾发现flag.txt<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./23.png" title="图片" data-fancybox="images"><img src="./23.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>得到一个加密压缩包,用上面信息解密,得到flag<br>flag{dd22a92bf2cceb6c0cd0d6b83ff51606}</p>
+<h2 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./24.gif" title="图片" data-fancybox="images"><img src="./24.gif" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>肉眼可见的flag,拖进stegsolve分离帧,再拼起来,分别在21,51,79<br>flag{he11ohongke}<br><br>## 九连环<br><br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./25.png" title="图片" data-fancybox="images"><img src="./25.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>拖进notepad里发现有隐藏文件,foremost分离得到一张图片和压缩包<br>图片可以steghide解密<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./26.png" title="图片" data-fancybox="images"><img src="./26.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>压缩包是个伪加密,修改后解压得到flag<br>flag{1RTo8w@&amp;4nK@z*XL}</p>
+<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./27.png" title="图片" data-fancybox="images"><img src="./27.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>拖进notepad,结尾发现flag.vmdk<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./28.png" title="图片" data-fancybox="images"><img src="./28.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>是个伪加密,修改解压得到文件,拖进winhex看到一个ook密码文件和一个brainfuck密码文件<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./29.png" title="图片" data-fancybox="images"><img src="./29.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>分别解密,拼接<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./31.png" title="图片](./30.png)![图片" data-fancybox="images"><img src="./31.png" alt="图片](./30.png)![图片" title class></a>
+                <p>图片](./30.png)![图片</p>
+            </figure><br>flag{N7F5_AD5_i5_funny!}</p>
+<h2 id="大白"><a href="#大白" class="headerlink" title="大白"></a>大白</h2><p>解压是张大白,目测下方被截掉,拖进winhex改高度<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./32.png" title="图片" data-fancybox="images"><img src="./32.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{He1l0_d4_ba1}</p>
+<h2 id="Mysterious"><a href="#Mysterious" class="headerlink" title="Mysterious"></a>Mysterious</h2><p>(我一个做misc的要哭了,现学ida)<br>打开是个exe,拖进ida里,在strings window找到”well done”的地方对应的函数,查看伪代码<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./33.png" title="图片" data-fancybox="images"><img src="./33.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>差不多意思是我们输入的字符串长度要小于等于6,在转换为整型时数值+1,再用itoa()将整型转字符串,从这里可以判断出v10的值应该是122,并且要连接两段字符串,把if里的数值转整型后<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./34.png" title="图片" data-fancybox="images"><img src="./34.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>根据顺序判断密码是122xyz<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./35.png" title="图片" data-fancybox="images"><img src="./35.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{123_Buff3r_0v3rf|0w}</p>
+<h2 id="sqltest"><a href="#sqltest" class="headerlink" title="sqltest"></a>sqltest</h2><p>是个流量包,拖进wireshark里,发现有很多盲注痕迹<br>常规操作,导出HTTP进行分析,save all后在文件夹里进行排序<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./36.png" title="图片" data-fancybox="images"><img src="./36.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>当盲注结果为true时文件大小都是780b,经过文件内容的对比,发现都有Version被注出,根据条件找到有flag信息的盲注点,按名称和文件大小的排序提取ascil值<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./37.png" title="图片" data-fancybox="images"><img src="./37.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>贴脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">'102 108 97 103 123 52 55 101 100 98 56 51 48 48 101 100 53 102 57 98 50 56 102 99 53 52 98 48 100 48 57 101 99 100 101 102 55 125'</span></span><br><span class="line">a=a.split(<span class="string">' '</span>)</span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    flag=flag+chr(int(i))</span><br><span class="line">print(flag)</span><br></pre></td></tr></table></figure>
+<p>转换后:flag{47edb8300ed5f9b28fc54b0d09ecdef7}</p>
+<h2 id="ningen"><a href="#ningen" class="headerlink" title="ningen"></a>ningen</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./38.png" title="图片" data-fancybox="images"><img src="./38.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>hint里提到了社工和四位数密码,生成字典丢尽ziperello里一跑<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./39.png" title="图片" data-fancybox="images"><img src="./39.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>解压得到flag<br>flag{b025fc9ca797a67d2103bfbc407a6d5f}</p>
+<h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><p>解压后是68个压缩包,拖进winhex分析,不是伪加密,hint提示是base64,每个文件是4b,所以每个bata.txt应该是4个字符,写脚本进行批量crc32碰撞</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> binascii</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CrackCrc</span><span class="params">(crc)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> a <span class="keyword">in</span> dic:</span><br><span class="line">        <span class="keyword">for</span> b <span class="keyword">in</span> dic:</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> dic:</span><br><span class="line">                <span class="keyword">for</span> d <span class="keyword">in</span> dic:</span><br><span class="line">                    s = a + b + c + d</span><br><span class="line">                    <span class="keyword">if</span> crc == (binascii.crc32(s) &amp; <span class="number">0xffffffff</span>):</span><br><span class="line">                        f.write(s)</span><br><span class="line">                        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CrackZip</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">68</span>):</span><br><span class="line">        file = <span class="string">'out'</span> + str(i) + <span class="string">'.zip'</span></span><br><span class="line">        f = zipfile.ZipFile(file,<span class="string">'r'</span>)</span><br><span class="line">        GetCrc = f.getinfo(<span class="string">'data.txt'</span>)</span><br><span class="line">        crc = GetCrc.CRC</span><br><span class="line">        CrackCrc(crc)</span><br><span class="line"></span><br><span class="line">dic = string.ascii_letters + string.digits + <span class="string">'+/='</span></span><br><span class="line"><span class="comment">#dic = string.printable</span></span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'out.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">CrackZip()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<p>跑完大概十分钟?没太注意<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./40.png" title="图片" data-fancybox="images"><img src="./40.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>尝试过网站在线转,会多出很多00,只好自己写脚本转</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">f = open(<span class="string">'out.txt'</span>,<span class="string">'r'</span>)</span><br><span class="line">f1 = open(<span class="string">'out1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f1.write(str(base64.b64decode(f.read())))</span><br><span class="line">f.close()</span><br><span class="line">f1.close()</span><br></pre></td></tr></table></figure>
+<p>base64解密后粘贴到winhex,提示要修复压缩包,看到CF 90 73,修补rar文件头<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./41.png" title="图片" data-fancybox="images"><img src="./41.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>修复后得到flag(不知道为什么会多一个0D,删掉就有flag了)<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./42.png" title="图片" data-fancybox="images"><img src="./42.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{nev3r_enc0de_t00_sm4ll_fil3_w1th_zip}</p>
+<h2 id="寂静之城"><a href="#寂静之城" class="headerlink" title="寂静之城"></a>寂静之城</h2><p>信息收集吗?(我认真的看完了小说,还做了笔记,结果….不说了)<br>看下面的信息(真的是挨个看的,我真是服了)<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./43.png" title="图片" data-fancybox="images"><img src="./43.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>点进去,发现一串密文和他的邮箱<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./44.png" title="图片" data-fancybox="images"><img src="./44.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./45.png" title="图片" data-fancybox="images"><img src="./45.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./46.png" title="图片" data-fancybox="images"><img src="./46.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>查看回应的时候看到大家都在说日狗心里平衡多了,在结尾发现一个微博地址<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./47.png" title="图片" data-fancybox="images"><img src="./47.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>啥都没有,空空如也,老老实实整邮箱,用社工软件跑了一下,密码是 63542021127<br>再看这串密文像AES,试着解,加上偏移量,得到上面那个微博地址(感觉被耍了)<br><a href="http://weibo.com/u/3192503722" target="_blank" rel="noopener">http://weibo.com/u/3192503722</a><br>这回仔细日了他的微博,终于在相册发现了信息,但是只有一张路飞,试过隐写也啥都没有<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./48.png" title="图片" data-fancybox="images"><img src="./48.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>…..所以身份证号在哪?<br>迫不得已去搜了wp,行吧,图没有,开房记录也找不到,flag倒是有<br>flag{31010419920831481363542021127}</p>
+<h2 id="被劫持的神秘礼物"><a href="#被劫持的神秘礼物" class="headerlink" title="被劫持的神秘礼物"></a>被劫持的神秘礼物</h2><p>拖进wireshark,过滤http,在一个post流里找到了关键信息<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./49.png" title="图片" data-fancybox="images"><img src="./49.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>也许是账号密码,hint提示是32位小写MD5,试过单独md5提交,最后是拼接md5提交成功<br>flag{1d240aafe21a86afc11f38a45b541a49}</p>
+<h2 id="基础破解"><a href="#基础破解" class="headerlink" title="基础破解"></a>基础破解</h2><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./50.png" title="图片" data-fancybox="images"><img src="./50.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>flag.txt 是个base64<br>解密得  flag{70354300a5100ba78068805661b93a5c}<br>直接丢进D盾去扫<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./51.png" title="图片" data-fancybox="images"><img src="./51.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>挨个查看,在大马那找到真正的密码<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./52.png" title="图片" data-fancybox="images"><img src="./52.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{ba8e6c6f35a53933b871480bb9a9545c}</p>
+<h2 id="小明的保险箱"><a href="#小明的保险箱" class="headerlink" title="小明的保险箱"></a>小明的保险箱</h2><p>改rar后缀,字典爆破<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./53.png" title="图片" data-fancybox="images"><img src="./53.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{75a3d68bf071ee188c418ea6cf0bb043}</p>
+<h2 id="被嗅探的流量"><a href="#被嗅探的流量" class="headerlink" title="被嗅探的流量"></a>被嗅探的流量</h2><p>是个上传图片的包,过滤http,找到图片包<br><figure class="image-box">
+                <a rel=BUUCTF misc wp(部分) href="./54.png" title="图片" data-fancybox="images"><img src="./54.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure><br>flag{da73d88936010da1eeeb36e945ec4b97}</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-13T02:58:54.824Z" itemprop="dateUpdated">2020-10-13 10:58:54</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/&title=《BUUCTF misc wp(部分)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/&title=《BUUCTF misc wp(部分)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/ctf-writeup-misc/ckwd5ws7m0023d0ucg28jo06d/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">BugkuCTF misc wp</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/笔记/ckwd5ws8f003cd0uc8rhep7ax/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Sass笔记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MISC"><span class="post-toc-number">1.</span> <span class="post-toc-text">MISC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#签到"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">签到</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#梅花香之苦寒来"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">梅花香之苦寒来</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#snake"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">snake</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#荷兰宽带数据泄露"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">荷兰宽带数据泄露</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二维码"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">二维码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#镜子里面的世界"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">镜子里面的世界</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#N种方法解决"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">N种方法解决</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#来首歌吧"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">来首歌吧</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#另外一个世界"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">另外一个世界</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#你竟然赶我走"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">你竟然赶我走</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#假如给我三天光明"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">假如给我三天光明</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#爱因斯坦"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">爱因斯坦</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#金三胖"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">金三胖</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面具下的flag"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">面具下的flag</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#大白"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">大白</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mysterious"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">Mysterious</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sqltest"><span class="post-toc-number">1.17.</span> <span class="post-toc-text">sqltest</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ningen"><span class="post-toc-number">1.18.</span> <span class="post-toc-text">ningen</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#zip"><span class="post-toc-number">1.19.</span> <span class="post-toc-text">zip</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寂静之城"><span class="post-toc-number">1.20.</span> <span class="post-toc-text">寂静之城</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#被劫持的神秘礼物"><span class="post-toc-number">1.21.</span> <span class="post-toc-text">被劫持的神秘礼物</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础破解"><span class="post-toc-number">1.22.</span> <span class="post-toc-text">基础破解</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小明的保险箱"><span class="post-toc-number">1.23.</span> <span class="post-toc-text">小明的保险箱</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#被嗅探的流量"><span class="post-toc-number">1.24.</span> <span class="post-toc-text">被嗅探的流量</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://phoebe233.cn/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://39.97.247.119/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/&title=《BUUCTF misc wp(部分)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup-misc/ckwd5ws74001dd0uc2o12ocw4/&title=《BUUCTF misc wp(部分)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aS24DQQgFQN//0omU7WTsBzSOI9WsLHt+xaIbA49HfHz9HNfPd79ez7k7/3rV9bi76tiBh4eH13r1/NbJI+/AvfvcXfv8nfHw8PC2eflmcHej58v9ZHHP74OHh4f3abzkMZNgJUs/Hh4e3v/iVdPrPFHeSOXx8PDwtnnJY/I0OgfnJYb1WgseHh5ezJs0wP7q85v6e3h4eHit1DZfgqtXzRtpL56Ch4eHt8DLx6SSdn7erOoFqNlUw8PDwzvKq5YG8tS2up3k4S4UnfHw8PDWeL2X6DX+k8Q6hxWSaTw8PLxDvGShz1tceVB692k2uvDw8PAWeJMGWJ5M59tAsjnlww14eHh4Z3mT9lIvcr3EvVcCxsPDw9vg9baHPI3ubSfzZH2UWOPh4eGNX/3sYEFe/K2GDw8PD++dvHw4oHrOZEQgeXqhJIGHh4d3iNcrts4DkY8sVJF4eHh427y8SJpgNgJRTfdfBAgPDw9vzKs2kyaNrslcQy8EeHh4eBu83knl3SZOhXvNrWMpNR4eHl7Am6TISVCqI1aTQdXbMi4eHh7eUV7Snk8Kpj3ABvuRd97w8PDwxrx8k0herjc+NSl/jCrTeHh4eIeQVfCkcNArTxTeAQ8PD+8oL1/iqw2t6qI/KSLfUvHw8PAWeKfS7sk3efIdlW43/lXg4eHhHco5T5UYqr8mqTYeHh7eNi8ZeKoWfCcl2sk+hoeHh7fHO1VUrcKeY3ph+iVkeHh4eAu83k6Sl1DPvmi1TIyHh4e3x5s073vJd29B76XmeHh4eHu8yWaQbxjVcw6EEg8PD+8DeL0iQq9EO0nK8fDw8D6BV05nW3WRZDShMEyAh4eHt8bL099kue+NIBwj4eHh4S3zeg2wfLmffF8N6LH+Hh4eHt7vd/sGcATkKftJ9hEAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
