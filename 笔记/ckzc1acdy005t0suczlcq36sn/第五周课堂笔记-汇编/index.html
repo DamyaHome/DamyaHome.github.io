@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>第五周课堂笔记(汇编) | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="汇编">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>第五周课堂笔记(汇编)</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">第五周课堂笔记(汇编)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-04T10:37:30.000Z" itemprop="datePublished" class="page-time">
+  2020-04-04
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-第五周课堂笔记-汇编"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">第五周课堂笔记(汇编)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-04 18:37:30" datetime="2020-04-04T10:37:30.000Z"  itemprop="datePublished">2020-04-04</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/笔记/">笔记</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>主要寄存器:(32位)<br>EAX EBX ECX EDX:数据寄存器<br>ESI EDI:变址寄存器<br>ESP:指向栈顶<br>EBP:指向栈底<br>EIP:指向指令执行的下一条地址</p>
+<p>R(64位)</p>
+<p>（以上也是在栈中的位置顺序）</p>
+<h2 id="常见的汇编指令"><a href="#常见的汇编指令" class="headerlink" title="常见的汇编指令"></a>常见的汇编指令</h2><p>mov eax,0x12  将0x12覆盖的存入eax<br>mov eax,ebx   将ebxd的值覆盖的存入eax<br>add eax，ebx  将ebx+eax并覆盖的存入eax<br>inc eax       eax++<br>edc eax       eax–</p>
+<h2 id="PUSH"><a href="#PUSH" class="headerlink" title="PUSH"></a>PUSH</h2><p>push指令将操作数压入内存的栈中<br>个人理解：栈结构不变，push数据（压栈）前，先将esp值减4，再将操作数内容压入esp指示的位置，再自行+4恢复到栈顶位置<br>push eax    将eax内容压栈<br>push [var]  将var指示的4直接内容压栈</p>
+<h2 id="POP"><a href="#POP" class="headerlink" title="POP"></a>POP</h2><p>pop指令与push指令相反,执行出栈工作<br>个人理解：栈结构不变，pop数据（出栈）前，先将esp指示地址中的内容出栈，然后esp值+4恢复栈顶位置<br>pop edi    将edi内容出栈<br>pop [ebx]  将ebx指示的4直接内容出栈</p>
+<h2 id="CALL"><a href="#CALL" class="headerlink" title="CALL"></a>CALL</h2><p>call指令实现子程序的调用<br>个人理解：call指令先将当前执行指令地址入栈，然后无条件转移到由标签指示的指令，但依旧保存调用前的地址信息，当调用结束后返回到调用前的地址</p>
+<h2 id="RET"><a href="#RET" class="headerlink" title="RET"></a>RET</h2><p>ret指令实现子程序的返回<br>个人理解：ret指令弹出栈中保存的指令地址，然后无条件转移到保存的指令地址执行，等待下一次返回数据</p>
+<h2 id="调用约定画图理解"><a href="#调用约定画图理解" class="headerlink" title="调用约定画图理解"></a>调用约定画图理解</h2><figure class="image-box">
+                <a rel=第五周课堂笔记(汇编) href="./pwn_pic.png" title="" data-fancybox="images"><img src="./pwn_pic.png" alt title class></a>
+                <p></p>
+            </figure>
+<p>(以下纯个人理解,有不对的地方虚心听教)</p>
+<p>main函数里定义A子程序,并赋值1,2,3,A子程序里返回a+b+c的值<br>old ebp是原栈底,一个保存原栈底地址的寄存器,内容可变结构不变<br>ret add返回由1,2,3赋值后的a+b+c,当有值被定义时就返回值,地址位置自行变化,功能不变<br>mov ebp,esp,有新内容进来,一个入栈过程,将ebp的地址转移到esp<br>leave,一个出栈过程,mov esp,ebp,将栈顶地址转移到栈底,pop出来一个ebp地址的内容,但因为已经将esp地址转移到ebp,所以pop ebp的内容依旧是在出栈,retn返回出栈的值</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-04T10:38:18.152Z" itemprop="dateUpdated">2020-04-04 18:38:18</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/" target="_blank" rel="external">https://www.damyahome.github.io/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/汇编/">汇编</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/&title=《第五周课堂笔记(汇编)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/&title=《第五周课堂笔记(汇编)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/ctf-writeup/ckzc1aca4000x0sucv5hm0vny/2020DozerCTF-wp-by-ginkgo-三叶草/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">2020DozerCTF_wp_by_ginkgo_三叶草</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/笔记/ckzc1ace5005z0sucen3mjcyr/第一周复习-WEB/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">第一周复习(WEB)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#寄存器"><span class="post-toc-number">1.</span> <span class="post-toc-text">寄存器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#常见的汇编指令"><span class="post-toc-number">2.</span> <span class="post-toc-text">常见的汇编指令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PUSH"><span class="post-toc-number">3.</span> <span class="post-toc-text">PUSH</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#POP"><span class="post-toc-number">4.</span> <span class="post-toc-text">POP</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#CALL"><span class="post-toc-number">5.</span> <span class="post-toc-text">CALL</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#RET"><span class="post-toc-number">6.</span> <span class="post-toc-text">RET</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调用约定画图理解"><span class="post-toc-number">7.</span> <span class="post-toc-text">调用约定画图理解</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://w4nder.top/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.vigorous.top/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.mklkx.xyz/" target="_blank">mklkx</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.cnblogs.com/cx1ng/" target="_blank">cxing</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2022
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/&title=《第五周课堂笔记(汇编)》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/笔记/ckzc1acdy005t0suczlcq36sn/第五周课堂笔记-汇编/&title=《第五周课堂笔记(汇编)》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADM0lEQVR42u3aQW7jMBAEwPz/095rFois7qEMWFTpFDgRpaIPnZnhz098vQ6u3799f9fRb49WeL29jta5+MLGxsa+CTt5QPLgqz5//27t54dbj42Njb0duw2YNhFWIirZmtyCjY2NjZ1ESFKKvH/WLFCxsbGxsRN2WxLM7pqRsLGxsZ/Mzh+ZDAOuBSdR98FeGjY2NvbXs/Op6Pf//JH5NjY2NvYXs1/l9YnjPm2p04bWH3dhY2Njb8SeDXHzF83x+XC3vffwrbCxsbG3YLcHa/KjM8kKK9vXlk/DRMXGxsb+enZ722w02x67aUNr/cAQNjY29h7sfHw7awC1xca1w4yTDMfGxsa+LXs9JPLCox0SrJQfJ9GLjY2NvR07LxhmD541rWb3Rs/FxsbG3oi9Poi9aki8HmxJGP+xDjY2NvbN2StHbdptSgYAeRDmY4y6qYSNjY19Q3b+0hfkZFxmtFOO4m+wsbGxH8CevVbefmoP3MwaUodlDDY2NvZG7PYQTBta622pWZSufCXY2NjY92W3N8zaPSvbmpdA2NjY2M9hJwGTh0fRoC/XbGOyHvRiY2Njb8fOh7izYmM9nFbaTNjY2Nj7sduGUTsGaBv97dC3fmdsbGzsTdlJkTAbo85aRW2ZUWwfNjY29qbsvLk/O0yTlzftWDdZ+b/1sbGxsTdiJze3Rcjs75PBQB6HUcRiY2Njb8TOXyJfum1ItUOIpC1VtMCwsbGxt2DXB1/K+Wl7DCgfQqw8HRsbG/vu7LaR1D5mpQiZrZB8MdjY2Ng7sdu2Th42bXMqHx7kkXayfdjY2NiPYbcHa9rCYLbRLfVwyo2NjY29ETv/tz4/RtOOgdsozVtUh6UINjY29nbsttGTD3HzDV0ZEhRTAGxsbOwt2LMDl+3Bmvx4TVvwtI2t4nQPNjY29k3YbRi0zaO8mEnWvLZEwcbGxt6J3YZW3sTJY7IdPK+UN9jY2Ni7stuxbstrY7KNsWGZgY2Njf1gdjv0bVtFV7WfTjpq2NjY2NijYFvnJdF4EoTY2NjY27GTB7eFQTsYaNtSs43AxsbG3o/ddmBWypIoWuKNaAMYGxsbezv2PwEfkc0kvoAPAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
